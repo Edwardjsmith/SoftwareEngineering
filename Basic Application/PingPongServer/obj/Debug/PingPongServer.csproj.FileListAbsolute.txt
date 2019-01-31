@@ -1,0 +1,6 @@
+D:\Software Engineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe.config
+D:\Software Engineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe
+D:\Software Engineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.pdb
+D:\Software Engineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
+D:\Software Engineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
+D:\Software Engineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb
