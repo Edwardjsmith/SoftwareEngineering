@@ -4,3 +4,12 @@ D:\Software Engineering\Basic Application\PingPongServer\bin\Debug\PingPongServe
 D:\Software Engineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
 D:\Software Engineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
 D:\Software Engineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe.config
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.pdb
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csprojAssemblyReference.cache
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.Popupcs.resources
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.GenerateResource.cache
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb
