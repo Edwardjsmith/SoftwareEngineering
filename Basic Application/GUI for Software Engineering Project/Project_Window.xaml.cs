@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace GUI_for_Software_Engineering_Project.GUI
+{
+    /// <summary>
+    /// Interaction logic for Project_Window.xaml
+    /// </summary>
+    public partial class Project_Window : Window
+    {
+        private static List<string> _projectNames = new List<string>();
+
+        public static List<string> ProjectNames
+        {
+            get
+            {
+                return _projectNames;
+            }
+            set
+            {
+                _projectNames = value;
+            }
+        }
+
+
+
+        public Project_Window()
+        {
+            
+            InitializeComponent();
+            
+            //FillUIWithDataForTesting();
+
+            ProjectNames.Add("Your advertisement here!");
+            ProjectNames.Add("For just £9999");
+            ProjectNames.Add("Seriously the best investment you could ever consider!");
+
+            cbxProjectSelection.ItemsSource = ProjectNames;
+        }
+
+        
+        private void cbxProjectSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Server requests should be made when this event is fired
+
+            Console.WriteLine(cbxProjectSelection.SelectedItem.ToString());
+            
+        }
+
+        private void FillUIWithDataForTesting()
+        {
+
+        }
+
+    }
+}
