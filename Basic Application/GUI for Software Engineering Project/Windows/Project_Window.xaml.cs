@@ -17,7 +17,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
     /// <summary>
     /// Interaction logic for Project_Window.xaml
     /// </summary>
-    public partial class Project_Window : Window
+    public partial class Project_Window : Window, IProject_Window
     {
         private static List<string> _projectNames = new List<string>();
 
@@ -37,15 +37,8 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
         public Project_Window()
         {
-            
             InitializeComponent();
-            
-            //FillUIWithDataForTesting();
-
-            ProjectNames.Add("Your advertisement here!");
-            ProjectNames.Add("For just £9999");
-            ProjectNames.Add("Seriously the best investment you could ever consider!");
-
+            FillUIWithDataForTesting();
             cbxProjectSelection.ItemsSource = ProjectNames;
         }
 
@@ -55,13 +48,28 @@ namespace GUI_for_Software_Engineering_Project.GUI
             // Server requests should be made when this event is fired
 
             Console.WriteLine(cbxProjectSelection.SelectedItem.ToString());
-            
+            if (cbxProjectSelection.SelectedItem.ToString() == "New Project")
+            {
+                Console.WriteLine("Creating new Project");
+                new ProjectCreation_Window().Show();
+
+            }
+
         }
 
         private void FillUIWithDataForTesting()
         {
-
+            ProjectNames.Add("Your advertisement here!");
+            ProjectNames.Add("For just £9999");
+            ProjectNames.Add("Seriously the best investment you could ever consider!");
+            ProjectNames.Add("New Project");
         }
 
+
+
+        // TODO: Remove after VS Restart
+        private void CbxProjectSelection_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+        }
     }
 }

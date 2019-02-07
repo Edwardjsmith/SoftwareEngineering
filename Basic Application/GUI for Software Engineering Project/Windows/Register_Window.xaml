@@ -1,0 +1,22 @@
+﻿<Window x:Class="GUI_for_Software_Engineering_Project.Register_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_for_Software_Engineering_Project"
+        mc:Ignorable="d"
+        Title="Register" Height="362.8" Width="395.2">
+    <Grid>
+        <Label Content="Username;" HorizontalAlignment="Left" Margin="44,42,0,0" VerticalAlignment="Top"/>
+        <Label Content="E-Mail:" HorizontalAlignment="Left" Margin="44,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="44,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="Reenter Password:" HorizontalAlignment="Left" Margin="44,228,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxUsername" HorizontalAlignment="Left" Height="23" Margin="211,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtbxEMail" HorizontalAlignment="Left" Height="23" Margin="211,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtbxPassword1" HorizontalAlignment="Left" Height="23" Margin="211,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtbxPassword2" HorizontalAlignment="Left" Height="23" Margin="211,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnConfirm" Content="Register" HorizontalAlignment="Left" Margin="256,291,0,0" VerticalAlignment="Top" Width="75" Click="BtnConfirm_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="165,291,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
+
+    </Grid>
+</Window>

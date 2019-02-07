@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
-2-1197394965
+4-1112881002
 
-111164570086
+24-1495626126
 131569487696
-MainWindow.xaml;Project_Window.xaml;
+Windows\MainWindow.xaml;Windows\ProjectCreation_Window.xaml;Windows\Project_Window.xaml;Windows\Register_Window.xaml;
 
-True
+False
 

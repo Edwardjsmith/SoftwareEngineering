@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="155.943" Width="281.257">
     <Grid HorizontalAlignment="Left" Margin="0,0,0,-3.6" Width="271" RenderTransformOrigin="0.518,0.556">
-        <Label Content="Login:" HorizontalAlignment="Left" Margin="8,9,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Margin="8,9,0,0" VerticalAlignment="Top" Width="70"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="8,57,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="83,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="3"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="3" KeyDown="txtbxPassword_Enter"/>
+        <TextBox x:Name="txtbxUsername" HorizontalAlignment="Left" Height="23" Margin="83,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txtbxPassword" HorizontalAlignment="Left" Height="23" Margin="82,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="3" KeyDown="txtbxPassword_Enter"/>
         <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="106,101,0,0" VerticalAlignment="Top" Width="75" Click="btnLogin_Click"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="186,101,0,0" VerticalAlignment="Top" Width="75" Click="btnRegister_Click"/>
 

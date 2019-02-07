@@ -20,23 +20,38 @@ namespace GUI_for_Software_Engineering_Project
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IMainWindow
     {
+
+        public string Username
+        {
+            get => txtbxUsername.Text;
+        }
+
+        public string Password
+        {
+            get => txtbxPassword.Text;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-            Window window = new Project_Window();
-            window.Show();
+            
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            Window window = new Project_Window();
+            window.Show();
             Console.WriteLine("Logging in!");
+            this.Close();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Registering!");
+            new Register_Window().Show();
+
         }
 
         private void txtbxPassword_Enter(object sender, KeyEventArgs e)

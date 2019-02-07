@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace GUI_for_Software_Engineering_Project
 {
-    class LoginController
+    interface IProjectCreationController
     {
-        private MainWindow mainWindow;
 
-        public MainWindow MainWindow { get => mainWindow; set => mainWindow = value; }
-
-
+        void CreateNewProject();
+        bool CheckForExistingProject();
 
     }
 }

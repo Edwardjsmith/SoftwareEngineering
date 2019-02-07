@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Project_Window" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="cbxProjectSelection" HorizontalAlignment="Left" Margin="61,13,0,0" VerticalAlignment="Top" Width="474" SelectionChanged="cbxProjectSelection_SelectionChanged" DataContext="{Binding ProjectNames, Mode=TwoWay}"/>
+        <ComboBox x:Name="cbxProjectSelection" HorizontalAlignment="Left" Margin="61,13,0,0" VerticalAlignment="Top" Width="474" SelectionChanged="cbxProjectSelection_SelectionChanged" DataContext="{Binding ProjectNames, Mode=TwoWay}" ContextMenuClosing="CbxProjectSelection_ContextMenuClosing"/>
         <Label Content="Project" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtbxSearchBar" HorizontalAlignment="Left" Height="23" Margin="540,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" />
         <ListView x:Name="lbProjectFiles" HorizontalAlignment="Left" Height="321" Margin="61,60,0,0" VerticalAlignment="Top" Width="474">

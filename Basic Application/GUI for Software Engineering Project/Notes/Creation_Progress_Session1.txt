@@ -1,0 +1,7 @@
+﻿Created Login Window
+Created Dummy Project Window
+
+Added Controller for Login Window
+Added Controller for Project Window
+
+Added default commenting to Login Window
