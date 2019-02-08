@@ -1,0 +1,38 @@
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csprojAssemblyReference.cache
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\App.g.cs
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.cache
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.lref
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.g.resources
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI_for_Software_Engineering_Project.Properties.Resources.resources
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.GenerateResource.cache
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\MainWindow.g.cs
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\Project_Window.g.cs
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\MainWindow.baml
+D:\Software Engineering\GUI for Software Engineering Project\GUI for Software Engineering Project\obj\Debug\Project_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csprojAssemblyReference.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\App.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.lref
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.g.resources
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI_for_Software_Engineering_Project.Properties.Resources.resources
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.GenerateResource.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.baml

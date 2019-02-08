@@ -1,0 +1,12 @@
+﻿
+Expanded functionality of Login Window
+
+Added Project Creation Window
+Added Registration Window
+
+Added project creation Controller
+Added Registration Controller
+
+Cleaned up the Project by adding Folders
+
+Added Interfaces to all windows and controllers
