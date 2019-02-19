@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{64F47C5B-D9B0-48E4-829D-DED98A79ABF7}</ProjectGuid>
+    <ProjectGuid>{A3EA8F3D-B487-40D1-8BEA-7BB2417F9F41}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PingPongServer</RootNamespace>
-    <AssemblyName>PingPongServer</AssemblyName>
+    <RootNamespace>EdsStuff</RootNamespace>
+    <AssemblyName>EdsStuff</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,8 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

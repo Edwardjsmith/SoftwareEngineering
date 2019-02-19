@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPongServer", "PingPongS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI for Software Engineering Project", "GUI for Software Engineering Project\GUI for Software Engineering Project.csproj", "{1F844633-B50C-43BB-B5E0-69F2AF3C9159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdsStuff", "EdsStuff\EdsStuff.csproj", "{A3EA8F3D-B487-40D1-8BEA-7BB2417F9F41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1F844633-B50C-43BB-B5E0-69F2AF3C9159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F844633-B50C-43BB-B5E0-69F2AF3C9159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F844633-B50C-43BB-B5E0-69F2AF3C9159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3EA8F3D-B487-40D1-8BEA-7BB2417F9F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3EA8F3D-B487-40D1-8BEA-7BB2417F9F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3EA8F3D-B487-40D1-8BEA-7BB2417F9F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3EA8F3D-B487-40D1-8BEA-7BB2417F9F41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

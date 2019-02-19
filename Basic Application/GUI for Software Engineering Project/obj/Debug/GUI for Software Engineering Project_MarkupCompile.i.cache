@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
 GUI_for_Software_Engineering_Project
 none
 false
 DEBUG;TRACE
-D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
 4-1112881002
 
-24-1495626126
+24-855064329
 131569487696
 Windows\MainWindow.xaml;Windows\ProjectCreation_Window.xaml;Windows\Project_Window.xaml;Windows\Register_Window.xaml;
 
-False
+True
 

@@ -36,3 +36,24 @@ D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software E
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.baml
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.g.cs
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.baml
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csprojAssemblyReference.cache
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.g.cs
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.g.cs
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.g.cs
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.g.cs
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\App.g.cs
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.cache
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.lref
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.baml
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.baml
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.baml
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.baml
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.g.resources
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI_for_Software_Engineering_Project.Properties.Resources.resources
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.GenerateResource.cache
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
