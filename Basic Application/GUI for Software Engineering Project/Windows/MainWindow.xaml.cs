@@ -59,5 +59,10 @@ namespace GUI_for_Software_Engineering_Project
             if(e.Key == Key.Enter)
                 Console.WriteLine("Logging in!");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
