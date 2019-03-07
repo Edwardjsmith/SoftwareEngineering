@@ -13,9 +13,7 @@ namespace PingPongServer
  
         static void Main(string[] args)
         {
-            Popupcs popup = new Popupcs();
-            popup.ShowDialog();
-
+       
             TcpListener listener = new TcpListener(IPAddress.Any, 2302);
             listener.Start();
             while (true)
