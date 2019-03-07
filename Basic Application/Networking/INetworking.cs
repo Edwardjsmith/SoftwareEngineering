@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Networking
 {
-    interface INetworking
+    public interface INetworking
     {
 
         // USER CRADENTRALS FUNCTIONS//

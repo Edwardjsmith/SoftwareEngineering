@@ -11,6 +11,8 @@ namespace Networking
     {
         static void Main(string[] args)
         {
+    
+
             string externalip = new WebClient().DownloadString("http://icanhazip.com");
             Console.WriteLine("My Public IP Address is :" + externalip);
             string hostName = Dns.GetHostName(); // Retrive the Name of HOST 
