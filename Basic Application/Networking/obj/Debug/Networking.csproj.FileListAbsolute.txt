@@ -10,3 +10,15 @@ U:\SoftwareEngineering\Basic Application\Networking\bin\Debug\MySql.Data.xml
 U:\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CopyComplete
 U:\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.exe
 U:\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.pdb
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.exe.config
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.exe
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.pdb
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\bin\Debug\Google.Protobuf.dll
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\bin\Debug\MySql.Data.dll
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\bin\Debug\Google.Protobuf.xml
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\bin\Debug\MySql.Data.xml
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csprojAssemblyReference.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CoreCompileInputs.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CopyComplete
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.exe
+D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.pdb

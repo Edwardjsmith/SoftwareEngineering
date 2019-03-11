@@ -10,13 +10,19 @@
         <ComboBox x:Name="cbxProjectSelection" HorizontalAlignment="Left" Margin="61,13,0,0" VerticalAlignment="Top" Width="474" SelectionChanged="cbxProjectSelection_SelectionChanged" DataContext="{Binding ProjectNames, Mode=TwoWay}" ContextMenuClosing="CbxProjectSelection_ContextMenuClosing"/>
         <Label Content="Project" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtbxSearchBar" HorizontalAlignment="Left" Height="23" Margin="540,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" />
-        <ListView x:Name="lbProjectFiles" HorizontalAlignment="Left" Height="321" Margin="61,60,0,0" VerticalAlignment="Top" Width="474">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ListBox Name="lbAssets" HorizontalAlignment="Left" Height="297" Margin="61,59,0,0" VerticalAlignment="Top" Width="474" ItemsSource="{Binding AssetSource}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Margin="5">
+                        <Image Source="{Binding Path=ImgSource}" DockPanel.Dock="Left" MaxHeight="100" MaxWidth="200"></Image>
+                        <Label Content="{Binding TxtContent}" DockPanel.Dock="Right"></Label>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+        <Button x:Name="btnPreview" Content="Preview" HorizontalAlignment="Left" Margin="556,330,0,0" VerticalAlignment="Top" Width="103" Height="26" Click="btnPreview_Click"/>
+
 
     </Grid>
 </Window>

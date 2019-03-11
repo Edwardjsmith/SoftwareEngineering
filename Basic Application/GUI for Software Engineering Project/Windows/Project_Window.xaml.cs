@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_for_Software_Engineering_Project.Model;
+using GUI_for_Software_Engineering_Project.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,12 @@ namespace GUI_for_Software_Engineering_Project.GUI
     public partial class Project_Window : Window, IProject_Window
     {
         private static List<string> _projectNames = new List<string>();
+        public List<AssetData> assetData = new List<AssetData>();
+
+        public List<AssetData> AssetSource
+        {
+            get => assetData;
+        }
 
         public static List<string> ProjectNames
         {
@@ -40,6 +48,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
             InitializeComponent();
             FillUIWithDataForTesting();
             cbxProjectSelection.ItemsSource = ProjectNames;
+            lbAssets.ItemsSource = AssetSource;
         }
 
         
@@ -63,6 +72,8 @@ namespace GUI_for_Software_Engineering_Project.GUI
             ProjectNames.Add("For just £9999");
             ProjectNames.Add("Seriously the best investment you could ever consider!");
             ProjectNames.Add("New Project");
+            assetData.Add(new AssetData());
+
         }
 
 
@@ -70,6 +81,18 @@ namespace GUI_for_Software_Engineering_Project.GUI
         // TODO: Remove after VS Restart
         private void CbxProjectSelection_ContextMenuClosing(object sender, ContextMenuEventArgs e)
         {
+
+
+
+        }
+
+        private void btnPreview_Click(object sender, RoutedEventArgs e)
+        {
+
+            var tmp = lbAssets.SelectedItem;
+
+            new Preview_Window((AssetData)tmp).Show();
+
         }
     }
 }
