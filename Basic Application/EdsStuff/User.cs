@@ -6,36 +6,56 @@ using System.Threading.Tasks;
 
 namespace EdsStuff
 {
-    class User
+    class User : IUser
     {
-        string loginName;
-        string password;
-        string name;
+        private string username;
+        private string password;
+        private string[] userDetails;
 
-        List<Projects> userProjects;
-
-        public User(string login, string pass, string n)
+        User(string name, string password, string[] userDetails)
         {
-            loginName = login;
-            password = pass;
-            name = n;
-        }
+            setUserName(name);
+            setPassword(password);
+            setUserDetails(userDetails);
 
-        public string getLogin()
-        {
-            return loginName;
+            if(Networking.Networking.instance.Create_User(name, password))
+            {
+                Console.WriteLine("User creation success");
+            }
+            else
+            {
+                Console.WriteLine("User creation failed");
+            }
         }
 
         public string getPassword()
         {
             return password;
         }
-        public string getName()
+
+        public string[] getUserDetails()
         {
-            return name;
+            return userDetails;
         }
-     
+
+        public string getUserName()
+        {
+            return username;
+        }
+
+        public void setPassword(string pass)
+        {
+            password = pass;
+        }
+
+        public void setUserDetails(string[] details)
+        {
+            userDetails = details;
+        }
+
+        public void setUserName(string name)
+        {
+            username = name;
+        }
     }
-            
-    
 }

@@ -5,8 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Networking
 {
-    class Networking : INetworking
+    public class Networking : INetworking
     {
+        private static Networking Instance = null;
+        private static readonly object padlock = new object();
+
+
+        private Networking()
+        {
+
+        }
+
+        public static Networking instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (Instance == null)
+                    {
+                        Instance = new Networking();
+                    }
+
+                    return Instance;
+                }
+            }
+        }
+
+
         Network_SQL _SQL = new Network_SQL();
         List<Network_Server> Servers = new List<Network_Server>();
         // USER CRADENTRALS FUNCTIONS//
