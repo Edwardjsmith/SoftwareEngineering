@@ -63,6 +63,10 @@
     <Compile Include="Interfaces\IRegister_Window.cs" />
     <Compile Include="Controller\ProjectController.cs" />
     <Compile Include="Controller\ProjectCreationController.cs" />
+    <Compile Include="Model\AssetData.cs" />
+    <Compile Include="Windows\Preview_Window.xaml.cs">
+      <DependentUpon>Preview_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ProjectCreation_Window.xaml.cs">
       <DependentUpon>ProjectCreation_Window.xaml</DependentUpon>
     </Compile>
@@ -85,6 +89,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\Preview_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\ProjectCreation_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
