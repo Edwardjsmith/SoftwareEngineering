@@ -35,10 +35,17 @@ namespace GUI_for_Software_Engineering_Project
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Registered");
-            IProject_Window window = new Project_Window();
-            window.Show();
-            this.Close();
+            if (Networking.Networking.instance.Create_User(Username, Password2))
+            {
+                Console.WriteLine("Registered");
+                IProject_Window window = new Project_Window();
+                window.Show();
+                this.Close();
+            }
+            else
+            {
+                Console.WriteLine("User could not be created");
+            }
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
