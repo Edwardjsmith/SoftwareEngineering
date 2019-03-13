@@ -36,22 +36,27 @@ namespace GUI_for_Software_Engineering_Project
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new Project_Window();
-            window.Show();
-            Console.WriteLine("Logging in!");
-            this.Close();
+           if(Networking.Networking.instance.Sign_In(Username, Password))
+            {
+                Window window = new Project_Window();
+                window.Show();
+                Console.WriteLine("Logging in!");
+                this.Close();
+            }
+            else
+            {
+                Console.WriteLine("Invalid password!");
+            }
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Registering!");
             new Register_Window().Show();
-
         }
 
         private void txtbxPassword_Enter(object sender, KeyEventArgs e)
