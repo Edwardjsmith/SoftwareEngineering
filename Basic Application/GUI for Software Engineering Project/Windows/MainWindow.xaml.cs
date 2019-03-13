@@ -57,7 +57,6 @@ namespace GUI_for_Software_Engineering_Project
         {
             Console.WriteLine("Registering!");
             new Register_Window().Show();
-
         }
 
         private void txtbxPassword_Enter(object sender, KeyEventArgs e)
