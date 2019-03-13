@@ -22,15 +22,3 @@ D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Deb
 D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CopyComplete
 D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.exe
 D:\Software Engineering\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.pdb
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.exe.config
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.exe
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.pdb
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\bin\Debug\Google.Protobuf.dll
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\bin\Debug\MySql.Data.dll
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\bin\Debug\Google.Protobuf.xml
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\bin\Debug\MySql.Data.xml
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csprojAssemblyReference.cache
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CoreCompileInputs.cache
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CopyComplete
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.exe
-C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.pdb
