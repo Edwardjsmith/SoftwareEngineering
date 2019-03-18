@@ -34,3 +34,14 @@ C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Netw
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CopyComplete
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.exe
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.pdb
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.exe.config
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.exe
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug\Networking.pdb
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug\Google.Protobuf.dll
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug\MySql.Data.dll
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug\Google.Protobuf.xml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug\MySql.Data.xml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csprojResolveAssemblyReference.cache
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.csproj.CoreCompileInputs.cache
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.exe
+N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\obj\Debug\Networking.pdb
