@@ -131,8 +131,9 @@ namespace Networking
         }
         private static string Get_File_raw(string file_name)
         {
-            byte[] data = File.ReadAllBytes(File_Location + file_name);
-            return Convert.ToBase64String(data);
+            //byte[] data = File.ReadAllBytes(File_Location + file_name);
+            //return Convert.ToBase64String(data);
+            return "";
         }
         private static string Get_File_name()
         {

@@ -11,9 +11,29 @@ namespace Networking
     {
         static void Main(string[] args)
         {
-    
+            Network_SQL _SQL = new Network_SQL();
+            _SQL.Connect_SQL("Test", "Pass");
+            List<Project> test = _SQL.Get_All_Projects();
+            Console.WriteLine("Name :" + test[0].Name);
+            Console.WriteLine("PORT :" + test[0].Port);
+            Console.WriteLine("PAssword :" + test[0].Password);
+            Console.WriteLine("IP :" + test[0].IP);
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input != "Quit")
+                {
 
-            string externalip = new WebClient().DownloadString("http://icanhazip.com");
+                }
+                else
+                {
+
+                    break;
+                }
+            }
+        }
+
+          /*  string externalip = new WebClient().DownloadString("http://icanhazip.com");
             Console.WriteLine("My Public IP Address is :" + externalip);
             string hostName = Dns.GetHostName(); // Retrive the Name of HOST 
             Console.WriteLine("My Host Name is :" + hostName);
@@ -60,6 +80,6 @@ namespace Networking
                 }
 
             }
-        }
+        }*/
     }
 }
