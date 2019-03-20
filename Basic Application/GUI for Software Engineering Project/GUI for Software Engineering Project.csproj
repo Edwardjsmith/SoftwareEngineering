@@ -136,6 +136,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EdsStuff\EdsStuff.csproj">
+      <Project>{a3ea8f3d-b487-40d1-8bea-7bb2417f9f41}</Project>
+      <Name>EdsStuff</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Networking\Networking.csproj">
       <Project>{b456ce7d-76e1-4fec-90ba-ed10c85c02b4}</Project>
       <Name>Networking</Name>

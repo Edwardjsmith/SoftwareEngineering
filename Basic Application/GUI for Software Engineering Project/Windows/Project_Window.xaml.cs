@@ -13,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using EdsStuff;
 namespace GUI_for_Software_Engineering_Project.GUI
 {
     /// <summary>
@@ -61,17 +61,17 @@ namespace GUI_for_Software_Engineering_Project.GUI
             {
                 Console.WriteLine("Creating new Project");
                 new ProjectCreation_Window().Show();
-
             }
 
         }
 
         private void FillUIWithDataForTesting()
         {
-            ProjectNames.Add("Your advertisement here!");
+            /*ProjectNames.Add("Your advertisement here!");
             ProjectNames.Add("For just £9999");
             ProjectNames.Add("Seriously the best investment you could ever consider!");
-            ProjectNames.Add("New Project");
+            ProjectNames.Add("New Project");*/
+            ProjectNames = Networking.Networking.instance.Get_Projects();
             assetData.Add(new AssetData());
 
         }
