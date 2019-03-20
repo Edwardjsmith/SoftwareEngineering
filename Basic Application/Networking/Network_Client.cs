@@ -48,6 +48,27 @@ namespace Networking
         // A/[username]                 - request acsess to 
         // U/[username]                 - on whitelist? 
         // S/[filename]/D/[filedata]    - sending a file to server for updating
+        public void Request_filenames()
+        {
+            Send_Message("R:");
+        }
+        public void Request_file(string filename)
+        {
+            Send_Message(string.Join("R:",filename));
+        }
+        public void Request_Acsess()
+        {
+            Send_Message("A/");
+        }
+        public void Query_Acsess()
+        {
+            Send_Message("U/");
+        }
+        public void Update_file(string filename, string filedata)
+        {
+            // TODO
+            //Send_Message("U/");
+        }
         public void Send_Message(string message)
         {
             To_send.Add(message);
@@ -77,7 +98,7 @@ namespace Networking
         private static void Sender()
         {
             
-            while (true)
+            while (Running)
             {
                 for (int i = 0; i < To_send.Count; i++)
                 {
@@ -88,7 +109,7 @@ namespace Networking
                     {
                         if (To_send[i][1] == ':')
                         {
-                            // requesting file
+                            // requesting file names
                             if (!Listen(Client_Data)) { i--; }
 
                         }
@@ -96,7 +117,7 @@ namespace Networking
                         {
                             if (To_send[i][1] == '/')
                             {
-                                // requesting file names
+                                // requesting file 
                                 if (!Listen(Client_Data)) { i--; }
                             }
                         }
@@ -114,7 +135,7 @@ namespace Networking
                     }
                     Client_Data.Close();
                 }
-               // To_send.Clear();
+                To_send.Clear();
                
             }
           

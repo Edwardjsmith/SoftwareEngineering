@@ -11,7 +11,7 @@ namespace Networking
     {
         static void Main(string[] args)
         {
-            Network_SQL _SQL = new Network_SQL();
+           /* Network_SQL _SQL = new Network_SQL();
             _SQL.Connect_SQL("Test", "Pass");
             List<Project> test = _SQL.Get_All_Projects();
             Console.WriteLine("Name :" + test[0].Name);
@@ -31,9 +31,9 @@ namespace Networking
                     break;
                 }
             }
-        }
+        }*/
 
-          /*  string externalip = new WebClient().DownloadString("http://icanhazip.com");
+            string externalip = new WebClient().DownloadString("http://icanhazip.com");
             Console.WriteLine("My Public IP Address is :" + externalip);
             string hostName = Dns.GetHostName(); // Retrive the Name of HOST 
             Console.WriteLine("My Host Name is :" + hostName);
@@ -43,7 +43,7 @@ namespace Networking
             {
                 Console.WriteLine("STARTING SERVER");
                 Network_Server network_Server = new Network_Server();
-                network_Server.Start(2302, @"C:\Users\Public\Pictures\Sample Pictures");
+                network_Server.Start(2302, @"N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug");
                 // Network_SQL _SQL = new Network_SQL();
                 // _SQL.Connect_SQL("Test", "Pass");
                 while (true)
@@ -77,9 +77,10 @@ namespace Networking
                         network_Client.End();
                         break;
                     }
+                    Console.Clear();
                 }
 
             }
-        }*/
+        }
     }
 }

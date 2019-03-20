@@ -74,17 +74,18 @@ namespace Networking
             TcpListener listener = new TcpListener(IPAddress.Any, Server_Port);
             listener.Start();
             List<TcpClient> Clients = new List<TcpClient>();
-            while (true)
+            while (Running)
             {
                 if (listener.Pending())
                 {
                     TcpClient Client_Data = listener.AcceptTcpClient();
+                   
                    // Clients.Add(Client_Data);
               //  }
               //  for(int i = 0; i < Clients.Count; i++) {
                    // TcpClient Client_Data = Clients[i];
                     NetworkStream stream = Client_Data.GetStream();
-
+                    
                     byte[] message = new byte[Client_Data.ReceiveBufferSize];
 
                     int bytesRead = stream.Read(message, 0, Client_Data.ReceiveBufferSize);
@@ -103,14 +104,14 @@ namespace Networking
                     {
                         if (dataReceived[0] == 'R')
                         {
-                            if (dataReceived[1] == ':')
+                            if (dataReceived[1] == '/')
                             {
                                 //message = ASCIIEncoding.ASCII.GetBytes("Test message 1");//Get_File_raw(string.Join("", dataReceived, 2, dataReceived.Length)));
                                 message = ASCIIEncoding.ASCII.GetBytes(Get_File_raw(string.Join("", dataReceived, 2, dataReceived.Length)));
 
                                 Client_Data.GetStream().Write(message, 0, message.Length);
                             }
-                            if (dataReceived[1] == '/')
+                            if (dataReceived[1] == ':')
                             {
                                // message = ASCIIEncoding.ASCII.GetBytes("test message 2");
                                 message = ASCIIEncoding.ASCII.GetBytes(Get_File_name());
@@ -124,7 +125,7 @@ namespace Networking
                      //   temp.Client = Client_Data;
                      //   Message_Data.Add(temp);
                     }
-                   // Client_Data.Close();
+                    Client_Data.Close();
                 }
                 //
             }
@@ -137,8 +138,14 @@ namespace Networking
         }
         private static string Get_File_name()
         {
-            string[] fileArray = Directory.GetFiles(File_Location,"", SearchOption.AllDirectories);
-            string files = string.Join("/File/",fileArray);
+            string[] fileArray = Directory.GetFiles(File_Location);
+         
+           
+            for (int i = 0; i < fileArray.Count(); i++)
+            {
+                fileArray[i] = fileArray[i].Remove(0, File_Location.Count());
+            }
+            string files = string.Join("|",fileArray);
             return files;
         }
     }
