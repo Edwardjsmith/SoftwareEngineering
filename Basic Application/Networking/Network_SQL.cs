@@ -86,7 +86,7 @@ namespace Networking
             if(!reader.HasRows)
             {
                 Console.WriteLine("ERROR -- CONNECT_SQL - USERNAME AND PASSWORD COMBO NOT FOUND"); //  name
-
+                if (!reader.IsClosed) reader.Close();
                 return false;
             }
            // self.ID = (int) reader[0];
