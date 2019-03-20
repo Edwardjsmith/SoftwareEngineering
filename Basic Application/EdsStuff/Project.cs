@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EdsStuff
 {
-    class Project : IProject
+    public class Project : IProject
     {
         string fileAddress;
         string projectName;
