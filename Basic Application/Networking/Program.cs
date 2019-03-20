@@ -11,7 +11,27 @@ namespace Networking
     {
         static void Main(string[] args)
         {
-    
+           /* Network_SQL _SQL = new Network_SQL();
+            _SQL.Connect_SQL("Test", "Pass");
+            List<Project> test = _SQL.Get_All_Projects();
+            Console.WriteLine("Name :" + test[0].Name);
+            Console.WriteLine("PORT :" + test[0].Port);
+            Console.WriteLine("PAssword :" + test[0].Password);
+            Console.WriteLine("IP :" + test[0].IP);
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input != "Quit")
+                {
+
+                }
+                else
+                {
+
+                    break;
+                }
+            }
+        }*/
 
             string externalip = new WebClient().DownloadString("http://icanhazip.com");
             Console.WriteLine("My Public IP Address is :" + externalip);
@@ -23,7 +43,7 @@ namespace Networking
             {
                 Console.WriteLine("STARTING SERVER");
                 Network_Server network_Server = new Network_Server();
-                network_Server.Start(2302, @"C:\Users\Public\Pictures\Sample Pictures");
+                network_Server.Start(2302, @"N:\GitKrack\software\SoftwareEngineering\Basic Application\Networking\bin\Debug");
                 // Network_SQL _SQL = new Network_SQL();
                 // _SQL.Connect_SQL("Test", "Pass");
                 while (true)
@@ -57,6 +77,7 @@ namespace Networking
                         network_Client.End();
                         break;
                     }
+                    Console.Clear();
                 }
 
             }

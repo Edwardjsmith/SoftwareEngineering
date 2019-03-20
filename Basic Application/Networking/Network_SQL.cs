@@ -125,20 +125,30 @@ namespace Networking
                 project.Master_user_id = user_id;
                 project.Name = reader_projects[1].ToString();
                 project.Password = reader_projects[2].ToString();
-
+                project.IP = "";
                 // get user data
                  projects.Add(project);
 
-                reader_projects.Close();
+                
             }
-            for(int i = 0; i < projects.Count; i++) {
-                command = string.Format("SELECT * FROM `Users` WHERE (( `ID` = '{0}' )", projects[i].Master_user_id); 
+            reader_projects.Close();
+            for (int i = 0; i < projects.Count; i++) {
+                command = string.Format("SELECT * FROM `Users` WHERE (( `ID` = '{0}' ))", projects[i].Master_user_id); 
                 myCommand = new MySqlCommand(command, SQL);
                 MySqlDataReader reader_users = myCommand.ExecuteReader();
-                reader_projects.Read();
+                reader_users.Read();
                 //TODO (FIX)
-               // projects.ElementAt(i).IP = reader_users[3].ToString(); 
-               // projects[i].IP = reader_users[3].ToString();
+                Console.WriteLine("User ip" + reader_users[3].ToString());
+                string ip = reader_users[3].ToString();
+
+                Project project = projects[i];
+                project.IP = ip;
+                projects.RemoveAt(i);
+                projects.Insert(i, project);
+                
+                
+                projects[i].IP.Insert(0, ip);
+                //projects[i].IP = reader_users[3].ToString();
                 reader_users.Close();
             }
             

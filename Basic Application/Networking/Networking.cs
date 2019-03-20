@@ -35,6 +35,7 @@ namespace Networking
 
         Network_SQL _SQL = new Network_SQL();
         List<Network_Server> Servers = new List<Network_Server>();
+        Network_Client _Client = new Network_Client();
         // USER CRADENTRALS FUNCTIONS//
         public bool Sign_In(string name, string password)
         { 
@@ -58,12 +59,17 @@ namespace Networking
         // FILE RECOVEROY FUNCTIONS //
         public bool Get_File(string project_name, string file_name)
         {
+
             return true;
         }
 
-        public bool Get_Files(string project_name)
+        public List<string> Get_Files(string project_name)
         {
-            return true;
+            Project temp = _SQL.Get_Project(project_name);
+            _Client.Start(temp.IP, temp.Port);
+            _Client.Request_filenames();
+            List<string> temp_return = _Client.Get_Messages();
+            return temp_return;
         }
 
         public string Get_File_raw(string project_name, string file_name)
@@ -96,7 +102,13 @@ namespace Networking
 
         public List<string> Get_Projects()
         {
-            throw new NotImplementedException();
+            List<string> names = new List<string>();
+            List<Project> projects = _SQL.Get_All_Projects();
+            for(int i = 0; i < projects.Count(); i++)
+            {
+                names.Add(projects[i].Name);
+            }
+            return names;
         }
 
         public bool Allow_Assess(string project_name, string user_name)

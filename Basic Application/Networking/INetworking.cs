@@ -25,11 +25,11 @@ namespace Networking
         // END END END END END //
 
 
-        
+
         // FILE RECOVEROY FUNCTIONS //
 
         // Returns a vector of stings containing file name if the user has is on the projects white_list 
-        bool Get_Files(string project_name);
+        List<string> Get_Files(string project_name);
         // Returns true if was able to save the file to the local storage
         bool Get_File(string project_name, string file_name);
         // Returns the file from the server as a string   

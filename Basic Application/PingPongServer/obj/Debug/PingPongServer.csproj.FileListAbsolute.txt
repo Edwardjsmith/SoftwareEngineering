@@ -13,3 +13,10 @@ C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Ping
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb
+C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe.config
+C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe
+C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.pdb
+C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csprojAssemblyReference.cache
+C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
+C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
+C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb
