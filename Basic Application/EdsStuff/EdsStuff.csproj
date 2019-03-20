@@ -63,6 +63,10 @@
       <Project>{9800d0e3-3bf0-4591-a082-5a81506649fb}</Project>
       <Name>Basic Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GUI for Software Engineering Project\GUI for Software Engineering Project.csproj">
+      <Project>{1f844633-b50c-43bb-b5e0-69f2af3c9159}</Project>
+      <Name>GUI for Software Engineering Project</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Networking\Networking.csproj">
       <Project>{b456ce7d-76e1-4fec-90ba-ed10c85c02b4}</Project>
       <Name>Networking</Name>
