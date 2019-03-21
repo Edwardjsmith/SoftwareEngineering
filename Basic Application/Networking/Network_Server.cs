@@ -22,6 +22,7 @@ namespace Networking
         static bool Running = false;
         static int Server_Port;
         static string File_Location;
+        public string my_name = "";
         ThreadStart Lister_Ref;
         Thread Lister_Thread;
 
@@ -33,8 +34,9 @@ namespace Networking
         {
             Message_Data.Clear();
         }
-        public bool Start(int port,string file_location)
+        public bool Start(int port,string file_location,string name)
         {
+            my_name = name;
             File_Location = file_location;
             Server_Port = port;
             Running = true;
@@ -80,10 +82,7 @@ namespace Networking
                 {
                     TcpClient Client_Data = listener.AcceptTcpClient();
                    
-                   // Clients.Add(Client_Data);
-              //  }
-              //  for(int i = 0; i < Clients.Count; i++) {
-                   // TcpClient Client_Data = Clients[i];
+                  
                     NetworkStream stream = Client_Data.GetStream();
                     
                     byte[] message = new byte[Client_Data.ReceiveBufferSize];
@@ -120,10 +119,7 @@ namespace Networking
                         }
                         
 
-                        //Client_Message temp = new Client_Message();
-                     //   temp.Message = dataReceived;
-                     //   temp.Client = Client_Data;
-                     //   Message_Data.Add(temp);
+                       
                     }
                     Client_Data.Close();
                 }

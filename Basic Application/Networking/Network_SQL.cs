@@ -75,12 +75,7 @@ namespace Networking
                 myCommand = new MySqlCommand(commanda, SQL);
                 myCommand.ExecuteNonQuery();
                 return true;
-                // Console.WriteLine("User IP   = " + reader[3].ToString()); //  name
-                // self.IP = (reader[3].ToString());
-
-                // Console.WriteLine("User Port = " + reader[4].ToString()); //  name
-                // self.Port = Int32.Parse(reader[4].ToString());
-
+              
                 }
             
             if(!reader.HasRows)
@@ -89,20 +84,44 @@ namespace Networking
                 if (!reader.IsClosed) reader.Close();
                 return false;
             }
-           // self.ID = (int) reader[0];
-            //self.Name = (string)reader[0];
-           // self.IP = (string)reader[0];
-           // self.Port = (int)reader[0];
+          
            
             return true;
         }
-
+        public void Update_Project_IP(string project_name)
+        {
+            string public_ip = new WebClient().DownloadString("http://icanhazip.com");
+            string commanda = string.Format("UPDATE `Projects` SET `IP` = \"{0}\" WHERE `Projects`.`Name` = '{1}'", public_ip, project_name);
+            MySqlCommand myCommand = new MySqlCommand(commanda, SQL);
+            myCommand.ExecuteNonQuery();
+        }
 
         public List<Project> Get_My_Projects()
         {
             List<Project> projects = new List<Project>();
-
-
+            string command = string.Format("SELECT * FROM `Projects` WHERE (( `User` = '{0}' ))", self.ID);
+            MySqlCommand myCommand = new MySqlCommand(command, SQL);
+            MySqlDataReader reader_projects = myCommand.ExecuteReader();
+            if (!reader_projects.HasRows)
+            {
+                Console.WriteLine("ERROR -- NO Projects found for this user");
+            }
+            else
+            {
+                while (reader_projects.Read())
+                {
+                    Project project = new Project();
+                    int user_id = (int)reader_projects[3];
+                    project.Port = (int)reader_projects[4];
+                    project.Master_user_id = user_id;
+                    project.Name = reader_projects[1].ToString();
+                    project.Password = reader_projects[2].ToString();
+                    project.IP = reader_projects[5].ToString();
+                    projects.Add(project);
+                }
+               
+            }
+            if (!reader_projects.IsClosed) reader_projects.Close();
             return projects;
         }
         public List<Project> Get_All_Projects()
@@ -137,7 +156,6 @@ namespace Networking
                 myCommand = new MySqlCommand(command, SQL);
                 MySqlDataReader reader_users = myCommand.ExecuteReader();
                 reader_users.Read();
-                //TODO (FIX)
                 Console.WriteLine("User ip" + reader_users[3].ToString());
                 string ip = reader_users[3].ToString();
 
@@ -148,7 +166,7 @@ namespace Networking
                 
                 
                 projects[i].IP.Insert(0, ip);
-                //projects[i].IP = reader_users[3].ToString();
+              
                 reader_users.Close();
             }
             
@@ -177,17 +195,8 @@ namespace Networking
                 project.Master_user_id = user_id;
                 project.Name = reader_projects[1].ToString();
                 project.Password = reader_projects[2].ToString();
+                project.IP = reader_projects[5].ToString();
                  if (!reader_projects.IsClosed) reader_projects.Close();
-                // get user data
-                command = string.Format("SELECT * FROM `Users` WHERE (( `ID` = '{0}' )", user_id); ;
-                myCommand = new MySqlCommand(command, SQL);
-                MySqlDataReader reader_users = myCommand.ExecuteReader();
-                if (!reader_users.HasRows)
-                {
-                    Console.WriteLine("ERROR -- GET_PROJECT - PROJECT USER NOT FOUND");
-                }
-                reader_projects.Read();
-                project.IP = reader_users[3].ToString();
             }
            
             return project;
@@ -197,7 +206,7 @@ namespace Networking
             Project project = new Project();
 
             // get project data
-            string command = string.Format("SELECT * FROM `Projects` WHERE (( `Name` = '{0}' )", project_name);
+            string command = string.Format("SELECT * FROM `Projects` WHERE (( `Name` = '{0}' ))", project_name);
             MySqlCommand myCommand = new MySqlCommand(command, SQL);
             MySqlDataReader reader_projects = myCommand.ExecuteReader();
             reader_projects.Read();
@@ -212,17 +221,8 @@ namespace Networking
                 project.Master_user_id = user_id;
                 project.Name = reader_projects[1].ToString();
                 project.Password = reader_projects[2].ToString();
+                project.IP = reader_projects[5].ToString();
                 if (!reader_projects.IsClosed) reader_projects.Close();
-                // get user data
-                command = string.Format("SELECT * FROM `Users` WHERE (( `ID` = '{0}' )", user_id); ;
-                myCommand = new MySqlCommand(command, SQL);
-                MySqlDataReader reader_users = myCommand.ExecuteReader();
-                if (!reader_users.HasRows)
-                {
-                    Console.WriteLine("ERROR -- GET_PROJECT - PROJECT USER NOT FOUND");
-                }
-                reader_projects.Read();
-                project.IP = reader_users[3].ToString();
             }
            
             return project;

@@ -34,7 +34,7 @@ namespace Networking
 
 
         Network_SQL _SQL = new Network_SQL();
-        List<Network_Server> Servers = new List<Network_Server>();
+        ///List<Network_Server> Servers = new List<Network_Server>();
         Network_Client _Client = new Network_Client();
         // USER CRADENTRALS FUNCTIONS//
         public bool Sign_In(string name, string password)
@@ -63,13 +63,19 @@ namespace Networking
             return true;
         }
 
-        public List<string> Get_Files(string project_name)
+        public string[] Get_Files(string project_name)
         {
             Project temp = _SQL.Get_Project(project_name);
             _Client.Start(temp.IP, temp.Port);
             _Client.Request_filenames();
             List<string> temp_return = _Client.Get_Messages();
-            return temp_return;
+            while(temp_return.Count() == 0)
+            {
+                temp_return = _Client.Get_Messages();
+            }
+            _Client.End();
+            string[] split = temp_return[0].Split('|');
+            return split;
         }
 
         public string Get_File_raw(string project_name, string file_name)
