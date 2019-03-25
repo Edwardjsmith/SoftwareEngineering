@@ -1,0 +1,28 @@
+﻿<Window x:Class="GUI_for_Software_Engineering_Project.Windows.ProjectSelection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_for_Software_Engineering_Project.Windows"
+        mc:Ignorable="d"
+        Title="ProjectSelection" Height="450" Width="588.473"
+        >
+    <Grid>
+        <ListBox x:Name="lbProjects" HorizontalAlignment="Left" Height="297" Margin="61,59,0,0" VerticalAlignment="Top" Width="474" ItemsSource="{Binding ProjectData}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Margin="5">
+                        <Image Source="{Binding ImgSource}" DockPanel.Dock="Left" MaxHeight="100" MaxWidth="200"/>
+                        <Label Content="{Binding TxtContent}" DockPanel.Dock="Right"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+        <Label Content="Projects" HorizontalAlignment="Left" Margin="61,28,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbxSearchBar" HorizontalAlignment="Left" Height="23" Margin="167,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="368" AutomationProperties.HelpText="Search"/>
+        <Button Name="btnOpen" Content="Open/Apply" HorizontalAlignment="Left" Margin="282,361,0,0" VerticalAlignment="Top" Width="253" Height="48" Click="btnOpenClick"/>
+        <Button Name="btnCreate" Content="Create Project" HorizontalAlignment="Left" Margin="61,361,0,0" VerticalAlignment="Top" Width="216" Height="48" Click="btnCreateClick"/>
+
+    </Grid>
+</Window>
