@@ -15,32 +15,25 @@ namespace Networking
         static int Port;
         static bool Running;
         static List<string> Messages = new List<string>();
+        static List<byte[]> raw_bytes = new List<byte[]>();
         ThreadStart Sender_Ref;
         Thread Sender_Thread;
 
-        public bool Start(string ip, int port)
+        public void Start(string ip, int port)
         {
-            TcpClient client = new TcpClient(ip, port);
-            if (client.Connected)
-            {
-                client.Close();
+
                 IP = ip;
                 Port = port;
                 Running = true;
                 Sender_Ref = new ThreadStart(Sender);
                 Sender_Thread = new Thread(Sender_Ref);
                 Sender_Thread.Start();
-            }
-            else
-            {
-                return false;
-            }
-            return true;
+         
         }
         public void End()
         {
             Running = false;
-            Sender_Thread.Abort();
+            Sender_Thread.Join();
         }
         // PREIX:                         Meaning:
         // R:                           - filenames 
@@ -54,7 +47,7 @@ namespace Networking
         }
         public void Request_file(string filename)
         {
-            Send_Message(string.Join("R:",filename));
+            Send_Message("R/"+filename);
         }
         public void Request_Acsess()
         {
@@ -77,6 +70,10 @@ namespace Networking
         {
             return Messages;
         }
+        public byte[] Get_Messages(int id)
+        {
+            return raw_bytes[id];
+        }
         private static bool Listen(TcpClient Client_Data)
         {
             try
@@ -86,8 +83,9 @@ namespace Networking
                 byte[] message = new byte[Client_Data.ReceiveBufferSize];
                 int bytesRead = stream.Read(message, 0, Client_Data.ReceiveBufferSize);
                 string dataReceived = Encoding.ASCII.GetString(message, 0, bytesRead);
-                Console.Write(dataReceived);
+                ///Console.Write(dataReceived);
                 Messages.Add(dataReceived);
+                raw_bytes.Add(message);
             }
             catch
             {
@@ -97,13 +95,16 @@ namespace Networking
         }
         private static void Sender()
         {
-            
+            TcpClient Client_Data = new TcpClient(IP, Port);
+            Client_Data.ReceiveBufferSize = Int16.MaxValue * 10;
+            Client_Data.SendBufferSize = Int16.MaxValue * 10;
+
             while (Running)
             {
                 int sent_message = 0;
                 for (int i = 0; i < To_send.Count; i++)
                 {
-                    TcpClient Client_Data = new TcpClient(IP, Port);
+                    
                     byte[] message = ASCIIEncoding.ASCII.GetBytes(To_send[i]);
                     Client_Data.GetStream().Write(message, 0, message.Length);
                     sent_message ++;
@@ -136,7 +137,7 @@ namespace Networking
                             }
                         }
                     }
-                    Client_Data.Close();
+                   
                 }
                 if (sent_message == To_send.Count)
                 {
@@ -144,7 +145,7 @@ namespace Networking
                 }
                
             }
-          
+            Client_Data.Close();
         }
     }
 }

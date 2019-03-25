@@ -21,6 +21,9 @@ namespace Networking
         }
         static void Main(string[] args)
         {
+            string t_file = @"C:\Users\Oliver\Desktop\black.png";
+
+
             // Client Code
             if (Console.ReadLine() == "C")
             {
@@ -28,10 +31,10 @@ namespace Networking
                 while (true)
                 {
                     Console.WriteLine("ENTER USER NAME : ");
-                    string name = Console.ReadLine();
+                    string name = "tester";//Console.ReadLine();
 
                     Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = Console.ReadLine();
+                    string pass = "tester";// Console.ReadLine();
                     Clear_messages(false);
                     if (Networking.instance.Sign_In(name, pass))
                     {
@@ -78,18 +81,38 @@ namespace Networking
                     // gets the data for a file
                     if (user_input == "_file")
                     {
-                        Console.WriteLine("enter ID");
+                        Console.WriteLine("enter project ID");
                         string id = Console.ReadLine();
                         if (id != "Q")
                         {
-                            List<string> projects = Networking.instance.Get_Projects();
-                           
+                            List<string> projects = Networking.instance.Get_Projects(); // returns a list of all project names 
+                        
+                            string[] files = Networking.instance.Get_Files(projects[Convert.ToInt32(id)]);
+                            for (int i = 0; i < files.Count(); i++)
+                            {
+                                Console.WriteLine("FILE " + i + " : " + files[i]);
+                            }
+                            Console.WriteLine("enter file ID");
+                            string file_id = Console.ReadLine();
+                            if (id != "Q")
+                            {
+                                
+                                 Networking.instance.Get_File(projects[Convert.ToInt32(id)], files[Convert.ToInt32(file_id)], @"C:\Users\Oliver\Desktop");
+
+                            }
+                            else
+                            {
+                                Clear_messages(false);
+                                Console.WriteLine("BACK");
+                            }
                         }
                         else
                         {
                             Clear_messages(false);
                             Console.WriteLine("BACK");
+
                         }
+                      
 
                     }
                 }
@@ -106,10 +129,10 @@ namespace Networking
                 while (true)
                 {
                     Console.WriteLine("ENTER USER NAME : ");
-                    string name = Console.ReadLine();
+                    string name = "test";//Console.ReadLine();
 
                     Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = Console.ReadLine();
+                    string pass = "pass"; //Console.ReadLine();
 
 
                     if (_SQL.Connect_SQL(name, pass))
