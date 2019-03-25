@@ -100,11 +100,14 @@ namespace Networking
             
             while (Running)
             {
+                int sent_message = 0;
                 for (int i = 0; i < To_send.Count; i++)
                 {
                     TcpClient Client_Data = new TcpClient(IP, Port);
                     byte[] message = ASCIIEncoding.ASCII.GetBytes(To_send[i]);
                     Client_Data.GetStream().Write(message, 0, message.Length);
+                    sent_message ++;
+
                     if (To_send[i][0] == 'R')
                     {
                         if (To_send[i][1] == ':')
@@ -135,7 +138,10 @@ namespace Networking
                     }
                     Client_Data.Close();
                 }
-                To_send.Clear();
+                if (sent_message == To_send.Count)
+                {
+                    To_send.Clear();
+                }
                
             }
           
