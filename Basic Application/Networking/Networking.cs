@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 namespace Networking
@@ -57,9 +60,21 @@ namespace Networking
 
 
         // FILE RECOVEROY FUNCTIONS //
-        public bool Get_File(string project_name, string file_name)
+        public bool Get_File(string project_name, string file_name, string save_location)
         {
+            Project _temp = _SQL.Get_Project(project_name);
+            _Client.Start(_temp.IP, _temp.Port);
+            _Client.Request_file(file_name);
+            List<string> temp_return = _Client.Get_Messages();
+            while (temp_return.Count() <= 1)
+            {
+                temp_return = _Client.Get_Messages();
+            }
+            _Client.End();
+            byte[] data = _Client.Get_Messages(1);
+            File.WriteAllBytes(save_location + file_name, data);
 
+           
             return true;
         }
 
@@ -78,9 +93,19 @@ namespace Networking
             return split;
         }
 
-        public string Get_File_raw(string project_name, string file_name)
+        public byte[] Get_File_raw(string project_name, string file_name)
         {
-            return " lalala ";
+            Project _temp = _SQL.Get_Project(project_name);
+            _Client.Start(_temp.IP, _temp.Port);
+            _Client.Request_file(file_name);
+            List<string> temp_return = _Client.Get_Messages();
+            while (temp_return.Count() <= 1)
+            {
+                temp_return = _Client.Get_Messages();
+            }
+            _Client.End();
+            byte[] data = _Client.Get_Messages(1);
+            return data;
         }
 
         public string Get_Metadata(string project_name, string file_name)

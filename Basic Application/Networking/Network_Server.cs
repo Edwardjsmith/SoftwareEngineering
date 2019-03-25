@@ -7,6 +7,8 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Networking
 {
@@ -75,14 +77,14 @@ namespace Networking
         {
             TcpListener listener = new TcpListener(IPAddress.Any, Server_Port);
             listener.Start();
-            List<TcpClient> Clients = new List<TcpClient>();
             while (Running)
             {
                 if (listener.Pending())
                 {
                     TcpClient Client_Data = listener.AcceptTcpClient();
-                   
-                  
+                    Client_Data.ReceiveBufferSize = Int16.MaxValue*10;
+                    Client_Data.SendBufferSize = Int16.MaxValue*10;
+
                     NetworkStream stream = Client_Data.GetStream();
                     
                     byte[] message = new byte[Client_Data.ReceiveBufferSize];
@@ -106,14 +108,16 @@ namespace Networking
                             if (dataReceived[1] == '/')
                             {
                                 //message = ASCIIEncoding.ASCII.GetBytes("Test message 1");//Get_File_raw(string.Join("", dataReceived, 2, dataReceived.Length)));
-                                message = ASCIIEncoding.ASCII.GetBytes(Get_File_raw(string.Join("", dataReceived, 2, dataReceived.Length)));
-
+                                // MemoryStream file_data = Get_File_raw(dataReceived.Remove(0, 2));
+                                // file_data.Read(message,0,(int) file_data.Length);
+                                //Console.WriteLine(message);
+                                message = Get_File_raw(dataReceived.Remove(0, 2));
                                 Client_Data.GetStream().Write(message, 0, message.Length);
                             }
                             if (dataReceived[1] == ':')
                             {
                                // message = ASCIIEncoding.ASCII.GetBytes("test message 2");
-                                message = ASCIIEncoding.ASCII.GetBytes(Get_File_name());
+                                message = Encoding.UTF8.GetBytes(Get_File_name());
                                 Client_Data.GetStream().Write(message, 0, message.Length);
                             }
                         }
@@ -126,11 +130,21 @@ namespace Networking
                 //
             }
         }
-        private static string Get_File_raw(string file_name)
+        private static byte[] Get_File_raw(string file_name)
         {
-            //byte[] data = File.ReadAllBytes(File_Location + file_name);
-            //return Convert.ToBase64String(data);
-            return "";
+
+            //Stream data = new FileStream(File_Location + file_name, FileMode.Open, FileAccess.Read);
+            // IFormatter formatter = new BinaryFormatter();
+            //byte[] file_bytes = new byte[(int)data.Length];
+            //data.Read( file_bytes, 0, (int)data.Length);
+            // MemoryStream file_data = new MemoryStream();
+            //formatter.Serialize(file_data, file_bytes);
+            //data.Close();
+            //return file_bytes;
+
+            byte[] data = File.ReadAllBytes(File_Location + file_name);
+
+            return data;
         }
         private static string Get_File_name()
         {

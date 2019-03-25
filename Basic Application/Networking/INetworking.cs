@@ -31,9 +31,9 @@ namespace Networking
         // Returns a vector of stings containing file name if the user has is on the projects white_list 
         string[] Get_Files(string project_name);
         // Returns true if was able to save the file to the local storage
-        bool Get_File(string project_name, string file_name);
-        // Returns the file from the server as a string   
-        string Get_File_raw(string project_name, string file_name);
+        bool Get_File(string project_name, string file_name,string save_location);
+        // Returns the file from the server as a array of bytes  
+        byte[] Get_File_raw(string project_name, string file_name);
         // Returns the files meta data as a string 
         string Get_Metadata(string project_name, string file_name);
 
