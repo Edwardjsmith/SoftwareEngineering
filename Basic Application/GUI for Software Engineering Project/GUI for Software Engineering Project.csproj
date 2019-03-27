@@ -55,15 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\PreviewController.cs" />
     <Compile Include="Controller\ProjectSelectionController.cs" />
+    <Compile Include="Interfaces\IAssetData.cs" />
     <Compile Include="Interfaces\IProjectController.cs" />
     <Compile Include="Interfaces\IProjectCreationController.cs" />
     <Compile Include="Interfaces\IProjectCreation_Window.cs" />
+    <Compile Include="Interfaces\IProjectData.cs" />
+    <Compile Include="Interfaces\IProjectSelection.cs" />
+    <Compile Include="Interfaces\IProjectSelectionController.cs" />
     <Compile Include="Interfaces\IProject_Window.cs" />
     <Compile Include="Interfaces\IRegisterController.cs" />
     <Compile Include="Interfaces\IRegister_Window.cs" />
     <Compile Include="Controller\ProjectController.cs" />
     <Compile Include="Controller\ProjectCreationController.cs" />
+    <Compile Include="Interfaces\IResourceManager.cs" />
     <Compile Include="Model\AssetData.cs" />
     <Compile Include="Model\ProjectData.cs" />
     <Compile Include="Model\ResourceManager.cs" />
@@ -136,6 +142,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

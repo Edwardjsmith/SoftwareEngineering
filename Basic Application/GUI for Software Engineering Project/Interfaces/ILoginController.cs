@@ -10,5 +10,7 @@ namespace GUI_for_Software_Engineering_Project
     {
         string GetUserName();
         string GetUserPassword();
+        void LoginPressed(string username, string password);
+        void RegisterPressed();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_for_Software_Engineering_Project.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,48 @@ namespace GUI_for_Software_Engineering_Project
 {
     class LoginController : ILoginController
     {
-        private MainWindow mainWindow;
+        private IMainWindow view;
 
-        public MainWindow MainWindow { get => mainWindow; set => mainWindow = value; }
+        public LoginController(MainWindow window)
+        {
+            view = window;
+        }
+
+        public IMainWindow MainWindow { get => view; set => view = value; }
 
         public string GetUserName()
         {
-            return mainWindow.Username;
+            return view.Username;
         }
 
         public string GetUserPassword()
         {
-            return mainWindow.Password;
+            return view.Password;
+        }
+
+        public void LoginPressed(string username, string password)
+        {
+            new ProjectSelection().Show();
+            ((MainWindow)view).Close();
+
+            //if(Networking.Networking.instance.Sign_In(Username, Password))
+            // {
+            //     Window window = new Project_Window();
+            //     window.Show();
+            //     Console.WriteLine("Logging in!");
+            //     this.Close();
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Invalid password!");
+            // }
+        }
+
+        public void RegisterPressed()
+        {
+
+            Console.WriteLine("Registering!");
+            new Register_Window().Show();
         }
     }
 }

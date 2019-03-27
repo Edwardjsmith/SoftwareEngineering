@@ -24,6 +24,8 @@ namespace GUI_for_Software_Engineering_Project
     public partial class MainWindow : Window, IMainWindow
     {
 
+        LoginController controller;
+
         public string Username
         {
             get => txtbxUsername.Text;
@@ -37,30 +39,17 @@ namespace GUI_for_Software_Engineering_Project
         public MainWindow()
         {
             InitializeComponent();
+            controller = new LoginController(this);
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            new ProjectSelection().Show();
-            this.Close();
-
-           //if(Networking.Networking.instance.Sign_In(Username, Password))
-           // {
-           //     Window window = new Project_Window();
-           //     window.Show();
-           //     Console.WriteLine("Logging in!");
-           //     this.Close();
-           // }
-           // else
-           // {
-           //     Console.WriteLine("Invalid password!");
-           // }
+            controller.LoginPressed(Username, Password);
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Registering!");
-            new Register_Window().Show();
+            controller.RegisterPressed();
         }
 
         private void txtbxPassword_Enter(object sender, KeyEventArgs e)

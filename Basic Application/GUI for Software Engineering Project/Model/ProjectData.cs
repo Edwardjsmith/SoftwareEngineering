@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GUI_for_Software_Engineering_Project.Interfaces;
 using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Model
@@ -13,7 +9,7 @@ namespace GUI_for_Software_Engineering_Project.Model
         applied,
         accepted
     }
-    class ProjectData
+    class ProjectData : IProjectData
     {
 
         ProjectState state;
