@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GUI_for_Software_Engineering_Project.Interfaces;
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Model
 {
-    public class AssetData
+    public class AssetData : IAssetData
     {
 
         private BitmapImage imgSource;

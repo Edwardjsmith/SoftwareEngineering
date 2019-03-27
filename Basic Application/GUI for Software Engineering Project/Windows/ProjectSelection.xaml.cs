@@ -1,4 +1,5 @@
 ﻿using GUI_for_Software_Engineering_Project.Controller;
+using GUI_for_Software_Engineering_Project.Interfaces;
 using GUI_for_Software_Engineering_Project.Model;
 using System;
 using System.Collections.Generic;
@@ -19,16 +20,18 @@ namespace GUI_for_Software_Engineering_Project.Windows
     /// <summary>
     /// Interaction logic for ProjectSelection.xaml
     /// </summary>
-    public partial class ProjectSelection : Window
+    public partial class ProjectSelection : Window, IProjectSelection
     {
 
-        ProjectSelectionController controller;
+        IProjectSelectionController controller;
         public ProjectSelection()
         {
             InitializeComponent();
             controller = new ProjectSelectionController(this);
         }
-        
+
+        ListBox IProjectSelection.lbProjects => lbProjects;
+
         private void btnCreateClick(object sender, RoutedEventArgs e)
         {
             controller.OnCreateProjectClicked();

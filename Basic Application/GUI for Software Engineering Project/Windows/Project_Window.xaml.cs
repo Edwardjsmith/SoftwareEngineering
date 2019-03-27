@@ -21,6 +21,8 @@ namespace GUI_for_Software_Engineering_Project.GUI
     /// </summary>
     public partial class Project_Window : Window, IProject_Window
     {
+        IProjectController controller;
+
         private static List<string> _projectNames = new List<string>();
         public List<AssetData> assetData = new List<AssetData>();
 
@@ -46,6 +48,9 @@ namespace GUI_for_Software_Engineering_Project.GUI
         public Project_Window()
         {
             InitializeComponent();
+
+            controller = new ProjectController(this);
+
             FillUIWithDataForTesting();
             cbxProjectSelection.ItemsSource = ProjectNames;
             lbAssets.ItemsSource = AssetSource;
@@ -85,10 +90,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
         private void btnPreview_Click(object sender, RoutedEventArgs e)
         {
 
-            var tmp = lbAssets.SelectedItem;
-
-            new Preview_Window((AssetData)tmp).Show();
-
+            controller.PreviewAsset((AssetData)lbAssets.SelectedItem);
         }
     }
 }

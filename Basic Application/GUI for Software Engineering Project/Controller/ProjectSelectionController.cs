@@ -1,4 +1,5 @@
 ﻿using GUI_for_Software_Engineering_Project.GUI;
+using GUI_for_Software_Engineering_Project.Interfaces;
 using GUI_for_Software_Engineering_Project.Model;
 using GUI_for_Software_Engineering_Project.Windows;
 using System;
@@ -9,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace GUI_for_Software_Engineering_Project.Controller
 {
-    class ProjectSelectionController
+    class ProjectSelectionController: IProjectSelectionController
     {
 
         public List<ProjectData> ProjectData = new List<ProjectData>();
 
-        private readonly ProjectSelection window;
+        private readonly IProjectSelection window;
 
-        public ProjectSelectionController(ProjectSelection window)
+        public ProjectSelectionController(IProjectSelection window)
         {
             this.window = window;
             SetProjectList();
@@ -38,12 +39,14 @@ namespace GUI_for_Software_Engineering_Project.Controller
             
         }
 
-        public void OnProjectOpenApplied(ProjectData selected)
+        public void OnProjectOpenApplied(IProjectData selected)
         {
 
             //TODO: Open this project
             new Project_Window().Show();
         }
 
+  
+     
     }
 }
