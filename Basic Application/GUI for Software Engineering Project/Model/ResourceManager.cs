@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_for_Software_Engineering_Project.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Model
 {
-    class ResourceManager
+    class ResourceManager : IResourceManager
     {
         BitmapImage lockedImage;
         BitmapImage pendingImage;
@@ -28,7 +29,7 @@ namespace GUI_for_Software_Engineering_Project.Model
         public BitmapImage PendingImage { get => pendingImage; }
         public BitmapImage AcceptedImage { get => acceptedImage; }
 
-        public ResourceManager()
+        private ResourceManager()
         {
             lockedImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../lock.png"), UriKind.Absolute));
 
