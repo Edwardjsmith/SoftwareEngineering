@@ -13,6 +13,7 @@ namespace GUI_for_Software_Engineering_Project.Model
     {
 
         private BitmapImage imgSource;
+
         private string txtContent;
 
         public AssetData()

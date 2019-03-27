@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\ProjectSelectionController.cs" />
     <Compile Include="Interfaces\IProjectController.cs" />
     <Compile Include="Interfaces\IProjectCreationController.cs" />
     <Compile Include="Interfaces\IProjectCreation_Window.cs" />
@@ -64,11 +65,16 @@
     <Compile Include="Controller\ProjectController.cs" />
     <Compile Include="Controller\ProjectCreationController.cs" />
     <Compile Include="Model\AssetData.cs" />
+    <Compile Include="Model\ProjectData.cs" />
+    <Compile Include="Model\ResourceManager.cs" />
     <Compile Include="Windows\Preview_Window.xaml.cs">
       <DependentUpon>Preview_Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ProjectCreation_Window.xaml.cs">
       <DependentUpon>ProjectCreation_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ProjectSelection.xaml.cs">
+      <DependentUpon>ProjectSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Register_Window.xaml.cs">
       <DependentUpon>Register_Window.xaml</DependentUpon>
@@ -94,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ProjectCreation_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ProjectSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

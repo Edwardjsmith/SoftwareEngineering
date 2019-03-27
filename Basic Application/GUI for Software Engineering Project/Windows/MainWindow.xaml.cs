@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using GUI_for_Software_Engineering_Project.GUI;
+using GUI_for_Software_Engineering_Project.Windows;
 
 namespace GUI_for_Software_Engineering_Project
 {
@@ -40,17 +41,20 @@ namespace GUI_for_Software_Engineering_Project
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-           if(Networking.Networking.instance.Sign_In(Username, Password))
-            {
-                Window window = new Project_Window();
-                window.Show();
-                Console.WriteLine("Logging in!");
-                this.Close();
-            }
-            else
-            {
-                Console.WriteLine("Invalid password!");
-            }
+            new ProjectSelection().Show();
+            this.Close();
+
+           //if(Networking.Networking.instance.Sign_In(Username, Password))
+           // {
+           //     Window window = new Project_Window();
+           //     window.Show();
+           //     Console.WriteLine("Logging in!");
+           //     this.Close();
+           // }
+           // else
+           // {
+           //     Console.WriteLine("Invalid password!");
+           // }
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -65,9 +69,6 @@ namespace GUI_for_Software_Engineering_Project
                 Console.WriteLine("Logging in!");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -51,7 +51,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
             lbAssets.ItemsSource = AssetSource;
         }
 
-        
+
         private void cbxProjectSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Server requests should be made when this event is fired
