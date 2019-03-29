@@ -20,7 +20,7 @@
 
         </ListBox>
         <Label Content="Projects" HorizontalAlignment="Left" Margin="61,28,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbxSearchBar" HorizontalAlignment="Left" Height="23" Margin="167,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="368" AutomationProperties.HelpText="Search"/>
+        <TextBox x:Name="txbxSearchBar" HorizontalAlignment="Left" Height="23" Margin="167,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="368" AutomationProperties.HelpText="Search" Visibility="Hidden"/>
         <Button Name="btnOpen" Content="Open/Apply" HorizontalAlignment="Left" Margin="282,361,0,0" VerticalAlignment="Top" Width="253" Height="48" Click="btnOpenClick"/>
         <Button Name="btnCreate" Content="Create Project" HorizontalAlignment="Left" Margin="61,361,0,0" VerticalAlignment="Top" Width="216" Height="48" Click="btnCreateClick"/>
 

@@ -31,3 +31,36 @@ C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Softwa
 C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
 C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.exe
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\MySql.Data.dll
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Google.Protobuf.dll
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.pdb
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.exe.config
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\MySql.Data.xml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Google.Protobuf.xml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csprojAssemblyReference.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Preview_Window.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectSelection.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\App.g.cs
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.lref
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Preview_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectSelection.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.baml
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.g.resources
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI_for_Software_Engineering_Project.Properties.Resources.resources
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.GenerateResource.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
+D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb

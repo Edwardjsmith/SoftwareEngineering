@@ -14,7 +14,9 @@ namespace GUI_for_Software_Engineering_Project
 
         List<IAssetData> AssetSource { get; }
 
-        void CreateNewProject();
+        void UploadFile();
+
+        void DownloadFile(IAssetData data);
 
         void PreviewAsset(IAssetData data);
 
