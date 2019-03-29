@@ -48,27 +48,9 @@ namespace GUI_for_Software_Engineering_Project.GUI
         public Project_Window()
         {
             InitializeComponent();
-
             controller = new ProjectController(this);
-
             FillUIWithDataForTesting();
-            cbxProjectSelection.ItemsSource = ProjectNames;
             lbAssets.ItemsSource = AssetSource;
-        }
-
-
-        private void cbxProjectSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // Server requests should be made when this event is fired
-
-            Console.WriteLine(cbxProjectSelection.SelectedItem.ToString());
-            if (cbxProjectSelection.SelectedItem.ToString() == "New Project")
-            {
-                Console.WriteLine("Creating new Project");
-                new ProjectCreation_Window().Show();
-
-            }
-
         }
 
         private void FillUIWithDataForTesting()
@@ -77,20 +59,19 @@ namespace GUI_for_Software_Engineering_Project.GUI
             assetData.Add(new AssetData());
         }
 
-
-
-        // TODO: Remove after VS Restart
-        private void CbxProjectSelection_ContextMenuClosing(object sender, ContextMenuEventArgs e)
-        {
-
-
-
-        }
-
         private void btnPreview_Click(object sender, RoutedEventArgs e)
         {
-
             controller.PreviewAsset((AssetData)lbAssets.SelectedItem);
+        }
+
+        private void BtnUpload_Click(object sender, RoutedEventArgs e)
+        {
+            controller.UploadFile();
+        }
+
+        private void BtnDownload_Click(object sender, RoutedEventArgs e)
+        {
+            controller.DownloadFile((AssetData)lbAssets.SelectedItem);
         }
     }
 }
