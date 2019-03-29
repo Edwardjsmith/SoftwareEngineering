@@ -77,6 +77,15 @@ namespace Networking
            
             return true;
         }
+        public bool Send_File(string project_name, string file_name, string save_location)
+        {
+            Project _temp = _SQL.Get_Project(project_name);
+            _Client.Start(_temp.IP, _temp.Port);
+            byte[] data = File.ReadAllBytes(save_location + file_name);
+            _Client.Update_file(file_name, data);
+            _Client.End();
+            return true;
+        }
 
         public string[] Get_Files(string project_name)
         {
@@ -160,7 +169,21 @@ namespace Networking
         }
         public bool Has_Assess(string project_name)
         {
-            return true;
+            string name =  _SQL.Get_User().Name;
+            Project temp = _SQL.Get_Project(project_name);
+            _Client.Start(temp.IP, temp.Port);
+            _Client.Request_Acsess(name) ;
+            List<string> temp_return = _Client.Get_Messages();
+            while (temp_return.Count() == 0)
+            {
+                temp_return = _Client.Get_Messages();
+            }
+            _Client.End();
+            if (temp_return[0] == "TRUE")
+            {
+                return true;
+            }
+            return false;
         }
         public bool Request_Assess(string project_name)
         {

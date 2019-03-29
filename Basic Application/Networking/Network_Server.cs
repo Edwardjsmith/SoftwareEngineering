@@ -25,6 +25,8 @@ namespace Networking
         static int Server_Port;
         static string File_Location;
         public string my_name = "";
+        static List<string> White_list = new List<string>();
+        static List<string> Request_list = new List<string>();
         ThreadStart Lister_Ref;
         Thread Lister_Thread;
 
@@ -38,6 +40,7 @@ namespace Networking
         }
         public bool Start(int port,string file_location,string name)
         {
+            White_list = System.IO.File.ReadAllLines(file_location+ @"\White_list_"+ name + ".txt").ToList();
             my_name = name;
             File_Location = file_location;
             Server_Port = port;
@@ -57,6 +60,7 @@ namespace Networking
         }
         public bool End()
         {
+            System.IO.File.WriteAllLines(File_Location + @"\White_list_" + my_name + ".txt", White_list.ToArray());
             try
             {
                 Running = false;
@@ -88,12 +92,12 @@ namespace Networking
                     NetworkStream stream = Client_Data.GetStream();
                     
                     byte[] message = new byte[Client_Data.ReceiveBufferSize];
+                    byte[] message_in = new byte[Client_Data.ReceiveBufferSize];
 
-                    int bytesRead = stream.Read(message, 0, Client_Data.ReceiveBufferSize);
+                    int bytesRead = stream.Read(message_in, 0, Client_Data.ReceiveBufferSize);
 
-                    string dataReceived = Encoding.ASCII.GetString(message, 0, bytesRead);
-
-                    Console.WriteLine(dataReceived);
+                    string dataReceived = Encoding.ASCII.GetString(message_in, 0, bytesRead);
+                    
 
                     // PREIX:                         Meaning:
                     // R:                           - filenames 
@@ -107,43 +111,79 @@ namespace Networking
                         {
                             if (dataReceived[1] == '/')
                             {
-                                //message = ASCIIEncoding.ASCII.GetBytes("Test message 1");//Get_File_raw(string.Join("", dataReceived, 2, dataReceived.Length)));
-                                // MemoryStream file_data = Get_File_raw(dataReceived.Remove(0, 2));
-                                // file_data.Read(message,0,(int) file_data.Length);
-                                //Console.WriteLine(message);
+                                // request file data 
                                 message = Get_File_raw(dataReceived.Remove(0, 2));
                                 Client_Data.GetStream().Write(message, 0, message.Length);
                             }
                             if (dataReceived[1] == ':')
                             {
-                               // message = ASCIIEncoding.ASCII.GetBytes("test message 2");
+                               // request file names
                                 message = Encoding.UTF8.GetBytes(Get_File_name());
                                 Client_Data.GetStream().Write(message, 0, message.Length);
                             }
                         }
-                        
+                        if (dataReceived[0] == 'A')
+                        {
+                            if (dataReceived[1] == '/')
+                            {
+                                // requset acsess to project 
+                                Request_list.Add(dataReceived.Remove(0, 2));
+                               
+                            }
+                          
+                        }
+                        if (dataReceived[0] == 'U')
+                        {
+                            if (dataReceived[1] == '/')
+                            {
+                                bool on_white = false;
+                                // true false on white list 
+                               for(int i = 0; i < White_list.Count(); i++)
+                                {
+                                    if(White_list[i] == dataReceived.Remove(0, 2))
+                                    {
+                                        message = Encoding.UTF8.GetBytes("TRUE");
+                                        Client_Data.GetStream().Write(message, 0, message.Length);
+                                        on_white = true;
+                                    }
+                                }
+                                if (!on_white)
+                                {
+                                    message = Encoding.UTF8.GetBytes("FALSE");
+                                    Client_Data.GetStream().Write(message, 0, message.Length);
+                                }
+                            }
 
-                       
+                        }
+                        if (dataReceived[0] == 'S' && dataReceived[1] == '/')
+                        {
+                            int name_end = 0;
+                            for (int i = 0; i < dataReceived.Count(); i++)
+                            {
+                                if (dataReceived[i] == '/' && dataReceived[i + 1] == 'D' && dataReceived[i + 2] == '/')
+                                {
+                                    name_end = i;
+                                }
+                            }
+                            string filename = dataReceived.Remove(name_end, dataReceived.Count() - name_end).Remove(0, 2);
+                            List<byte> data = new List<byte>();
+                            for(int i = 0; i < message_in.Count() - (name_end+3); i++)
+                            {
+                                data.Add(message_in[i + name_end+3]);
+                            }
+                            File.WriteAllBytes(File_Location + filename, data.ToArray());
+                            Console.WriteLine("File updated : " + filename);
+                        }
                     }
+
                     Client_Data.Close();
                 }
-                //
+                
             }
         }
         private static byte[] Get_File_raw(string file_name)
         {
-
-            //Stream data = new FileStream(File_Location + file_name, FileMode.Open, FileAccess.Read);
-            // IFormatter formatter = new BinaryFormatter();
-            //byte[] file_bytes = new byte[(int)data.Length];
-            //data.Read( file_bytes, 0, (int)data.Length);
-            // MemoryStream file_data = new MemoryStream();
-            //formatter.Serialize(file_data, file_bytes);
-            //data.Close();
-            //return file_bytes;
-
             byte[] data = File.ReadAllBytes(File_Location + file_name);
-
             return data;
         }
         private static string Get_File_name()
