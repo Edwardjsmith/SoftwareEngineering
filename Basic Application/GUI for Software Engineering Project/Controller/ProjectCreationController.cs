@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace GUI_for_Software_Engineering_Project
 {
     class ProjectCreationController : IProjectCreationController
     {
-        public bool CheckForExistingProject()
+        public bool CheckForExistingProject(string projectName)
         {
-            // TODO: Check wether the project already exists
-            return false;
+            foreach(string name in Networking.Networking.instance.Get_Projects())
+            {
+                if(name == projectName)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        public void CreateNewProject()
+        public void CreateNewProject(string projectName)
         {
-            // TODO: Add Project Creation to Model
+            //Networking.Networking.instance.Create_Project(projectName, la la la, lalala);
         }
     }
 }

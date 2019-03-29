@@ -9,8 +9,8 @@ namespace GUI_for_Software_Engineering_Project
     interface IProjectCreationController
     {
 
-        void CreateNewProject();
-        bool CheckForExistingProject();
+        void CreateNewProject(string projectName);
+        bool CheckForExistingProject(string projectName);
 
     }
 }

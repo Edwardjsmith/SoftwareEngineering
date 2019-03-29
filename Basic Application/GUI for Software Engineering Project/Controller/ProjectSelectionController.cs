@@ -25,11 +25,11 @@ namespace GUI_for_Software_Engineering_Project.Controller
 
         public void SetProjectList()
         {
-            ProjectData.Add(new ProjectData("Test 1", ProjectState.accepted));
-            ProjectData.Add(new ProjectData("Test 2", ProjectState.applied));
-            ProjectData.Add(new ProjectData("Test 3", ProjectState.locked));
+            foreach (string name in Networking.Networking.instance.Get_Projects())
+            {
+                ProjectData.Add(new ProjectData(name, ProjectState.accepted));
+            }
             window.lbProjects.ItemsSource = ProjectData;
-            
         }
 
         public void OnCreateProjectClicked()

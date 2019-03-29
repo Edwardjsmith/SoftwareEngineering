@@ -19,11 +19,6 @@ namespace GUI_for_Software_Engineering_Project
             this.view = view;
         }
 
-        public void CreateNewProject()
-        {
-            throw new NotImplementedException();
-        }
-
         public void PreviewAsset(IAssetData data)
         {
             new Preview_Window(data).Show();
