@@ -35,7 +35,7 @@ namespace GUI_for_Software_Engineering_Project
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (controller.CheckForExistingProject())
+            if (controller.CheckForExistingProject(Projectname))
             {
                 controller.CreateNewProject();
                 this.Close();

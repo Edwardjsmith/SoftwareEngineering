@@ -4,17 +4,29 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+=======
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+>>>>>>> EdsBranch
 GUI_for_Software_Engineering_Project
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
 6-1662134891
 
 321949786383
 14492826782
+=======
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
+6-1662134891
+
+36-741849682
+141635721735
+>>>>>>> EdsBranch
 Windows\MainWindow.xaml;Windows\Preview_Window.xaml;Windows\ProjectCreation_Window.xaml;Windows\ProjectSelection.xaml;Windows\Project_Window.xaml;Windows\Register_Window.xaml;
 
-False
+True
 
