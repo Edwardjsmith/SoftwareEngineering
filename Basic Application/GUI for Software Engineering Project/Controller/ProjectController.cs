@@ -23,15 +23,13 @@ namespace GUI_for_Software_Engineering_Project
         }
 
         public void PreviewAsset(IAssetData data)
-<<<<<<< HEAD
+
         {
             new Preview_Window(data).Show();
 
         }
 
         public void UploadFile()
-=======
->>>>>>> EdsBranch
         {
             OpenFileDialog dialog = new OpenFileDialog();
 

@@ -64,3 +64,15 @@ D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software E
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 D:\Software Engineering\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csprojAssemblyReference.cache
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Preview_Window.g.cs
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.g.cs
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectSelection.g.cs
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.g.cs
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.g.cs
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\App.g.cs
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.cache
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.lref
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
