@@ -49,18 +49,24 @@ namespace Networking
         {
             Send_Message("R/"+filename);
         }
-        public void Request_Acsess()
+        public void Request_Acsess(string username)
         {
-            Send_Message("A/");
+            Send_Message("A/" + username);
         }
-        public void Query_Acsess()
+        public void Query_Acsess(string username)
         {
-            Send_Message("U/");
+            Send_Message("U/" + username);
         }
-        public void Update_file(string filename, string filedata)
+        public void Update_file(string filename, byte[] filedata)
         {
-            // TODO
-            //Send_Message("U/");
+            TcpClient Client_Data = new TcpClient(IP, Port);
+            Client_Data.ReceiveBufferSize = Int16.MaxValue * 10;
+            Client_Data.SendBufferSize = Int16.MaxValue * 10;
+            string start = "S/" + filename + "/D/";
+            List<byte> message = ASCIIEncoding.ASCII.GetBytes(start).ToList();
+            message.AddRange(filedata);
+            Client_Data.GetStream().Write(message.ToArray(), 0, message.ToArray().Length);
+            Client_Data.Close();
         }
         public void Send_Message(string message)
         {

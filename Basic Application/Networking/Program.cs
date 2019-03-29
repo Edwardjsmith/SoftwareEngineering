@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using System.IO;
 
 namespace Networking
 {
@@ -21,11 +22,10 @@ namespace Networking
         }
         static void Main(string[] args)
         {
-            string t_file = @"C:\Users\Oliver\Desktop\black.png";
 
-
+            string mode = Console.ReadLine();
             // Client Code
-            if (Console.ReadLine() == "C")
+            if (mode == "C")
             {
                 Clear_messages(false);
                 while (true)
@@ -86,7 +86,7 @@ namespace Networking
                         if (id != "Q")
                         {
                             List<string> projects = Networking.instance.Get_Projects(); // returns a list of all project names 
-                        
+
                             string[] files = Networking.instance.Get_Files(projects[Convert.ToInt32(id)]);
                             for (int i = 0; i < files.Count(); i++)
                             {
@@ -96,8 +96,8 @@ namespace Networking
                             string file_id = Console.ReadLine();
                             if (id != "Q")
                             {
-                                
-                                 Networking.instance.Get_File(projects[Convert.ToInt32(id)], files[Convert.ToInt32(file_id)], @"C:\Users\Oliver\Desktop");
+
+                                Networking.instance.Get_File(projects[Convert.ToInt32(id)], files[Convert.ToInt32(file_id)], @"..\..\..\User_files");
 
                             }
                             else
@@ -112,16 +112,57 @@ namespace Networking
                             Console.WriteLine("BACK");
 
                         }
-                      
 
+
+                    }
+                    if (user_input == "u_file")
+                    {
+                        Console.WriteLine("enter project ID");
+                        string id = Console.ReadLine();
+                        if (id != "Q")
+                        {
+                            List<string> projects = Networking.instance.Get_Projects(); // returns a list of all project names 
+
+                            string[] fileArray = Directory.GetFiles(@"..\..\..\User_files");
+
+
+                            for (int i = 0; i < fileArray.Count(); i++)
+                            {
+                                fileArray[i] = fileArray[i].Remove(0, @"..\..\..\User_files".Count());
+                            }
+                            for (int i = 0; i < fileArray.Count(); i++)
+                            {
+                                Console.WriteLine("FILE " + i + " : " + fileArray[i]);
+                            }
+                            Console.WriteLine("enter file ID");
+                            string file_id = Console.ReadLine();
+                            if (id != "Q")
+                            {
+
+                                Networking.instance.Send_File(projects[Convert.ToInt32(id)], fileArray[Convert.ToInt32(file_id)], @"..\..\..\User_files");
+
+                            }
+                            else
+                            {
+                                Clear_messages(false);
+                                Console.WriteLine("BACK");
+                            }
+                        }
+                        else
+                        {
+                            Clear_messages(false);
+                            Console.WriteLine("BACK");
+
+                        }
                     }
                 }
             }
+
             // Client END
 
 
                 // SERVER CODE 
-            if (Console.ReadLine() == "S")
+            if (mode == "S")
             {
                 Network_SQL _SQL = new Network_SQL();
                 List<Network_Server> _Servers = new List<Network_Server>();
@@ -154,7 +195,7 @@ namespace Networking
                     Console.WriteLine("PROJECT FOUND : ");
                     Console.WriteLine(projects[i].Name);
                     Network_Server network_Server = new Network_Server();
-                    network_Server.Start(25565, @"N:\GitKrack\software\SoftwareEngineering\Basic Application\Repos", projects[i].Name);
+                    network_Server.Start(25565, @"..\..\..\Server_files", projects[i].Name);
                     Console.WriteLine(" SERVER " + i + " RUNNING ");
                     _Servers.Add(network_Server);
                 }
