@@ -53,6 +53,14 @@ namespace Networking
         {
             Send_Message("A/" + username);
         }
+        public void Request_Requests()
+        {
+            Send_Message("Z/");
+        }
+        public void Alow_Acsess(string username)
+        {
+            Send_Message("F/" + username);
+        }
         public void Query_Acsess(string username)
         {
             Send_Message("U/" + username);
@@ -139,6 +147,14 @@ namespace Networking
                             if (To_send[i][1] == '/')
                             {
                                 // Asking if on white list
+                                if (!Listen(Client_Data)) { i--; }
+                            }
+                        }
+                        if (To_send[i][0] == 'Z')
+                        {
+                            if (To_send[i][1] == '/')
+                            {
+                                // asking for a list of acess requests 
                                 if (!Listen(Client_Data)) { i--; }
                             }
                         }

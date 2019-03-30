@@ -65,7 +65,7 @@ namespace Networking
         // Returns true if the user is on the projects white list 
         bool Has_Assess(string project_name);
         // Returns a list of strings that are requesting assess to a project#
-        List<string> Get_Assess_Requests(string project_name);
+        string[] Get_Assess_Requests(string project_name);
 
         // END END END END END //
 

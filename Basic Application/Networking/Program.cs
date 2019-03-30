@@ -10,11 +10,11 @@ namespace Networking
 {
     class Program
     {
-       static void Clear_messages(bool server)
+        static void Clear_messages(bool server)
         {
             Console.Clear();
             Console.WriteLine("________________________________________________");
-            if(server)
+            if (server)
                 Console.WriteLine("_________________PROJECT_SERVER_________________");
             else
                 Console.WriteLine("______________________USER______________________");
@@ -55,6 +55,25 @@ namespace Networking
                         for (int i = 0; i < projects.Count(); i++)
                         {
                             Console.WriteLine("ID " + i + " : " + projects[i]);
+                        }
+                    }
+                    if (user_input == "_join")
+                    {
+                        List<string> projects = Networking.instance.Get_Projects(); // returns a list of all project names 
+                        for (int i = 0; i < projects.Count(); i++)
+                        {
+                            Console.WriteLine("ID " + i + " : " + projects[i]);
+                        }
+                        Console.WriteLine("Enter project ID");
+                        string id = Console.ReadLine();
+                        if (id != "Q")
+                        {
+                            Networking.instance.Request_Assess(projects[Convert.ToInt32(id)]);
+                        }
+                        else
+                        {
+                            Clear_messages(false);
+                            Console.WriteLine("BACK");
                         }
                     }
                     // gets a list of all the files 
@@ -161,7 +180,7 @@ namespace Networking
             // Client END
 
 
-                // SERVER CODE 
+            // SERVER CODE 
             if (mode == "S")
             {
                 Network_SQL _SQL = new Network_SQL();
@@ -212,73 +231,64 @@ namespace Networking
                                 _SQL.Update_Project_IP(projects[i].Name);
                             }
                         }
-
-                    }
-                    else
-                    {
-                        for (int i = 0; i < projects.Count(); i++)
+                        if (input == "R")
                         {
-                            Console.WriteLine("KILLING SERVER" + projects[i].Name);
-                            _Servers[i].End();
-                            Console.WriteLine(projects[i].Name + " SERVER DEAD ");
+                            for (int i = 0; i < _Servers.Count(); i++)
+                            {
+                                Console.WriteLine("Project " + i + " : " + _Servers[i].my_name);
+                            }
+                            Console.WriteLine("Enter project ID");
+                            string id = Console.ReadLine();
+                            if (id != "Q")
+                            {
+                                string[] requests = _Servers[Convert.ToInt32(id)].get_requests();
+                                for (int i = 0; i < requests.Count(); i++)
+                                {
+                                    Console.WriteLine("USER  " + i + " : " + requests[i]);
+                                }
+                            }
                         }
-                        break;
+
+                        if (input == "A")
+                        {
+                            for (int i = 0; i < _Servers.Count(); i++)
+                            {
+                                Console.WriteLine("Project " + i + " : " + _Servers[i].my_name);
+                            }
+                            Console.WriteLine("Enter project ID");
+                            string id = Console.ReadLine();
+                            if (id != "Q")
+                            {
+                                string[] requests = _Servers[Convert.ToInt32(id)].get_requests();
+                                for (int i = 0; i < requests.Count(); i++)
+                                {
+                                    Console.WriteLine("USER  " + i + " : " + requests[i]);
+                                }
+                                Console.WriteLine("Enter User ID");
+                                string user_id = Console.ReadLine();
+                                if (user_id != "Q")
+                                {
+                                    _Servers[Convert.ToInt32(id)].Alow_asess(requests[Convert.ToInt32(user_id)]);
+                                }
+                            }
+                            else
+                            {
+                                for (int i = 0; i < projects.Count(); i++)
+                                {
+                                    Console.WriteLine("KILLING SERVER" + projects[i].Name);
+                                    _Servers[i].End();
+                                    Console.WriteLine(projects[i].Name + " SERVER DEAD ");
+                                }
+                                break;
+                            }
+
+                        }
+
                     }
-
-
+                    // SERVER END
                 }
+
             }
-            // SERVER END
         }
-
-    /*             string externalip = new WebClient().DownloadString("http://icanhazip.com");
-            Console.WriteLine("My Public IP Address is :" + externalip);
-            string hostName = Dns.GetHostName(); // Retrive the Name of HOST 
-            Console.WriteLine("My Host Name is :" + hostName);
-            string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
-            Console.WriteLine("My Local IP Address is :" + myIP);
-            if (Console.ReadLine() == "S")
-            {
-                Console.WriteLine("STARTING SERVER");
-                Network_Server network_Server = new Network_Server();
-                network_Server.Start(25565, @"N:\GitKrack\software\SoftwareEngineering\Basic Application\Repos");
-                // Network_SQL _SQL = new Network_SQL();
-                // _SQL.Connect_SQL("Test", "Pass");
-                while (true)
-                {
-                    string input = Console.ReadLine();
-                    if (input != "Quit")
-                    {
-
-                    }
-                    else
-                    {
-                        network_Server.End();
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                Console.WriteLine("STARTING USER");
-                Network_Client network_Client = new Network_Client();
-                network_Client.Start("localhost", 25565);
-                while (true)
-                {
-                    string input = Console.ReadLine();
-                    if (input != "Quit")
-                    {
-                        network_Client.Send_Message(input);
-                    }
-                    else
-                    {
-                        network_Client.End();
-                        break;
-                    }
-                    Console.Clear();
-                }
-
-            }
-        }*/
     }
 }

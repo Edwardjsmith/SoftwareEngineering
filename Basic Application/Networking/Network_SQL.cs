@@ -157,7 +157,7 @@ namespace Networking
             if (Connected_to_server)
             {
                 string public_ip = new WebClient().DownloadString("http://icanhazip.com");
-                string commanda = string.Format("UPDATE `Projects` SET `IP` = \"{0}\" WHERE `Projects`.`Name` = '{1}'", public_ip, project_name);
+                string commanda = string.Format("UPDATE `Projects` SET `IP` = \"{0}\" WHERE `Projects`.`Name` = '{1}'", public_ip.Remove(public_ip.Count()-1,1), project_name);
                 MySqlCommand myCommand = new MySqlCommand(commanda, SQL);
                 myCommand.ExecuteNonQuery();
             }
