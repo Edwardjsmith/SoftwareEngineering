@@ -175,14 +175,18 @@ namespace Networking
                                 {
                                     if(White_list[i] == dataReceived.Remove(0, 2))
                                     {
-                                        message = Encoding.UTF8.GetBytes("TRUE");
-                                        Client_Data.GetStream().Write(message, 0, message.Length);
                                         on_white = true;
+                                        break;
                                     }
                                 }
                                 if (!on_white)
                                 {
                                     message = Encoding.UTF8.GetBytes("FALSE");
+                                    Client_Data.GetStream().Write(message, 0, message.Length);
+                                }
+                                else
+                                {
+                                    message = Encoding.UTF8.GetBytes("TRUE");
                                     Client_Data.GetStream().Write(message, 0, message.Length);
                                 }
                             }
