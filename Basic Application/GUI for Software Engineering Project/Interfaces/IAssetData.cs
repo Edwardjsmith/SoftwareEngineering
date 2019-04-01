@@ -10,6 +10,7 @@ namespace GUI_for_Software_Engineering_Project.Interfaces
     public interface IAssetData
     {
         string TxtContent { get; set; }
+        string ProjectName { get; set; }
         BitmapImage ImgSource { get; set; }
     }
 }

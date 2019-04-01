@@ -11,16 +11,18 @@ namespace GUI_for_Software_Engineering_Project.Model
         private BitmapImage imgSource;
 
         private string txtContent;
-
-        public AssetData(string image_url,string name)
+        private string projectName;
+        public AssetData(string display_url,string file_name,string project_name)
         {
             
-            ImgSource = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, image_url), UriKind.Absolute));
+            ImgSource = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, display_url), UriKind.Absolute));
             
-            TxtContent = name;
+            TxtContent = file_name;
+            projectName = project_name;
         }
 
         public string TxtContent { get => txtContent; set => txtContent = value; }
+        public string ProjectName { get => projectName; set => projectName = value; }
         public BitmapImage ImgSource { get => imgSource; set => imgSource = value; }
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Media.Imaging;
 using GUI_for_Software_Engineering_Project.Interfaces;
 using GUI_for_Software_Engineering_Project.Windows;
 using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace GUI_for_Software_Engineering_Project
 {
@@ -29,26 +30,26 @@ namespace GUI_for_Software_Engineering_Project
 
         }
 
-        public void UploadFile()
+        public void UploadFile(IAssetData data)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
+
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
 
             dialog.ShowDialog();
 
-            FileStream stream = File.Create(dialog.FileName);
+            Networking.Networking.instance.Send_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
 
-            StreamReader reader = new StreamReader(stream);
+           
         }
 
         public void DownloadFile(IAssetData data)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+          
             dialog.ShowDialog();
-            if (dialog.CheckPathExists)
-            {
-                
-                BitmapEncoder encoder = new PngBitmapEncoder();
+           
+                Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
+                /*BitmapEncoder encoder = new PngBitmapEncoder();
 
                 encoder.Frames.Add(BitmapFrame.Create(data.ImgSource));
 
@@ -61,8 +62,8 @@ namespace GUI_for_Software_Engineering_Project
                 using( FileStream fileStream = new FileStream(dialog.FileName + ((fileextension) ? ".png" : ""), FileMode.CreateNew))
                 {
                     encoder.Save(fileStream);
-                }
-            }
+                }*/
+            
         }
     }
 }

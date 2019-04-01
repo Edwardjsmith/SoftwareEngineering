@@ -32,7 +32,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
             get => assetData;
         }
 
-        public static List<string> ProjectNames
+        public static List<string> FileNames
         {
             get
             {
@@ -56,10 +56,10 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
         private void FillUIWithDataForTesting(string name)
         {
-            ProjectNames = Networking.Networking.instance.Get_Files(name).ToList();
-            for (int i = 0; i < ProjectNames.Count(); i++)
+            FileNames = Networking.Networking.instance.Get_Files(name).ToList();
+            for (int i = 0; i < FileNames.Count(); i++)
             {
-                assetData.Add(new AssetData(@"..\..\image.png",ProjectNames[i]));
+                assetData.Add(new AssetData(@"..\..\image.png",FileNames[i],name));
             }
         }
 
@@ -70,7 +70,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
         private void BtnUpload_Click(object sender, RoutedEventArgs e)
         {
-            controller.UploadFile();
+            controller.UploadFile((AssetData)lbAssets.SelectedItem);
         }
 
         private void BtnDownload_Click(object sender, RoutedEventArgs e)
