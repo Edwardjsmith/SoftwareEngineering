@@ -12,12 +12,12 @@ namespace GUI_for_Software_Engineering_Project.Model
 
         private string txtContent;
 
-        public AssetData()
+        public AssetData(string image_url,string name)
         {
             
-            ImgSource = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../image.png"), UriKind.Absolute));
+            ImgSource = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, image_url), UriKind.Absolute));
             
-            TxtContent = "TEST";
+            TxtContent = name;
         }
 
         public string TxtContent { get => txtContent; set => txtContent = value; }

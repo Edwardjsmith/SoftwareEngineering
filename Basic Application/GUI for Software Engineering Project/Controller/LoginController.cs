@@ -30,20 +30,19 @@ namespace GUI_for_Software_Engineering_Project
 
         public void LoginPressed(string username, string password)
         {
-            new ProjectSelection().Show();
-            ((MainWindow)view).Close();
+            
+           
 
-            //if(Networking.Networking.instance.Sign_In(Username, Password))
-            // {
-            //     Window window = new Project_Window();
-            //     window.Show();
-            //     Console.WriteLine("Logging in!");
-            //     this.Close();
-            // }
-            // else
-            // {
-            //     Console.WriteLine("Invalid password!");
-            // }
+            if(Networking.Networking.instance.Sign_In(username, password))
+            {
+                new ProjectSelection().Show();
+                Console.WriteLine("Logging in!");
+                ((MainWindow)view).Close();
+            }
+            else
+            {
+                 Console.WriteLine("Invalid password!");
+            }
         }
 
         public void RegisterPressed()

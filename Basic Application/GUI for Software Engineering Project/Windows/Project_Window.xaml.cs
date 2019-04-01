@@ -1,4 +1,5 @@
-﻿ using GUI_for_Software_Engineering_Project.Model;
+﻿using GUI_for_Software_Engineering_Project.Interfaces;
+using GUI_for_Software_Engineering_Project.Model;
 using GUI_for_Software_Engineering_Project.Windows;
 using System;
 using System.Collections.Generic;
@@ -45,18 +46,21 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
 
 
-        public Project_Window()
+        public Project_Window(string name)
         {
             InitializeComponent();
             controller = new ProjectController(this);
-            FillUIWithDataForTesting();
+            FillUIWithDataForTesting(name);
             lbAssets.ItemsSource = AssetSource;
         }
 
-        private void FillUIWithDataForTesting()
+        private void FillUIWithDataForTesting(string name)
         {
-            ProjectNames = Networking.Networking.instance.Get_Projects();
-            assetData.Add(new AssetData());
+            ProjectNames = Networking.Networking.instance.Get_Files(name).ToList();
+            for (int i = 0; i < ProjectNames.Count(); i++)
+            {
+                assetData.Add(new AssetData(@"..\..\image.png",ProjectNames[i]));
+            }
         }
 
         private void btnPreview_Click(object sender, RoutedEventArgs e)
