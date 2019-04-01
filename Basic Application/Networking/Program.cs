@@ -31,10 +31,10 @@ namespace Networking
                 while (true)
                 {
                     Console.WriteLine("ENTER USER NAME : ");
-                    string name = "tester";//Console.ReadLine();
+                    string name = "test";//Console.ReadLine();
 
                     Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = "tester";// Console.ReadLine();
+                    string pass = "pass";// Console.ReadLine();
                     Clear_messages(false);
                     if (Networking.instance.Sign_In(name, pass))
                     {

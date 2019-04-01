@@ -43,7 +43,7 @@ namespace GUI_for_Software_Engineering_Project.Controller
         {
 
             //TODO: Open this project
-            new Project_Window().Show();
+            new Project_Window(selected.Name).Show();
         }
 
   

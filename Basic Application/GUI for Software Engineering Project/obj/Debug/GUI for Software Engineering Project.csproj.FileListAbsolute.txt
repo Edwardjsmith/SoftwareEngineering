@@ -97,3 +97,35 @@ C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI 
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.GenerateResource.cache
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.exe
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\MySql.Data.dll
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Google.Protobuf.dll
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.pdb
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.exe.config
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\MySql.Data.xml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Google.Protobuf.xml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csprojResolveAssemblyReference.cache
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.g.cs
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Preview_Window.g.cs
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.g.cs
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectSelection.g.cs
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.g.cs
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.g.cs
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\App.g.cs
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.cache
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.lref
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.baml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Preview_Window.baml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.baml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectSelection.baml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.baml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.baml
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.g.resources
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI_for_Software_Engineering_Project.Properties.Resources.resources
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.GenerateResource.Cache
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
+N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb

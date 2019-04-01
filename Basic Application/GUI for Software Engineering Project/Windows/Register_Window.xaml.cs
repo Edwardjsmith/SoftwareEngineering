@@ -1,4 +1,6 @@
 ﻿using GUI_for_Software_Engineering_Project.GUI;
+using GUI_for_Software_Engineering_Project.Interfaces;
+using GUI_for_Software_Engineering_Project.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +40,7 @@ namespace GUI_for_Software_Engineering_Project
             if (Networking.Networking.instance.Create_User(Username, Password2))
             {
                 Console.WriteLine("Registered");
-                IProject_Window window = new Project_Window();
+                IProjectSelection window = new ProjectSelection();
                 window.Show();
                 this.Close();
             }
