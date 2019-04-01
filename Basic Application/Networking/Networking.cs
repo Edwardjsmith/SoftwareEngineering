@@ -141,10 +141,10 @@ namespace Networking
 
         // PROJECT MANAGEMENT FUNTIONS //
 
-         public bool Create_Project(string name, string file_location,int port)
+         public bool Create_Project(string name, string password,int port)
         {
             // add project to sql data base
-            _SQL.Create_Project(name, "password", port);
+            _SQL.Create_Project(name, password, port);
             // start server
 
            
