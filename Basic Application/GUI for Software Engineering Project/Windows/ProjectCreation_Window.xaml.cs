@@ -37,7 +37,7 @@ namespace GUI_for_Software_Engineering_Project
         {
             if (controller.CheckForExistingProject(Projectname))
             {
-                controller.CreateNewProject();
+                controller.CreateNewProject(Projectname);
                 this.Close();
             }
                 
