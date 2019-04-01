@@ -40,7 +40,16 @@ namespace Networking
         }
         public bool Start(int port,string file_location,string name)
         {
-            White_list = System.IO.File.ReadAllLines(file_location+ @"\White_list_"+ name + ".txt").ToList();
+            try
+            {
+                White_list = System.IO.File.ReadAllLines(file_location + @"..\..\Server_private/White_list_" + name + ".txt").ToList();
+                Request_list = System.IO.File.ReadAllLines(file_location + @"..\..\Server_private/Request_list_" + name + ".txt").ToList();
+            }
+            catch (FileNotFoundException exception)
+            {
+                System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/White_list_" + my_name + ".txt", White_list.ToArray());
+                System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/Request_list_" + my_name + ".txt", Request_list.ToArray());
+            }
             my_name = name;
             File_Location = file_location;
             Server_Port = port;
@@ -60,7 +69,8 @@ namespace Networking
         }
         public bool End()
         {
-            System.IO.File.WriteAllLines(File_Location + @"\White_list_" + my_name + ".txt", White_list.ToArray());
+            System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/White_list_" + my_name + ".txt", White_list.ToArray());
+            System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/Request_list_" + my_name + ".txt", Request_list.ToArray());
             try
             {
                 Running = false;
@@ -132,6 +142,29 @@ namespace Networking
                             }
                           
                         }
+                        if (dataReceived[0] == 'F')
+                        {
+                            if (dataReceived[1] == '/')
+                            {
+                                // requset acsess to project 
+                                string name = dataReceived.Remove(0, 2);
+                                White_list.Add(name);
+
+                                Request_list.Remove(name);
+                            }
+
+                        }
+                        if (dataReceived[0] == 'Z')
+                        {
+                            if (dataReceived[1] == '/')
+                            {
+                                // requset acsess to project 
+                                string requests = string.Join("|",Request_list.ToArray());
+                                message = Encoding.UTF8.GetBytes(requests);
+                                Client_Data.GetStream().Write(message, 0, message.Length);
+
+                            }
+                        }
                         if (dataReceived[0] == 'U')
                         {
                             if (dataReceived[1] == '/')
@@ -197,6 +230,15 @@ namespace Networking
             }
             string files = string.Join("|",fileArray);
             return files;
+        }
+        public string[] get_requests()
+        {
+            return Request_list.ToArray();
+        }
+        public void Alow_asess(string name)
+        {
+            White_list.Add(name);
+            Request_list.Remove(name);
         }
     }
 }

@@ -62,59 +62,75 @@ namespace Networking
         // FILE RECOVEROY FUNCTIONS //
         public bool Get_File(string project_name, string file_name, string save_location)
         {
-            Project _temp = _SQL.Get_Project(project_name);
-            _Client.Start(_temp.IP, _temp.Port);
-            _Client.Request_file(file_name);
-            List<string> temp_return = _Client.Get_Messages();
-            while (temp_return.Count() <= 1)
+            if (Has_Assess(project_name))
             {
-                temp_return = _Client.Get_Messages();
+                Project _temp = _SQL.Get_Project(project_name);
+                _Client.Start(_temp.IP, _temp.Port);
+                _Client.Request_file(file_name);
+                List<string> temp_return = _Client.Get_Messages();
+                while (temp_return.Count() <= 1)
+                {
+                    temp_return = _Client.Get_Messages();
+                }
+                _Client.End();
+                byte[] data = _Client.Get_Messages(1);
+                File.WriteAllBytes(save_location + file_name, data);
+                return true;
             }
-            _Client.End();
-            byte[] data = _Client.Get_Messages(1);
-            File.WriteAllBytes(save_location + file_name, data);
-
-           
-            return true;
+            return false;
         }
         public bool Send_File(string project_name, string file_name, string save_location)
         {
-            Project _temp = _SQL.Get_Project(project_name);
-            _Client.Start(_temp.IP, _temp.Port);
-            byte[] data = File.ReadAllBytes(save_location + file_name);
-            _Client.Update_file(file_name, data);
-            _Client.End();
-            return true;
+            if (Has_Assess(project_name))
+            {
+                Project _temp = _SQL.Get_Project(project_name);
+                _Client.Start(_temp.IP, _temp.Port);
+                byte[] data = File.ReadAllBytes(save_location + file_name);
+                _Client.Update_file(file_name, data);
+                _Client.End();
+                return true;
+            }
+            return false;
         }
 
         public string[] Get_Files(string project_name)
         {
-            Project temp = _SQL.Get_Project(project_name);
-            _Client.Start(temp.IP, temp.Port);
-            _Client.Request_filenames();
-            List<string> temp_return = _Client.Get_Messages();
-            while(temp_return.Count() == 0)
+            if (Has_Assess(project_name))
             {
-                temp_return = _Client.Get_Messages();
+                Project temp = _SQL.Get_Project(project_name);
+                _Client.Start(temp.IP, temp.Port);
+                _Client.Request_filenames();
+                List<string> temp_return = _Client.Get_Messages();
+                while (temp_return.Count() == 0)
+                {
+                    temp_return = _Client.Get_Messages();
+                }
+                _Client.End();
+                string[] split = temp_return[0].Split('|');
+                return split;
             }
-            _Client.End();
-            string[] split = temp_return[0].Split('|');
-            return split;
+            string[] bate = { };
+            return bate;
         }
 
         public byte[] Get_File_raw(string project_name, string file_name)
         {
-            Project _temp = _SQL.Get_Project(project_name);
-            _Client.Start(_temp.IP, _temp.Port);
-            _Client.Request_file(file_name);
-            List<string> temp_return = _Client.Get_Messages();
-            while (temp_return.Count() <= 1)
+            if (Has_Assess(project_name))
             {
-                temp_return = _Client.Get_Messages();
+                Project _temp = _SQL.Get_Project(project_name);
+                _Client.Start(_temp.IP, _temp.Port);
+                _Client.Request_file(file_name);
+                List<string> temp_return = _Client.Get_Messages();
+                while (temp_return.Count() <= 1)
+                {
+                    temp_return = _Client.Get_Messages();
+                }
+                _Client.End();
+                byte[] data = _Client.Get_Messages(1);
+                return data;
             }
-            _Client.End();
-            byte[] data = _Client.Get_Messages(1);
-            return data;
+            byte[] bate = { };
+            return bate;
         }
 
         public string Get_Metadata(string project_name, string file_name)
@@ -135,10 +151,7 @@ namespace Networking
             return true;
         }
 
-        public bool Delete_Project(string project_name)
-        {
-            return true;
-        }
+       
 
         public List<string> Get_Projects()
         {
@@ -153,7 +166,10 @@ namespace Networking
 
         public bool Allow_Assess(string project_name, string user_name)
         {
-            return true;
+            Project temp = _SQL.Get_Project(project_name);
+            _Client.Start(temp.IP, temp.Port);
+            _Client.Alow_Acsess(user_name);
+            return false;
         }
         public bool Project_Live(string project_name)
         {
@@ -163,16 +179,31 @@ namespace Networking
 
 
         // PROJECT ASSESS MANAGEMENT FUNTIONS // 
-        public List<string> Get_Assess_Requests(string project_name)
+        public string[] Get_Assess_Requests(string project_name)
         {
-            throw new NotImplementedException();
+            string name = _SQL.Get_User().Name;
+            List<string> temp_return = new List<string>();
+            Project temp = _SQL.Get_Project(project_name);
+            if (_SQL.Get_User().ID == temp.Master_user_id)
+            {
+
+                _Client.Start(temp.IP, temp.Port);
+                _Client.Request_Requests();
+                temp_return = _Client.Get_Messages();
+                _Client.End();
+            }
+            return temp_return[0].Split('|');
         }
         public bool Has_Assess(string project_name)
         {
-            string name =  _SQL.Get_User().Name;
+            string name = _SQL.Get_User().Name;
             Project temp = _SQL.Get_Project(project_name);
+            if(_SQL.Get_User().ID == temp.Master_user_id)
+            {
+                return true;
+            }
             _Client.Start(temp.IP, temp.Port);
-            _Client.Request_Acsess(name) ;
+            _Client.Query_Acsess(name);
             List<string> temp_return = _Client.Get_Messages();
             while (temp_return.Count() == 0)
             {
@@ -187,7 +218,17 @@ namespace Networking
         }
         public bool Request_Assess(string project_name)
         {
-            return true;
+            string name = _SQL.Get_User().Name;
+            Project temp = _SQL.Get_Project(project_name);
+            _Client.Start(temp.IP, temp.Port);
+            _Client.Request_Acsess(name);
+            return false;
+            
+        }
+
+        public bool Delete_Project(string project_name)
+        {
+            throw new NotImplementedException();
         }
     }
 }
