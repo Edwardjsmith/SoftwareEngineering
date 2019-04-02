@@ -38,10 +38,12 @@ namespace GUI_for_Software_Engineering_Project
                 new ProjectSelection().Show();
                 Console.WriteLine("Logging in!");
                 ((MainWindow)view).Close();
+                Notification.Notification.instance.showNotification("Successfully logged in", " ", 1000000);
             }
             else
             {
                  Console.WriteLine("Invalid password!");
+                Notification.Notification.instance.showNotification("Could not log in", " ", 1000000);
             }
         }
 

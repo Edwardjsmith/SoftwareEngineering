@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_for_Software_Engineering_Project.Interfaces;
+using GUI_for_Software_Engineering_Project.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,7 @@ namespace GUI_for_Software_Engineering_Project
 {
     class RegisterController : IRegisterController
     {
-        RegisterController(IRegister_Window window)
+        public RegisterController(IRegister_Window window)
         {
             this.window = window;
         }
@@ -32,6 +34,32 @@ namespace GUI_for_Software_Engineering_Project
         public bool CheckForPasswordMatch()
         {
             return Password2 == Password1;
+        }
+
+        public void ProcessRegistration(string name, string pw1, string pw2, string email)
+        {
+
+            if (Networking.Networking.instance.Create_User(Username, Password2))
+            {
+                Console.WriteLine("Registered");
+                IProjectSelection window = new ProjectSelection();
+                window.Show();
+                window.Close();
+                Notification.Notification.instance.showNotification("User " + Username + "has been registered", " ", 1000000);
+            }
+            else
+            {
+                Notification.Notification.instance.showNotification("User could not be registered", " ", 1000000);
+                Console.WriteLine("User could not be created");
+            }
+        }
+
+        public void CloseWindow()
+        {
+
+            Console.WriteLine("Not Registered");
+            Notification.Notification.instance.showNotification("User not created", " ", 1000000);
+            window.Close();
         }
     }
 }

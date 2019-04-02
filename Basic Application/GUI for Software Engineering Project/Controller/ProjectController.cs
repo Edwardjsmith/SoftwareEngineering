@@ -48,22 +48,14 @@ namespace GUI_for_Software_Engineering_Project
           
             dialog.ShowDialog();
            
-                Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
-                /*BitmapEncoder encoder = new PngBitmapEncoder();
-
-                encoder.Frames.Add(BitmapFrame.Create(data.ImgSource));
-
-                bool fileextension = (dialog.FileName.Split(".png".ToCharArray())).Length > 1;
-
-                if (File.Exists( dialog.FileName + ((fileextension)? ".png" : "")))
-                    File.Delete(dialog.FileName + ((fileextension) ? ".png" : ""));
-
-
-                using( FileStream fileStream = new FileStream(dialog.FileName + ((fileextension) ? ".png" : ""), FileMode.CreateNew))
-                {
-                    encoder.Save(fileStream);
-                }*/
-            
+            if(Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
+            {
+                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent, 1000000);
+            }
+            else
+            {
+                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", " ", 1000000);
+            } 
         }
     }
 }
