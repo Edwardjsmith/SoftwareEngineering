@@ -60,7 +60,22 @@ namespace GUI_for_Software_Engineering_Project.GUI
             FileNames = Networking.Networking.instance.Get_Files(name).ToList();
             for (int i = 0; i < FileNames.Count(); i++)
             {
-                assetData.Add(new AssetData(@"..\..\image.png",FileNames[i],name));
+                string thumbnail;
+                switch (FileNames[i].Split('.')[1])
+                {
+                    case ("png"):
+                        thumbnail = "picture.png";
+                        break;
+                    case ("txt"):
+                        thumbnail = "text.png";
+                        break;
+                    default:
+                        thumbnail = "unknown.png";
+                        break;
+
+                }
+
+                assetData.Add(new AssetData(@"..\..\" + thumbnail,FileNames[i],name));
             }
         }
 
