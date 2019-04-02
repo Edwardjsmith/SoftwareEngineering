@@ -13,3 +13,18 @@ C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Appl
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.csproj.CoreCompileInputs.cache
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.exe
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.pdb
+U:\SoftwareEngineering\Basic Application\Basic Application\bin\Debug\Basic Application.exe.config
+U:\SoftwareEngineering\Basic Application\Basic Application\bin\Debug\Basic Application.exe
+U:\SoftwareEngineering\Basic Application\Basic Application\bin\Debug\Basic Application.pdb
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.csprojAssemblyReference.cache
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\MainWindow.g.cs
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\App.g.cs
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application_MarkupCompile.cache
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application_MarkupCompile.lref
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\MainWindow.baml
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.g.resources
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic_Application.Properties.Resources.resources
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.csproj.GenerateResource.cache
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.csproj.CoreCompileInputs.cache
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.exe
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\Basic Application.pdb

@@ -52,8 +52,7 @@ namespace GUI_for_Software_Engineering_Project
             FolderBrowserDialog dialog = new FolderBrowserDialog();
           
             dialog.ShowDialog();
-<<<<<<< HEAD
-           
+        
             if(Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
             {
                 Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent, 1000000);
@@ -62,7 +61,7 @@ namespace GUI_for_Software_Engineering_Project
             {
                 Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", " ", 1000000);
             } 
-=======
+
             Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
                 /*BitmapEncoder encoder = new PngBitmapEncoder();
 
@@ -79,7 +78,6 @@ namespace GUI_for_Software_Engineering_Project
                     encoder.Save(fileStream);
                 }*/
             
->>>>>>> OllyBranch
         }
     }
 }
