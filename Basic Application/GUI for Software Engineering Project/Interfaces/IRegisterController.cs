@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GUI_for_Software_Engineering_Project
 {
-    interface IRegisterController
+    public interface IRegisterController
     {
 
 
@@ -16,8 +16,7 @@ namespace GUI_for_Software_Engineering_Project
         string Password2 { get; }
         bool CheckForPasswordMatch();
         bool CheckForEmail();
-        
-
-
+        void ProcessRegistration(string name, string pw1, string pw2, string email);
+        void CloseWindow();
     }
 }

@@ -27,7 +27,30 @@ namespace GUI_for_Software_Engineering_Project.Controller
         {
             foreach (string name in Networking.Networking.instance.Get_Projects())
             {
-                ProjectData.Add(new ProjectData(name, ProjectState.accepted));
+                if (Networking.Networking.instance.Has_Assess(name))
+                {
+                    ProjectData.Add(new ProjectData(name, ProjectState.accepted));
+                }
+                else
+                {
+                    bool re = false;
+                    string[] names = Networking.Networking.instance.Get_Assess_Requests(name);
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        if(names[i] == Networking.Networking.instance.Get_username())
+                        {
+                            re = true;
+                        }
+                    }
+                    if (re)
+                    {
+                        ProjectData.Add(new ProjectData(name, ProjectState.applied));
+                    }
+                    else
+                    {
+                        ProjectData.Add(new ProjectData(name, ProjectState.locked));
+                    }
+                }
             }
             window.lbProjects.ItemsSource = ProjectData;
         }
@@ -41,9 +64,21 @@ namespace GUI_for_Software_Engineering_Project.Controller
 
         public void OnProjectOpenApplied(IProjectData selected)
         {
-
-            //TODO: Open this project
-            new Project_Window(selected.Name).Show();
+            if (selected.State == ProjectState.locked)
+            {
+                Networking.Networking.instance.Request_Assess(selected.Name);
+                selected.State = ProjectState.applied;
+                Notification.Notification.instance.showNotification("Assess Requested", " ", 1000000);
+            }
+            if (selected.State == ProjectState.applied)
+            {
+                Networking.Networking.instance.Request_Assess(selected.Name);
+                Notification.Notification.instance.showNotification("Still waiting on Acceptence", " ", 1000000);
+            }
+            if (selected.State == ProjectState.accepted) 
+            {
+                new Project_Window(selected.Name).Show();
+            }
         }
 
   

@@ -20,3 +20,17 @@ C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application
 C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
 C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
 C:\Users\coeol\OneDrive\Documents\GitCrack\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe.config
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.pdb
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csprojAssemblyReference.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb
+U:\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe.config
+U:\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.exe
+U:\SoftwareEngineering\Basic Application\PingPongServer\bin\Debug\PingPongServer.pdb
+U:\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csprojAssemblyReference.cache
+U:\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.csproj.CoreCompileInputs.cache
+U:\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.exe
+U:\SoftwareEngineering\Basic Application\PingPongServer\obj\Debug\PingPongServer.pdb

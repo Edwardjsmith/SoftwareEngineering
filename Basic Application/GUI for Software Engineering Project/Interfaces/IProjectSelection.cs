@@ -12,5 +12,7 @@ namespace GUI_for_Software_Engineering_Project.Interfaces
         ListBox lbProjects { get; }
 
         void Show();
+
+        void Close();
     }
 }
