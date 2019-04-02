@@ -89,15 +89,15 @@ namespace Networking
         }
         public static void Listener()
         {
-            TcpListener listener = new TcpListener(IPAddress.Any, Server_Port);
+            TcpListener listener = new TcpListener(Server_Port);
             listener.Start();
             while (Running)
             {
                 if (listener.Pending())
                 {
                     TcpClient Client_Data = listener.AcceptTcpClient();
-                    Client_Data.ReceiveBufferSize = Int16.MaxValue*10;
-                    Client_Data.SendBufferSize = Int16.MaxValue*10;
+                    Client_Data.ReceiveBufferSize = Int32.MaxValue/10;
+                    Client_Data.SendBufferSize = Int32.MaxValue/10;
 
                     NetworkStream stream = Client_Data.GetStream();
                     
@@ -202,14 +202,18 @@ namespace Networking
                                     name_end = i;
                                 }
                             }
+                            Console.WriteLine("file inbound");
+
                             string filename = dataReceived.Remove(name_end, dataReceived.Count() - name_end).Remove(0, 2);
                             List<byte> data = new List<byte>();
                             for(int i = 0; i < message_in.Count() - (name_end+3); i++)
                             {
                                 data.Add(message_in[i + name_end+3]);
                             }
-                            File.WriteAllBytes(File_Location + filename, data.ToArray());
-                            Console.WriteLine("File updated : " + filename);
+                            Console.WriteLine("data uploaded");
+
+                           File.WriteAllBytes(File_Location + filename, data.ToArray());
+                            Console.WriteLine("File saved : " + filename);
                         }
                     }
 

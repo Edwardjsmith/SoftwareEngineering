@@ -40,7 +40,7 @@ namespace Networking
             // define the sql server address and password 
             SQL = new MySqlConnection("Server= sql2.freemysqlhosting.net;" +
                                        "Database=sql2276785;" + "User=sql2276785;" +
-                                       "Password=pC7*yS3*;");
+                                       "Password=pC7*yS3*OOOOOO;");
             try
             {
                 // attempt to login to the server 
@@ -284,6 +284,7 @@ namespace Networking
                     project.Password = project_data[i * 4 + 2];
                     string localIP;
                     using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+<<<<<<< HEAD
                     {
                         socket.Connect("8.8.8.8", 65530);
                         IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
@@ -298,7 +299,15 @@ namespace Networking
                         {
                             project.IP = "localhost";//user_data[b * 5 + 3];
                         }
+=======
+                    {
+                        socket.Connect("8.8.8.8", 65530);
+                        IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                        localIP = endPoint.Address.ToString();
+>>>>>>> OllyBranch
                     }
+                    project.IP = localIP;
+                   
                   
                     projects.Add(project);*/
 
@@ -341,7 +350,7 @@ namespace Networking
                 {
                     if (projects[i].ID == id)
                     {
-                        ;
+                        
                         return projects[i];
                     }
                 }

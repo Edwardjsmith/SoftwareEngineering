@@ -1,0 +1,33 @@
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\GUI for Software Engineering Project.exe.config
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\GUI for Software Engineering Project.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\GUI for Software Engineering Project.pdb
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\Networking.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\MySql.Data.dll
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\Google.Protobuf.dll
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\Networking.pdb
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\Networking.exe.config
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\MySql.Data.xml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Release\Google.Protobuf.xml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project.csprojAssemblyReference.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\MainWindow.g.cs
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\Preview_Window.g.cs
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\ProjectCreation_Window.g.cs
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\ProjectSelection.g.cs
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\Project_Window.g.cs
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\Register_Window.g.cs
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\App.g.cs
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project_MarkupCompile.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project_MarkupCompile.lref
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\MainWindow.baml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\Preview_Window.baml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\ProjectCreation_Window.baml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\ProjectSelection.baml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\Project_Window.baml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\Windows\Register_Window.baml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project.g.resources
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI_for_Software_Engineering_Project.Properties.Resources.resources
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project.csproj.GenerateResource.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project.csproj.CopyComplete
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Release\GUI for Software Engineering Project.pdb

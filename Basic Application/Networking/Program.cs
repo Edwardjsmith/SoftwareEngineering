@@ -214,7 +214,7 @@ namespace Networking
                     Console.WriteLine("PROJECT FOUND : ");
                     Console.WriteLine(projects[i].Name);
                     Network_Server network_Server = new Network_Server();
-                    network_Server.Start(25565, @"..\..\..\Server_files", projects[i].Name);
+                    network_Server.Start(5000, @"..\..\..\Server_files", projects[i].Name);
                     Console.WriteLine(" SERVER " + i + " RUNNING ");
                     _Servers.Add(network_Server);
                 }

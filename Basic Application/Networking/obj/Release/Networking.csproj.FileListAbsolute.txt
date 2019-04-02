@@ -1,0 +1,11 @@
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\bin\Release\Networking.exe.config
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\bin\Release\Networking.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\bin\Release\Networking.pdb
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\bin\Release\Google.Protobuf.dll
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\bin\Release\MySql.Data.dll
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\bin\Release\Google.Protobuf.xml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\bin\Release\MySql.Data.xml
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\obj\Release\Networking.csproj.CoreCompileInputs.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\obj\Release\Networking.csproj.CopyComplete
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\obj\Release\Networking.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Networking\obj\Release\Networking.pdb

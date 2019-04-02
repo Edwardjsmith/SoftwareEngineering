@@ -1,0 +1,6 @@
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\bin\Release\PingPongServer.exe.config
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\bin\Release\PingPongServer.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\bin\Release\PingPongServer.pdb
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\obj\Release\PingPongServer.csproj.CoreCompileInputs.cache
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\obj\Release\PingPongServer.exe
+C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\PingPongServer\obj\Release\PingPongServer.pdb
