@@ -89,7 +89,7 @@ namespace Networking
         }
         public static void Listener()
         {
-            TcpListener listener = new TcpListener(IPAddress.Any, Server_Port);
+            TcpListener listener = new TcpListener(Server_Port);
             listener.Start();
             while (Running)
             {
