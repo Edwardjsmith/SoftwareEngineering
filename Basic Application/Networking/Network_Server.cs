@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
-using System.Net;
 using System.Net.Sockets;
 using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Networking
 {
@@ -149,7 +145,6 @@ namespace Networking
                                 // requset acsess to project 
                                 string name = dataReceived.Remove(0, 2);
                                 White_list.Add(name);
-
                                 Request_list.Remove(name);
                             }
 

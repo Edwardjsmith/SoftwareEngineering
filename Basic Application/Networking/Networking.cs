@@ -57,6 +57,10 @@ namespace Networking
             _SQL = new Network_SQL();
             return true;
         }
+        public string Get_username()
+        {
+            return _SQL.Get_User().Name;
+        }
 
 
         // FILE RECOVEROY FUNCTIONS //
@@ -184,36 +188,40 @@ namespace Networking
             string name = _SQL.Get_User().Name;
             List<string> temp_return = new List<string>();
             Project temp = _SQL.Get_Project(project_name);
-            if (_SQL.Get_User().ID == temp.Master_user_id)
-            {
+            //if (_SQL.Get_User().ID == temp.Master_user_id)
+           // {
 
                 _Client.Start(temp.IP, temp.Port);
                 _Client.Request_Requests();
                 temp_return = _Client.Get_Messages();
                 _Client.End();
-            }
+          //  }
             return temp_return[0].Split('|');
         }
         public bool Has_Assess(string project_name)
         {
-            string name = _SQL.Get_User().Name;
-            Project temp = _SQL.Get_Project(project_name);
-            if(_SQL.Get_User().ID == temp.Master_user_id)
+            try
             {
-                return true;
+                string name = _SQL.Get_User().Name;
+                Project temp = _SQL.Get_Project(project_name);
+                if (_SQL.Get_User().ID == temp.Master_user_id)
+                {
+                    return true;
+                }
+                _Client.Start(temp.IP, temp.Port);
+                _Client.Query_Acsess(name);
+                List<string> temp_return = _Client.Get_Messages();
+                while (temp_return.Count() == 0)
+                {
+                    temp_return = _Client.Get_Messages();
+                }
+                _Client.End();
+                if (temp_return[0] == "TRUE")
+                {
+                    return true;
+                }
             }
-            _Client.Start(temp.IP, temp.Port);
-            _Client.Query_Acsess(name);
-            List<string> temp_return = _Client.Get_Messages();
-            while (temp_return.Count() == 0)
-            {
-                temp_return = _Client.Get_Messages();
-            }
-            _Client.End();
-            if (temp_return[0] == "TRUE")
-            {
-                return true;
-            }
+            catch { }
             return false;
         }
         public bool Request_Assess(string project_name)
@@ -222,7 +230,7 @@ namespace Networking
             Project temp = _SQL.Get_Project(project_name);
             _Client.Start(temp.IP, temp.Port);
             _Client.Request_Acsess(name);
-            return false;
+            return true;
             
         }
 
