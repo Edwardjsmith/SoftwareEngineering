@@ -30,30 +30,25 @@ namespace GUI_for_Software_Engineering_Project
 
         public string Password2 { get => txtbxEMail.Text; }
 
+        public IRegisterController controller;
+
         public Register_Window()
         {
             InitializeComponent();
+            controller = new RegisterController(this);
         }
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
-            if (Networking.Networking.instance.Create_User(Username, Password2))
-            {
-                Console.WriteLine("Registered");
-                IProjectSelection window = new ProjectSelection();
-                window.Show();
-                this.Close();
-            }
-            else
-            {
-                Console.WriteLine("User could not be created");
-            }
+
+            controller.ProcessRegistration(Username, Password1, Password2, Email);
+
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Not Registered");
-            this.Close();
+            controller.CloseWindow();
+
         }
     }
 }
