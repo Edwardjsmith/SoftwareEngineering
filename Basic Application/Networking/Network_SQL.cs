@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Net;
+using System.Net.Sockets;
 
 namespace Networking
 {
@@ -281,18 +282,25 @@ namespace Networking
                     project.Master_user_id = Int32.Parse(project_data[i * 4 + 3]);
                     project.Name = project_data[i * 4 + 1];
                     project.Password = project_data[i * 4 + 2];
-
-                    string[] user_data = System.IO.File.ReadAllLines(@".\Users.txt");
+                    string localIP;
+                    using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+                    {
+                        socket.Connect("8.8.8.8", 65530);
+                        IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                        localIP = endPoint.Address.ToString();
+                    }
+                    project.IP = localIP;
+                   /* string[] user_data = System.IO.File.ReadAllLines(@".\Users.txt");
                     int number_of_users = user_data.Count() / 4;
                     for (int b = 0; b < number_of_users; b++)
                     {
                         if (Int32.Parse(user_data[b * 5 ]) == project.Master_user_id )
                         {
-                            project.IP = user_data[b * 5 + 3];
+                            project.IP = "localhost";//user_data[b * 5 + 3];
                         }
                     }
                   
-                    projects.Add(project);
+                    projects.Add(project);*/
 
                 }
             }
@@ -373,7 +381,7 @@ namespace Networking
                 {
                     if (projects[i].Name == project_name)
                     {
-                        ;
+                        
                         return projects[i];
                     }
                 }
