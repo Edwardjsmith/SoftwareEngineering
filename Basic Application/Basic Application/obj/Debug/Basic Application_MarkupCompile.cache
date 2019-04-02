@@ -1,51 +1,20 @@
-<<<<<<< HEAD
 ﻿Basic Application
 
 
 winexe
 C#
 .cs
-C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\
 Basic_Application
 none
 false
 DEBUG;TRACE
-C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\Basic Application\App.xaml
+C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\Basic Application\App.xaml
 11151548125
 
-9258706
+9-414415271
 131569487696
 MainWindow.xaml;
 
 True
 
-=======
-﻿Basic Application
-
-
-winexe
-C#
-.cs
-<<<<<<< HEAD
-C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\
-=======
-U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\
->>>>>>> OllyBranch
-Basic_Application
-none
-false
-DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Application\App.xaml
-=======
-U:\SoftwareEngineering\Basic Application\Basic Application\App.xaml
->>>>>>> OllyBranch
-11151548125
-
-5-2017746502
-131569487696
-MainWindow.xaml;
-
-False
-
->>>>>>> OllyBranch
