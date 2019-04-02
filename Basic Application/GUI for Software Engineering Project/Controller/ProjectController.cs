@@ -9,6 +9,7 @@ using GUI_for_Software_Engineering_Project.Interfaces;
 using GUI_for_Software_Engineering_Project.Windows;
 using Microsoft.Win32;
 using System.Windows.Forms;
+using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 
 namespace GUI_for_Software_Engineering_Project
 {
@@ -30,14 +31,18 @@ namespace GUI_for_Software_Engineering_Project
 
         }
 
-        public void UploadFile(IAssetData data)
+        public void UploadFile(string project_name)
         {
 
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            OpenFileDialog dialog = new OpenFileDialog();
 
             dialog.ShowDialog();
-
-            Networking.Networking.instance.Send_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
+            Console.WriteLine(dialog.FileName);
+            string[] tmpsplit = dialog.FileName.Split('\\');
+            string path = "";
+            for (int i = 0; i < tmpsplit.Length - 1; i++)
+                path += tmpsplit[i] + "\\";
+            Networking.Networking.instance.Send_File(project_name, "\\" + tmpsplit[tmpsplit.Count()-1], path);
 
            
         }
@@ -47,8 +52,7 @@ namespace GUI_for_Software_Engineering_Project
             FolderBrowserDialog dialog = new FolderBrowserDialog();
           
             dialog.ShowDialog();
-           
-                Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
+            Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
                 /*BitmapEncoder encoder = new PngBitmapEncoder();
 
                 encoder.Frames.Add(BitmapFrame.Create(data.ImgSource));

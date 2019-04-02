@@ -69,9 +69,10 @@ namespace Networking
         }
         public void Update_file(string filename, byte[] filedata)
         {
+            
             TcpClient Client_Data = new TcpClient(IP, Port);
-            Client_Data.ReceiveBufferSize = Int16.MaxValue * 10;
-            Client_Data.SendBufferSize = Int16.MaxValue * 10;
+            Client_Data.ReceiveBufferSize = Int32.MaxValue / 10;
+            Client_Data.SendBufferSize = Int32.MaxValue / 10;
             string start = "S/" + filename + "/D/";
             List<byte> message = ASCIIEncoding.ASCII.GetBytes(start).ToList();
             message.AddRange(filedata);
@@ -113,8 +114,8 @@ namespace Networking
         {
            
             TcpClient Client_Data = new TcpClient(IP, Port);
-            Client_Data.ReceiveBufferSize = Int16.MaxValue * 10;
-            Client_Data.SendBufferSize = Int16.MaxValue * 10;
+            Client_Data.ReceiveBufferSize = Int32.MaxValue / 10;
+            Client_Data.SendBufferSize = Int32.MaxValue / 10;
             
             while (Running)
             {
@@ -123,6 +124,7 @@ namespace Networking
                 {
                     
                     byte[] message = ASCIIEncoding.ASCII.GetBytes(To_send[i]);
+                    Console.WriteLine("sending ");
                     Client_Data.GetStream().Write(message, 0, message.Length);
 
                     sent_message ++;
@@ -165,6 +167,7 @@ namespace Networking
                     }
                    
                 }
+                Console.WriteLine("sent");
                 if (sent_message == To_send.Count)
                 {
                     To_send.Clear();

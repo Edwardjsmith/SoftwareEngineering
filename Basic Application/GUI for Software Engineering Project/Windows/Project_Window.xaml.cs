@@ -26,7 +26,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
         private static List<string> _projectNames = new List<string>();
         public List<AssetData> assetData = new List<AssetData>();
-
+        string project_name = "";
         public List<AssetData> AssetSource
         {
             get => assetData;
@@ -49,6 +49,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
         public Project_Window(string name)
         {
             InitializeComponent();
+            project_name = name;
             controller = new ProjectController(this);
             FillUIWithDataForTesting(name);
             lbAssets.ItemsSource = AssetSource;
@@ -70,7 +71,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
         private void BtnUpload_Click(object sender, RoutedEventArgs e)
         {
-            controller.UploadFile((AssetData)lbAssets.SelectedItem);
+            controller.UploadFile(project_name);
         }
 
         private void BtnDownload_Click(object sender, RoutedEventArgs e)
