@@ -5,10 +5,18 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Model
 {
+    public enum AssetType
+    {
+        image,
+        text,
+        unknown
+    }
+
     public class AssetData : IAssetData
     {
 
         private BitmapImage imgSource;
+        readonly AssetType assetType;
 
         private string txtContent;
         private string projectName;
@@ -24,5 +32,7 @@ namespace GUI_for_Software_Engineering_Project.Model
         public string TxtContent { get => txtContent; set => txtContent = value; }
         public string ProjectName { get => projectName; set => projectName = value; }
         public BitmapImage ImgSource { get => imgSource; set => imgSource = value; }
+
+        public AssetType AssetType => assetType;
     }
 }
