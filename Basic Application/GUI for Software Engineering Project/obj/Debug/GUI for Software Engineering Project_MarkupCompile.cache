@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+=======
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+>>>>>>> OllyBranch
 GUI_for_Software_Engineering_Project
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
 6-1662134891
 
 33973181737
 17-1204006280
+=======
+U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
+6-1662134891
+
+33973181737
+171968543943
+>>>>>>> OllyBranch
 Windows\MainWindow.xaml;Windows\Preview_Window.xaml;Windows\ProjectCreation_Window.xaml;Windows\ProjectSelection.xaml;Windows\Project_Window.xaml;Windows\Register_Window.xaml;
 
 False

@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\
+=======
+U:\SoftwareEngineering\Basic Application\Basic Application\obj\Debug\
+>>>>>>> OllyBranch
 Basic_Application
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\Basic Application\App.xaml
+=======
+U:\SoftwareEngineering\Basic Application\Basic Application\App.xaml
+>>>>>>> OllyBranch
 11151548125
 
 5-2017746502

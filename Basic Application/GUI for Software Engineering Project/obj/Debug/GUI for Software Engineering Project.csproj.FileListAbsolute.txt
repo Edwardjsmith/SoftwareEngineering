@@ -32,6 +32,7 @@ U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\ob
 U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
 U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 U:\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+<<<<<<< HEAD
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
@@ -66,3 +67,5 @@ C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for So
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 C:\Users\2coeo33\Downloads\repo\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+=======
+>>>>>>> OllyBranch
