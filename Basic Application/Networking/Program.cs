@@ -25,6 +25,91 @@ namespace Networking
 
             string mode = Console.ReadLine();
             // Client Code
+            if(mode == "T")
+            {
+                ///////////////////////////////
+                Console.WriteLine("");
+                Console.WriteLine("TEST : LOGGIN");
+                string name = "Test";//Console.ReadLine();
+                string pass = "Pass";// Console.ReadLine();
+                if (Networking.instance.Sign_In(name, pass))
+                {
+                    Console.WriteLine("PASS");
+                }
+                else
+                {
+                    Console.WriteLine("FAIL");
+                }
+
+                ////////////////////////////
+                Console.WriteLine("");
+                Console.WriteLine("TEST : GET PROJECTS");
+                List<string> projects = Networking.instance.Get_Projects(); // returns a list of all project names 
+                for (int i = 0; i < projects.Count(); i++)
+                {
+                        Console.WriteLine("FILES FOUND " + i + " : " + projects[i]);
+                }
+                if(projects[0] == "test" && projects[1] == "Project super fun")
+                {
+                    Console.WriteLine("PASS");
+                }
+                else
+                {
+                    Console.WriteLine("FAIL");
+                }
+                ///////////////////////////////
+                ///
+                Console.WriteLine("");
+                Console.WriteLine("TEST : GET FILES");
+                string[] files = Networking.instance.Get_Files(projects[0]);
+                if(files[0] == "UI1.png")
+                {
+                    Console.WriteLine("PASS 1");
+                }
+                else
+                {
+                    Console.WriteLine("FAIL");
+                }
+                if (files[0] == "UI2.png")
+                {
+                    Console.WriteLine("PASS 2");
+                }
+                else
+                {
+                    Console.WriteLine("FAIL");
+                }
+                if (files[0] == "UI3.png")
+                {
+                    Console.WriteLine("PASS 3");
+                }
+                else
+                {
+                    Console.WriteLine("FAIL");
+                }
+                if (files[0] == "UI4.png")
+                {
+                    Console.WriteLine("PASS 4");
+                }
+                else
+                {
+                    Console.WriteLine("FAIL");
+                }
+
+                /////////////////////////////////////
+                Console.WriteLine("");
+                Console.WriteLine("TEST : UPLOAD FILE");
+                Networking.instance.Send_File(projects[0], "test_tree.png", @"..\..\..\User_files");
+                files = Networking.instance.Get_Files(projects[0]);
+                if (files.Contains("test_tree.png"))
+                {
+                    Console.WriteLine("PASS");
+                }
+                else
+                {
+                    Console.WriteLine("FAIL");
+                }
+                string t = Console.ReadLine();
+            }
             if (mode == "C")
             {
                 Clear_messages(false);
