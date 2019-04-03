@@ -38,7 +38,7 @@ namespace GUI_for_Software_Engineering_Project
             for (int i = 0; i < tmpsplit.Length - 1; i++)
                 path += tmpsplit[i] + "\\";
 
-            Notification.Notification.instance.showNotification(project_name + " successfully uploaded", " ", 1000000);
+            Notification.Notification.instance.showNotification(project_name + " successfully uploaded", " ");
             Networking.Networking.instance.Send_File(project_name, "\\" + tmpsplit[tmpsplit.Count()-1], path);
 
            
@@ -52,14 +52,12 @@ namespace GUI_for_Software_Engineering_Project
         
             if(Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
             {
-                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent, 1000000);
+                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent);
             }
             else
             {
-                Notification.Notification.instance.showNotification(data.ProjectName + " failed to download", " ", 1000000);
+                Notification.Notification.instance.showNotification(data.ProjectName + " failed to download");
             } 
-
-            Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
         }
     }
 }
