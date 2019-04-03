@@ -31,10 +31,10 @@ namespace Networking
                 while (true)
                 {
                     Console.WriteLine("ENTER USER NAME : ");
-                    string name = "test";//Console.ReadLine();
+                    string name = "tester";//Console.ReadLine();
 
                     Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = "pass";// Console.ReadLine();
+                    string pass = "tester";// Console.ReadLine();
                     Clear_messages(false);
                     if (Networking.instance.Sign_In(name, pass))
                     {
@@ -179,7 +179,7 @@ namespace Networking
 
             // Client END
 
-
+            bool running = true;
             // SERVER CODE 
             if (mode == "S")
             {
@@ -189,10 +189,10 @@ namespace Networking
                 while (true)
                 {
                     Console.WriteLine("ENTER USER NAME : ");
-                    string name = "test";//Console.ReadLine();
+                    string name = "Test";//Console.ReadLine();
 
                     Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = "pass"; //Console.ReadLine();
+                    string pass = "Pass"; //Console.ReadLine();
 
 
                     if (_SQL.Connect_SQL(name, pass))
@@ -218,7 +218,7 @@ namespace Networking
                     Console.WriteLine(" SERVER " + i + " RUNNING ");
                     _Servers.Add(network_Server);
                 }
-                while (true)
+                while (running)
                 {
                     string input = Console.ReadLine();
                     if (input != "Quit")
@@ -283,6 +283,10 @@ namespace Networking
                             }
 
                         }
+
+                    }
+                    else {
+                        running = false;
 
                     }
                     // SERVER END

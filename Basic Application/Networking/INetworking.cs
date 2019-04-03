@@ -22,6 +22,8 @@ namespace Networking
         // Returns true if the intance is signed in
         bool Is_Signed_In();
 
+        string Get_username();
+
         // END END END END END //
 
 

@@ -22,10 +22,13 @@ namespace Networking
 
         public void Start(string ip, int port)
         {
+            while(To_send.Count() > 0) {
 
-                IP = ip;
+            }
+
+            IP = ip;
                 //Port = port;
-                Port = 5000;
+            Port = 5000;
                 Running = true;
                 Sender_Ref = new ThreadStart(Sender);
                 Sender_Thread = new Thread(Sender_Ref);
@@ -45,26 +48,32 @@ namespace Networking
         // S/[filename]/D/[filedata]    - sending a file to server for updating
         public void Request_filenames()
         {
+            Messages.Clear();
             Send_Message("R:");
         }
         public void Request_file(string filename)
         {
+            Messages.Clear();
             Send_Message("R/"+filename);
         }
         public void Request_Acsess(string username)
         {
+            Messages.Clear();
             Send_Message("A/" + username);
         }
         public void Request_Requests()
         {
+            Messages.Clear();
             Send_Message("Z/");
         }
         public void Alow_Acsess(string username)
         {
+            Messages.Clear();
             Send_Message("F/" + username);
         }
         public void Query_Acsess(string username)
         {
+            Messages.Clear();
             Send_Message("U/" + username);
         }
         public void Update_file(string filename, byte[] filedata)
@@ -93,6 +102,8 @@ namespace Networking
         }
         private static bool Listen(TcpClient Client_Data)
         {
+            Console.WriteLine("time out = " + Client_Data.ReceiveTimeout);
+            Client_Data.ReceiveTimeout = 50000;
             try
             {
                
@@ -129,45 +140,45 @@ namespace Networking
 
                     sent_message ++;
 
-                    if (To_send[i][0] == 'R')
-                    {
-                        if (To_send[i][1] == ':')
-                        {
+                   // if (To_send[i][0] == 'R')
+                   // {
+                      //  if (To_send[i][1] == ':')
+                      //  {
                             // requesting file names
                             if (!Listen(Client_Data)) { i--; }
 
-                        }
-                        else
-                        {
-                            if (To_send[i][1] == '/')
-                            {
-                                // requesting file 
-                                if (!Listen(Client_Data)) { i--; }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (To_send[i][0] == 'U')
-                        {
-                            if (To_send[i][1] == '/')
-                            {
-                                // Asking if on white list
-                                if (!Listen(Client_Data)) { i--; }
-                            }
-                        }
-                        if (To_send[i][0] == 'Z')
-                        {
-                            if (To_send[i][1] == '/')
-                            {
-                                // asking for a list of acess requests 
-                                if (!Listen(Client_Data)) { i--; }
-                            }
-                        }
-                    }
-                   
+                    /* }
+                     else
+                     {
+                         if (To_send[i][1] == '/')
+                       {
+                             // requesting file 
+                             if (!Listen(Client_Data)) { i--; }
+                         }
+                     }
+                 }
+                 else
+                 {
+                     if (To_send[i][0] == 'U')
+                     {
+                         if (To_send[i][1] == '/')
+                         {
+                             // Asking if on white list
+                             if (!Listen(Client_Data)) { i--; }
+                         }
+                     }
+                     if (To_send[i][0] == 'Z')
+                     {
+                         if (To_send[i][1] == '/')
+                         {
+                             // asking for a list of acess requests 
+                             if (!Listen(Client_Data)) { i--; }
+                         }
+                     }
+                 }*/
+                    Console.WriteLine("sent");
                 }
-                Console.WriteLine("sent");
+               
                 if (sent_message == To_send.Count)
                 {
                     To_send.Clear();
@@ -175,6 +186,7 @@ namespace Networking
                
             }
             Client_Data.Close();
+            Running = false;
         }
     }
 }
