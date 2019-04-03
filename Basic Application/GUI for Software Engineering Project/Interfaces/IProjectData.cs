@@ -8,7 +8,7 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Interfaces
 {
-    interface IProjectData
+    public interface IProjectData
     {
         ProjectState State { get; set; }
         string Name { get; set; }

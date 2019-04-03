@@ -19,9 +19,12 @@ namespace Networking
         static List<byte[]> raw_bytes = new List<byte[]>();
         ThreadStart Sender_Ref;
         Thread Sender_Thread;
-
-        public void Start(string ip, int port)
+        
+        static char user_type;
+        public void Start(string ip, int port,string t_username)
         {
+            user_type = t_username[0];
+
             while(To_send.Count() > 0) {
 
             }
@@ -29,10 +32,10 @@ namespace Networking
             IP = ip;
                 //Port = port;
             Port = 5000;
-                Running = true;
-                Sender_Ref = new ThreadStart(Sender);
-                Sender_Thread = new Thread(Sender_Ref);
-                Sender_Thread.Start();
+            Running = true;
+            Sender_Ref = new ThreadStart(Sender);
+            Sender_Thread = new Thread(Sender_Ref);
+            Sender_Thread.Start();
          
         }
         public void End()
@@ -50,19 +53,19 @@ namespace Networking
         {
             raw_bytes.Clear();
             Messages.Clear();
-            Send_Message("R:");
+            Send_Message("R:" + user_type);
         }
         public void Request_file(string filename)
         {
             raw_bytes.Clear();
             Messages.Clear();
-            Send_Message("R/"+filename);
+            Send_Message("R/" + user_type +  filename);
         }
-        public void Request_Acsess(string username)
+        public void Request_Acsess(string t_username)
         {
             raw_bytes.Clear();
             Messages.Clear();
-            Send_Message("A/" + username);
+            Send_Message("A/" + t_username);
         }
         public void Request_Requests()
         {
@@ -70,17 +73,17 @@ namespace Networking
             Messages.Clear();
             Send_Message("Z/");
         }
-        public void Alow_Acsess(string username)
+        public void Alow_Acsess(string t_username)
         {
             raw_bytes.Clear();
             Messages.Clear();
-            Send_Message("F/" + username);
+            Send_Message("F/" + t_username);
         }
-        public void Query_Acsess(string username)
+        public void Query_Acsess(string t_username)
         {
             raw_bytes.Clear();
             Messages.Clear();
-            Send_Message("U/" + username);
+            Send_Message("U/" + t_username);
         }
         public void Update_file(string filename, byte[] filedata)
         {
@@ -89,7 +92,7 @@ namespace Networking
             TcpClient Client_Data = new TcpClient(IP, Port);
             Client_Data.ReceiveBufferSize = Int32.MaxValue / 10;
             Client_Data.SendBufferSize = Int32.MaxValue / 10;
-            string start = "S/" + filename + "/D/";
+            string start = "S/" + filename + "/D/" + user_type;
             List<byte> message = ASCIIEncoding.ASCII.GetBytes(start).ToList();
             message.AddRange(filedata);
             Client_Data.GetStream().Write(message.ToArray(), 0, message.ToArray().Length);

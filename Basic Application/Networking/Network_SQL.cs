@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Net;
 using System.Net.Sockets;
@@ -143,6 +146,7 @@ namespace Networking
                     {
                         self.ID = Int32.Parse(user_data[i * 5]);
                         self.Name = username;
+                        return true;
                     }
                 }
 
@@ -150,7 +154,7 @@ namespace Networking
             }
           
            
-            return true;
+            return false;
         }
         public void Update_Project_IP(string project_name)
         {
@@ -426,6 +430,15 @@ namespace Networking
 
                 Console.WriteLine("ERROR -- CREATE_USER FAILED - LOGIN FAILED");
                 return false;
+            }
+            else
+            {
+                List<string> user_data = System.IO.File.ReadAllLines(@".\Users.txt").ToList();
+                user_data.Add(new Random().Next().ToString());
+                user_data.Add(username);
+                user_data.Add(password);
+                user_data.Add("localhost");
+                user_data.Add("");
             }
             Console.WriteLine("ERROR -- NO CONNECTION TO SQL SERVER --- Please use offline mode");
             return false;

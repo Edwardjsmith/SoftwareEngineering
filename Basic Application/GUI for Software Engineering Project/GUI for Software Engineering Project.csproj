@@ -60,6 +60,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Interfaces\IPreviewWindow.cs" />
+    <Compile Include="Interfaces\IPreviewController.cs" />
     <Compile Include="Controller\PreviewController.cs" />
     <Compile Include="Controller\ProjectSelectionController.cs" />
     <Compile Include="Interfaces\IAssetData.cs" />

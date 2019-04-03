@@ -1,7 +1,9 @@
 ﻿using GUI_for_Software_Engineering_Project.Interfaces;
+using GUI_for_Software_Engineering_Project.Model;
 using GUI_for_Software_Engineering_Project.Windows;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,16 +11,47 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Controller
 {
-    class PreviewController
+    class PreviewController : IPreviewController
     {
 
-        public PreviewController(Preview_Window preview_Window, IAssetData data)
+        IPreviewWindow previewWindow;
+        string name;
+        public PreviewController(IPreviewWindow preview_Window, IAssetData data, IProjectData project)
         {
+            this.previewWindow = preview_Window;
+            
+            if (Networking.Networking.instance.Get_File(project.Name, data.TxtContent, @"..\..\..\Temp"))
+            {
+
+                string[] tmp = data.TxtContent.Split('/');
+                name = tmp[tmp.Length - 1];
+
+
+                BitmapImage temp = new BitmapImage(); //= new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, @"..\..\..\Temp" + name), UriKind.Absolute));
+                Stream stream = File.OpenRead(@"..\..\..\Temp" + name);
+                temp.BeginInit();
+                temp.CacheOption = BitmapCacheOption.OnLoad;
+                temp.StreamSource = stream;
+                temp.EndInit();
+                stream.Close();
+                stream.Dispose();
+
+
+                ((Preview_Window)previewWindow).imgPreview.Source = temp; 
+                ((Preview_Window)previewWindow).lblPreview.Content = data.TxtContent;
+                
+            }
+
 
         }
 
-        void SetAsset(BitmapImage asset)
+
+        public void DeleteTempFile()
         {
+            string path = @"..\..\..\Temp" + name; //((BitmapImage)((Preview_Window)previewWindow).imgPreview.Source).UriSource.LocalPath;
+            ((Preview_Window)previewWindow).imgPreview.Source = null;
+
+            File.Delete(path);
 
         }
 

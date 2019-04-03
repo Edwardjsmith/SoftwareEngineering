@@ -12,10 +12,8 @@ namespace GUI_for_Software_Engineering_Project
 
         IProject_Window view { get; }
 
-        List<IAssetData> AssetSource { get; }
-
-        void UploadFile(string project_name);
-
+        void UploadFile();
+        void LoadProject(IProjectData projectData);
         void DownloadFile(IAssetData data);
         void PreviewAsset(IAssetData data);
 

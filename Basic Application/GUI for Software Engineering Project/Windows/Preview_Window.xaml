@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_for_Software_Engineering_Project.Windows"
         mc:Ignorable="d"
-        Title="Preview_Window" Height="450" Width="800">
+        Title="Preview_Window" Height="450" Width="800" Closed="PreviewClosed">
     <Grid>
         <Label x:Name="lblPreview" Content="No Title" HorizontalAlignment="Left" Height="36" Margin="39,10,0,0" VerticalAlignment="Top" Width="689"/>
-        <Image x:Name="imgPreview" HorizontalAlignment="Left" Height="363" Margin="10,46,0,0" VerticalAlignment="Top" Width="772"/>
+        <Image x:Name="imgPreview" Source="{Binding Path=ImgPreview, Mode=OneWay}" HorizontalAlignment="Left" Height="363" Margin="10,46,0,0" VerticalAlignment="Top" Width="772"/>
 
     </Grid>
 </Window>

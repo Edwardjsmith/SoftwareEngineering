@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Model
 {
-    class ResourceManager : IResourceManager
+    public class ResourceManager : IResourceManager
     {
         BitmapImage lockedImage;
         BitmapImage pendingImage;
@@ -46,23 +46,17 @@ namespace GUI_for_Software_Engineering_Project.Model
         private ResourceManager()
         {
 
-            // Taken from https://www.flaticon.com/free-icon/lock_483408#term=lock&page=1&position=4
-            lockedImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../lock.png"), UriKind.Absolute));
+            lockedImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/lock.png"), UriKind.Absolute));
 
-            // Taken from https://www.flaticon.com/free-icon/pending_1701869#term=pending&page=1&position=1
-            pendingImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../email.png"), UriKind.Absolute));
+            pendingImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/pending.png"), UriKind.Absolute));
 
-            // Taken from https://www.flaticon.com/free-icon/checked_128384#term=accept&page=1&position=1
-            acceptedImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../checked.png"), UriKind.Absolute));
+            acceptedImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/checked.png"), UriKind.Absolute));
 
-            // Taken from https://www.flaticon.com/free-icon/picture_149092#term=image&page=1&position=2
-            imageImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../image.png"), UriKind.Absolute));
+            imageImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/image.png"), UriKind.Absolute));
 
-            // Taken from https://www.flaticon.com/free-icon/document_1086563#term=text&page=1&position=5
-            txtImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../text.png"), UriKind.Absolute));
+            txtImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/text.png"), UriKind.Absolute));
 
-            // Taken from https://www.flaticon.com/free-icon/unknown_1179247#term=unknown&page=1&position=20
-            unknownImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../unknown.png"), UriKind.Absolute));
+            unknownImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/unknown.png"), UriKind.Absolute));
 
         }
 

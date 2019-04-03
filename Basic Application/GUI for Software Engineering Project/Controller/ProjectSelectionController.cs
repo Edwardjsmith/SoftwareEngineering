@@ -74,7 +74,6 @@ namespace GUI_for_Software_Engineering_Project.Controller
                 SetProjectList();
                 Networking.Networking.instance.Request_Assess(selected.Name);
                 Notification.Notification.instance.showNotification("Still waiting on Acceptence");
-                
 
             }
             if (selected.State == ProjectState.applied)
@@ -85,7 +84,7 @@ namespace GUI_for_Software_Engineering_Project.Controller
             }
             if (selected.State == ProjectState.accepted) 
             {
-                new Project_Window(selected.Name).Show();
+                new Project_Window(selected).Show();
             }
         }
 

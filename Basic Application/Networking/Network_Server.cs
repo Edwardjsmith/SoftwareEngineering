@@ -23,12 +23,15 @@ namespace Networking
         static bool Running = false;
         static int Server_Port;
         static string File_Location;
-        public string my_name = "";
+        static string my_name = "";
         static List<string> White_list = new List<string>();
         static List<string> Request_list = new List<string>();
         ThreadStart Lister_Ref;
         Thread Lister_Thread;
-
+        public string My_name()
+        {
+            return my_name;
+        } 
         public List<Client_Message> Get_messages()
         {
             return Message_Data;
@@ -44,7 +47,7 @@ namespace Networking
                 White_list = System.IO.File.ReadAllLines(file_location + @"..\..\Server_private/White_list_" + name + ".txt").ToList();
                 Request_list = System.IO.File.ReadAllLines(file_location + @"..\..\Server_private/Request_list_" + name + ".txt").ToList();
             }
-            catch (FileNotFoundException exception)
+            catch 
             {
                 System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/White_list_" + my_name + ".txt", White_list.ToArray());
                 System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/Request_list_" + my_name + ".txt", Request_list.ToArray());
@@ -120,9 +123,10 @@ namespace Networking
                         {
                             if (dataReceived[1] == '/')
                             {
+
                                 // request file data
                                 Console.WriteLine("File requested");
-                                message = Get_File_raw(dataReceived.Remove(0, 2));
+                                message = Get_File_raw(dataReceived[2], dataReceived.Remove(0, 3));
                                 Console.WriteLine("File sending");
                                 Client_Data.GetStream().Write(message, 0, message.Length);
                                 Console.WriteLine("File sent");
@@ -130,7 +134,7 @@ namespace Networking
                             if (dataReceived[1] == ':')
                             {
                                // request file names
-                                message = Encoding.UTF8.GetBytes(Get_File_name());
+                                message = Encoding.UTF8.GetBytes(Get_File_name(dataReceived[2]));
                                 Client_Data.GetStream().Write(message, 0, message.Length);
                             }
                         }
@@ -140,7 +144,7 @@ namespace Networking
                             {
                                 // requset acsess to project 
                                 Request_list.Add(dataReceived.Remove(0, 2));
-                                Console.WriteLine("user joining : " + dataReceived.Remove(0, 2));
+                                Console.WriteLine("user Request : " + dataReceived.Remove(0, 2));
                             }
                           
                         }
@@ -173,8 +177,9 @@ namespace Networking
                             if (dataReceived[1] == '/')
                             {
                                 bool on_white = false;
+                                
                                 // true false on white list 
-                               for(int i = 0; i < White_list.Count(); i++)
+                               for (int i = 0; i < White_list.Count(); i++)
                                 {
                                     if(White_list[i] == dataReceived.Remove(0, 2))
                                     {
@@ -197,25 +202,27 @@ namespace Networking
                         }
                         if (dataReceived[0] == 'S' && dataReceived[1] == '/')
                         {
+                            char user_type;
                             int name_end = 0;
                             for (int i = 0; i < dataReceived.Count(); i++)
                             {
                                 if (dataReceived[i] == '/' && dataReceived[i + 1] == 'D' && dataReceived[i + 2] == '/')
                                 {
+                                    user_type = dataReceived[i + 3];
                                     name_end = i;
                                 }
                             }
                             Console.WriteLine("file inbound");
 
-                            string filename = dataReceived.Remove(name_end, dataReceived.Count() - name_end).Remove(0, 2);
+                            string filename = dataReceived.Remove(name_end, dataReceived.Count() - name_end).Remove(0, 3);
                             List<byte> data = new List<byte>();
-                            for(int i = 0; i < message_in.Count() - (name_end+3); i++)
+                            for(int i = 0; i < message_in.Count() - (name_end+4); i++)
                             {
-                                data.Add(message_in[i + name_end+3]);
+                                data.Add(message_in[i + name_end+4]);
                             }
                             Console.WriteLine("data uploaded");
 
-                           File.WriteAllBytes(File_Location + filename, data.ToArray());
+                           File.WriteAllBytes(File_Location + "/" + my_name + filename, data.ToArray());
                             Console.WriteLine("File saved : " + filename);
                         }
                         
@@ -226,19 +233,19 @@ namespace Networking
                 
             }
         }
-        private static byte[] Get_File_raw(string file_name)
+        private static byte[] Get_File_raw(char user_type, string file_name)
         {
-            byte[] data = File.ReadAllBytes(File_Location + file_name);
+            byte[] data = File.ReadAllBytes(File_Location +"/" + my_name +"/"+ user_type  + file_name);
             return data;
         }
-        private static string Get_File_name()
+        private static string Get_File_name(char user_type)
         {
-            string[] fileArray = Directory.GetFiles(File_Location);
+            string[] fileArray = Directory.GetFiles(File_Location + "/" + my_name + "/" + user_type);
          
            
             for (int i = 0; i < fileArray.Count(); i++)
             {
-                fileArray[i] = fileArray[i].Remove(0, File_Location.Count());
+                fileArray[i] = fileArray[i].Remove(0, (File_Location + "/" + my_name + "/" + user_type ).Count());
             }
             string files = string.Join("|",fileArray);
             return files;

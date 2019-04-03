@@ -23,61 +23,25 @@ namespace GUI_for_Software_Engineering_Project.GUI
     public partial class Project_Window : Window, IProject_Window
     {
         IProjectController controller;
+        
+        public List<IAssetData> assetData = new List<IAssetData>();
 
-        private static List<string> _projectNames = new List<string>();
-        public List<AssetData> assetData = new List<AssetData>();
-        string project_name = "";
-        public List<AssetData> AssetSource
+        IProjectData project;
+
+        public List<IAssetData> AssetSource
         {
             get => assetData;
         }
 
-        public static List<string> FileNames
-        {
-            get
-            {
-                return _projectNames;
-            }
-            set
-            {
-                _projectNames = value;
-            }
-        }
-
-
-
-        public Project_Window(string name)
+        public Project_Window(IProjectData project)
         {
             InitializeComponent();
-            project_name = name;
-            controller = new ProjectController(this);
-            FillUIWithDataForTesting(name);
+            this.project = project;
+            controller = new ProjectController(this, project);
             lbAssets.ItemsSource = AssetSource;
+            
         }
 
-        private void FillUIWithDataForTesting(string name)
-        {
-            FileNames = Networking.Networking.instance.Get_Files(name).ToList();
-            for (int i = 0; i < FileNames.Count(); i++)
-            {
-                string thumbnail;
-                switch (FileNames[i].Split('.')[1])
-                {
-                    case ("png"):
-                        thumbnail = "picture.png";
-                        break;
-                    case ("txt"):
-                        thumbnail = "text.png";
-                        break;
-                    default:
-                        thumbnail = "unknown.png";
-                        break;
-
-                }
-
-                assetData.Add(new AssetData(@"..\..\" + thumbnail,FileNames[i],name));
-            }
-        }
 
         private void btnPreview_Click(object sender, RoutedEventArgs e)
         {
@@ -86,7 +50,7 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
         private void BtnUpload_Click(object sender, RoutedEventArgs e)
         {
-            controller.UploadFile(project_name);
+            controller.UploadFile();
         }
 
         private void BtnDownload_Click(object sender, RoutedEventArgs e)

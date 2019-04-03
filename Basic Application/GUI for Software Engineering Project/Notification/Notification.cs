@@ -50,7 +50,9 @@ namespace GUI_for_Software_Engineering_Project.Notification
         public void showNotification(string title)
         {
             notifyIcon.BalloonTipTitle = title;
+
             notifyIcon.BalloonTipText = " ";
+
             notifyIcon.ShowBalloonTip(notificationTime);
         }
 

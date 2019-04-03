@@ -69,7 +69,7 @@ namespace Networking
             if (Has_Assess(project_name))
             {
                 Project _temp = _SQL.Get_Project(project_name);
-                _Client.Start(_temp.IP, _temp.Port);
+                _Client.Start(_temp.IP, _temp.Port,Get_username());
                 _Client.Request_file(file_name);
                 List<string> temp_return = _Client.Get_Messages();
                 while (temp_return.Count() == 0)
@@ -88,7 +88,7 @@ namespace Networking
             if (Has_Assess(project_name))
             {
                 Project _temp = _SQL.Get_Project(project_name);
-                _Client.Start(_temp.IP, _temp.Port);
+                _Client.Start(_temp.IP, _temp.Port, Get_username());
                 byte[] data = File.ReadAllBytes(save_location + file_name);
                 _Client.Update_file(file_name, data);
                 _Client.End();
@@ -102,7 +102,7 @@ namespace Networking
             if (Has_Assess(project_name))
             {
                 Project temp = _SQL.Get_Project(project_name);
-                _Client.Start(temp.IP, temp.Port);
+                _Client.Start(temp.IP, temp.Port, Get_username());
                 _Client.Request_filenames();
                 List<string> temp_return = _Client.Get_Messages();
                 while (temp_return.Count() == 0)
@@ -122,7 +122,7 @@ namespace Networking
             if (Has_Assess(project_name))
             {
                 Project _temp = _SQL.Get_Project(project_name);
-                _Client.Start(_temp.IP, _temp.Port);
+                _Client.Start(_temp.IP, _temp.Port, Get_username());
                 _Client.Request_file(file_name);
                 List<string> temp_return = _Client.Get_Messages();
                 while (temp_return.Count() <= 1)
@@ -150,8 +150,6 @@ namespace Networking
             // add project to sql data base
             _SQL.Create_Project(name, password, port);
             // start server
-
-           
             return true;
         }
 
@@ -171,7 +169,7 @@ namespace Networking
         public bool Allow_Assess(string project_name, string user_name)
         {
             Project temp = _SQL.Get_Project(project_name);
-            _Client.Start(temp.IP, temp.Port);
+            _Client.Start(temp.IP, temp.Port, Get_username());
             _Client.Alow_Acsess(user_name);
 
             List<string> temp_return = _Client.Get_Messages();
@@ -199,15 +197,13 @@ namespace Networking
 
             try
             {
-                _Client.Start(temp.IP, temp.Port);
+                _Client.Start(temp.IP, temp.Port, Get_username());
                 _Client.Request_Requests();
                 while (temp_return.Count() == 0)
                 {
                     temp_return = _Client.Get_Messages();
                 }
                 _Client.End();
-
-               
             }
             catch { }
          
@@ -215,7 +211,6 @@ namespace Networking
             {
                 temp_return.Add("NONE");
             }
-
             return temp_return[0].Split('|');
         }
         public bool Has_Assess(string project_name)
@@ -228,10 +223,9 @@ namespace Networking
                 {
                     return true;
                 }
-
                 else
                 {
-                    _Client.Start(temp.IP, temp.Port);
+                    _Client.Start(temp.IP, temp.Port, Get_username());
                     _Client.Query_Acsess(name);
                     List<string> temp_return = _Client.Get_Messages();
                     while (temp_return.Count() == 0)
@@ -253,7 +247,7 @@ namespace Networking
         {
             string name = _SQL.Get_User().Name;
             Project temp = _SQL.Get_Project(project_name);
-            _Client.Start(temp.IP, temp.Port);
+            _Client.Start(temp.IP, temp.Port, Get_username());
             _Client.Request_Acsess(name);
 
             List<string> temp_return = _Client.Get_Messages();
@@ -265,7 +259,6 @@ namespace Networking
             _Client.End();
 
             return true;
-            
         }
 
         public bool Delete_Project(string project_name)

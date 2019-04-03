@@ -5,6 +5,7 @@ using GUI_for_Software_Engineering_Project.Interfaces;
 using GUI_for_Software_Engineering_Project.Windows;
 using System.Windows.Forms;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
+using GUI_for_Software_Engineering_Project.Model;
 
 namespace GUI_for_Software_Engineering_Project
 {
@@ -12,21 +13,48 @@ namespace GUI_for_Software_Engineering_Project
     {
         public IProject_Window view { get; }
 
-        public List<IAssetData> AssetSource => throw new NotImplementedException();
+        IProjectData projectData;
 
-        public ProjectController(IProject_Window view)
+        public ProjectController(IProject_Window view, IProjectData project)
         {
             this.view = view;
+            projectData = project;
+            LoadProject(project);
         }
+
+        public void LoadProject(IProjectData projectData)
+        {
+            List<string> FileNames = Networking.Networking.instance.Get_Files(projectData.Name).ToList();
+            for (int i = 0; i < FileNames.Count(); i++)
+            {
+                string thumbnail;
+                switch (FileNames[i].Split('.')[1])
+                {
+                    case ("png"):
+                        thumbnail = "picture.png";
+                        break;
+                    case ("txt"):
+                        thumbnail = "text.png";
+                        break;
+                    default:
+                        thumbnail = "unknown.png";
+                        break;
+
+                }
+                view.AssetSource.Add(new AssetData(@"..\..\" + thumbnail, FileNames[i], projectData.Name));
+            }
+        }
+
 
         public void PreviewAsset(IAssetData data)
 
         {
-            new Preview_Window(data).Show();
+            Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, @"..\..\..\Temp");
+            new Preview_Window(data, projectData).Show();
 
         }
 
-        public void UploadFile(string project_name)
+        public void UploadFile()
         {
 
             OpenFileDialog dialog = new OpenFileDialog();
@@ -38,8 +66,10 @@ namespace GUI_for_Software_Engineering_Project
             for (int i = 0; i < tmpsplit.Length - 1; i++)
                 path += tmpsplit[i] + "\\";
 
-            Notification.Notification.instance.showNotification(project_name + " successfully uploaded", " ");
-            Networking.Networking.instance.Send_File(project_name, "\\" + tmpsplit[tmpsplit.Count()-1], path);
+
+            Notification.Notification.instance.showNotification(projectData.Name + " successfully uploaded", " ");
+            Networking.Networking.instance.Send_File(projectData.Name, "\\" + tmpsplit[tmpsplit.Count()-1], path);
+
 
            
         }
@@ -59,5 +89,6 @@ namespace GUI_for_Software_Engineering_Project
                 Notification.Notification.instance.showNotification(data.ProjectName + " failed to download");
             } 
         }
+
     }
 }

@@ -41,8 +41,8 @@ namespace GUI_for_Software_Engineering_Project
 
         private void txtbxPassword_Enter(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
-                Console.WriteLine("Logging in!");
+            if (e.Key == Key.Enter)
+                controller.LoginPressed(Username, Password);
         }
     }
 }
