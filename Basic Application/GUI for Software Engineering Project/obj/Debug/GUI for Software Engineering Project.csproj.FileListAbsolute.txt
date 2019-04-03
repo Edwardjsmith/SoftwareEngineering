@@ -32,6 +32,7 @@ C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI 
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 C:\Users\EdwardSmith\Documents\GitHub\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+<<<<<<< HEAD
 N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
 N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
 N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
@@ -65,3 +66,5 @@ N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engi
 N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
 N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 N:\GitKrack\software\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+=======
+>>>>>>> OllyBranch
