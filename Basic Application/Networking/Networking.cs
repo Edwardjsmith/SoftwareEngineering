@@ -196,15 +196,9 @@ namespace Networking
             string name = _SQL.Get_User().Name;
             List<string> temp_return = new List<string>();
             Project temp = _SQL.Get_Project(project_name);
-            //if (_SQL.Get_User().ID == temp.Master_user_id)
-<<<<<<< HEAD
-            // {
+
             try
             {
-=======
-           // {
-
->>>>>>> OllyBranch
                 _Client.Start(temp.IP, temp.Port);
                 _Client.Request_Requests();
                 while (temp_return.Count() == 0)
@@ -212,18 +206,16 @@ namespace Networking
                     temp_return = _Client.Get_Messages();
                 }
                 _Client.End();
-<<<<<<< HEAD
+
                
             }
             catch { }
-          //  }
+         
           if(temp_return.Count() == 0)
             {
                 temp_return.Add("NONE");
             }
-=======
-          //  }
->>>>>>> OllyBranch
+
             return temp_return[0].Split('|');
         }
         public bool Has_Assess(string project_name)
@@ -236,13 +228,12 @@ namespace Networking
                 {
                     return true;
                 }
-<<<<<<< HEAD
+
                 else
                 {
                     _Client.Start(temp.IP, temp.Port);
                     _Client.Query_Acsess(name);
                     List<string> temp_return = _Client.Get_Messages();
-
                     while (temp_return.Count() == 0)
                     {
                         temp_return = _Client.Get_Messages();
@@ -251,20 +242,8 @@ namespace Networking
                     if (temp_return[0] == "TRUE")
                     {
                         return true;
+
                     }
-=======
-                _Client.Start(temp.IP, temp.Port);
-                _Client.Query_Acsess(name);
-                List<string> temp_return = _Client.Get_Messages();
-                while (temp_return.Count() == 0)
-                {
-                    temp_return = _Client.Get_Messages();
-                }
-                _Client.End();
-                if (temp_return[0] == "TRUE")
-                {
-                    return true;
->>>>>>> OllyBranch
                 }
             }
             catch { }
@@ -276,7 +255,7 @@ namespace Networking
             Project temp = _SQL.Get_Project(project_name);
             _Client.Start(temp.IP, temp.Port);
             _Client.Request_Acsess(name);
-<<<<<<< HEAD
+
             List<string> temp_return = _Client.Get_Messages();
 
             while (temp_return.Count() == 0)
@@ -284,8 +263,7 @@ namespace Networking
                 temp_return = _Client.Get_Messages();
             }
             _Client.End();
-=======
->>>>>>> OllyBranch
+
             return true;
             
         }

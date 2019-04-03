@@ -48,37 +48,44 @@ namespace Networking
         // S/[filename]/D/[filedata]    - sending a file to server for updating
         public void Request_filenames()
         {
+            raw_bytes.Clear();
             Messages.Clear();
             Send_Message("R:");
         }
         public void Request_file(string filename)
         {
+            raw_bytes.Clear();
             Messages.Clear();
             Send_Message("R/"+filename);
         }
         public void Request_Acsess(string username)
         {
+            raw_bytes.Clear();
             Messages.Clear();
             Send_Message("A/" + username);
         }
         public void Request_Requests()
         {
+            raw_bytes.Clear();
             Messages.Clear();
             Send_Message("Z/");
         }
         public void Alow_Acsess(string username)
         {
+            raw_bytes.Clear();
             Messages.Clear();
             Send_Message("F/" + username);
         }
         public void Query_Acsess(string username)
         {
+            raw_bytes.Clear();
             Messages.Clear();
             Send_Message("U/" + username);
         }
         public void Update_file(string filename, byte[] filedata)
         {
-            
+            raw_bytes.Clear();
+            Messages.Clear();
             TcpClient Client_Data = new TcpClient(IP, Port);
             Client_Data.ReceiveBufferSize = Int32.MaxValue / 10;
             Client_Data.SendBufferSize = Int32.MaxValue / 10;
