@@ -65,7 +65,7 @@ namespace GUI_for_Software_Engineering_Project.Controller
             {
                 Networking.Networking.instance.Request_Assess(selected.Name);
                 selected.State = ProjectState.applied;
-                Notification.Notification.instance.showNotification("Assess Requested", " ", 1000000);
+                Notification.Notification.instance.showNotification("Assess Requested");
 
                 SetProjectList();
             }
@@ -73,14 +73,14 @@ namespace GUI_for_Software_Engineering_Project.Controller
             {
                 SetProjectList();
                 Networking.Networking.instance.Request_Assess(selected.Name);
-                Notification.Notification.instance.showNotification("Still waiting on Acceptence", " ", 1000000);
+                Notification.Notification.instance.showNotification("Still waiting on Acceptence");
                 
 
             }
             if (selected.State == ProjectState.applied)
             {
                 Networking.Networking.instance.Request_Assess(selected.Name);
-                Notification.Notification.instance.showNotification("Still waiting on Acceptence", " ", 1000000);
+                Notification.Notification.instance.showNotification("Still waiting on Acceptence");
 
             }
             if (selected.State == ProjectState.accepted) 
