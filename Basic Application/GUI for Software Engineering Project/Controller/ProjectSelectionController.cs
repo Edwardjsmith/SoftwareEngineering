@@ -20,6 +20,7 @@ namespace GUI_for_Software_Engineering_Project.Controller
 
         public void SetProjectList()
         {
+            ProjectData.Clear();
             foreach (string name in Networking.Networking.instance.Get_Projects())
             {
                 if (Networking.Networking.instance.Has_Assess(name))
@@ -48,6 +49,7 @@ namespace GUI_for_Software_Engineering_Project.Controller
                 }
             }
             window.lbProjects.ItemsSource = ProjectData;
+            
         }
 
         public void OnCreateProjectClicked()
@@ -64,11 +66,22 @@ namespace GUI_for_Software_Engineering_Project.Controller
                 Networking.Networking.instance.Request_Assess(selected.Name);
                 selected.State = ProjectState.applied;
                 Notification.Notification.instance.showNotification("Assess Requested", " ", 1000000);
+
+                SetProjectList();
+            }
+            if (selected.State == ProjectState.applied)
+            {
+                SetProjectList();
+                Networking.Networking.instance.Request_Assess(selected.Name);
+                Notification.Notification.instance.showNotification("Still waiting on Acceptence", " ", 1000000);
+                
+
             }
             if (selected.State == ProjectState.applied)
             {
                 Networking.Networking.instance.Request_Assess(selected.Name);
                 Notification.Notification.instance.showNotification("Still waiting on Acceptence", " ", 1000000);
+
             }
             if (selected.State == ProjectState.accepted) 
             {

@@ -47,10 +47,10 @@ namespace GUI_for_Software_Engineering_Project
         public void DownloadFile(IAssetData data)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
-          
+
             dialog.ShowDialog();
-        
-            if(Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
+
+            if (Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
             {
                 Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent);
             }

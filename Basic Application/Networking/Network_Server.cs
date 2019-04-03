@@ -6,6 +6,9 @@ using System.Threading;
 using System.Net.Sockets;
 using System.IO;
 
+using System.Net;
+
+
 namespace Networking
 {
     class Network_Server
@@ -85,7 +88,7 @@ namespace Networking
         }
         public static void Listener()
         {
-            TcpListener listener = new TcpListener(Server_Port);
+            TcpListener listener = new TcpListener(IPAddress.Any,Server_Port);
             listener.Start();
             while (Running)
             {
@@ -117,9 +120,12 @@ namespace Networking
                         {
                             if (dataReceived[1] == '/')
                             {
-                                // request file data 
+                                // request file data
+                                Console.WriteLine("File requested");
                                 message = Get_File_raw(dataReceived.Remove(0, 2));
+                                Console.WriteLine("File sending");
                                 Client_Data.GetStream().Write(message, 0, message.Length);
+                                Console.WriteLine("File sent");
                             }
                             if (dataReceived[1] == ':')
                             {
@@ -134,7 +140,7 @@ namespace Networking
                             {
                                 // requset acsess to project 
                                 Request_list.Add(dataReceived.Remove(0, 2));
-                               
+                                Console.WriteLine("user joining : " + dataReceived.Remove(0, 2));
                             }
                           
                         }
@@ -146,6 +152,8 @@ namespace Networking
                                 string name = dataReceived.Remove(0, 2);
                                 White_list.Add(name);
                                 Request_list.Remove(name);
+                                message = Encoding.UTF8.GetBytes("OK");
+                                Client_Data.GetStream().Write(message, 0, message.Length);
                             }
 
                         }
@@ -210,8 +218,9 @@ namespace Networking
                            File.WriteAllBytes(File_Location + filename, data.ToArray());
                             Console.WriteLine("File saved : " + filename);
                         }
+                        
                     }
-
+                    
                     Client_Data.Close();
                 }
                 

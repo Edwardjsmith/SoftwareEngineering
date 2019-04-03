@@ -37,7 +37,9 @@ namespace Networking
             // define the sql server address and password 
             SQL = new MySqlConnection("Server= sql2.freemysqlhosting.net;" +
                                        "Database=sql2276785;" + "User=sql2276785;" +
+
                                        "Password=pC7*yS3*;");
+
             try
             {
                 // attempt to login to the server 
