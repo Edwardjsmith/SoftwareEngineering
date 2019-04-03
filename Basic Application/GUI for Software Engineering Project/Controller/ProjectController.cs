@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
 using GUI_for_Software_Engineering_Project.Interfaces;
 using GUI_for_Software_Engineering_Project.Windows;
-using Microsoft.Win32;
 using System.Windows.Forms;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 
@@ -42,6 +37,8 @@ namespace GUI_for_Software_Engineering_Project
             string path = "";
             for (int i = 0; i < tmpsplit.Length - 1; i++)
                 path += tmpsplit[i] + "\\";
+
+            Notification.Notification.instance.showNotification(project_name + " successfully uploaded", " ");
             Networking.Networking.instance.Send_File(project_name, "\\" + tmpsplit[tmpsplit.Count()-1], path);
 
            
@@ -55,29 +52,12 @@ namespace GUI_for_Software_Engineering_Project
         
             if(Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
             {
-                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent, 1000000);
+                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent);
             }
             else
             {
-                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", " ", 1000000);
+                Notification.Notification.instance.showNotification(data.ProjectName + " failed to download");
             } 
-
-            Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
-                /*BitmapEncoder encoder = new PngBitmapEncoder();
-
-                encoder.Frames.Add(BitmapFrame.Create(data.ImgSource));
-
-                bool fileextension = (dialog.FileName.Split(".png".ToCharArray())).Length > 1;
-
-                if (File.Exists( dialog.FileName + ((fileextension)? ".png" : "")))
-                    File.Delete(dialog.FileName + ((fileextension) ? ".png" : ""));
-
-
-                using( FileStream fileStream = new FileStream(dialog.FileName + ((fileextension) ? ".png" : ""), FileMode.CreateNew))
-                {
-                    encoder.Save(fileStream);
-                }*/
-            
         }
     }
 }

@@ -8,10 +8,20 @@ namespace GUI_for_Software_Engineering_Project.Notification
         private static Notification Instance = null;
         private static readonly object padlock = new object();
 
+        private NotifyIcon notifyIcon;
+        private int notificationTime = 10000;
 
         private Notification()
         {
-
+            notifyIcon = new NotifyIcon()
+            {
+                Visible = true,
+                Icon = new Icon("popup.ico")
+            };
+        }
+        ~Notification()
+        {
+            notifyIcon.Dispose();
         }
 
         public static Notification instance
@@ -30,18 +40,19 @@ namespace GUI_for_Software_Engineering_Project.Notification
             }
         }
 
-        public void showNotification(string title, string text, int time)
+        public void showNotification(string title, string text)
         {
-            NotifyIcon notifyIcon = new NotifyIcon()
-            {
-                Visible = true,
-                Icon = new Icon("popup.ico"),
-                BalloonTipTitle = title,
-                BalloonTipText = text
-            };
-
-            notifyIcon.ShowBalloonTip(time);
-            notifyIcon.Dispose();
+            notifyIcon.BalloonTipTitle = title;
+            notifyIcon.BalloonTipText = text;
+            notifyIcon.ShowBalloonTip(notificationTime);
         }
+
+        public void showNotification(string title)
+        {
+            notifyIcon.BalloonTipTitle = title;
+            notifyIcon.BalloonTipText = null;
+            notifyIcon.ShowBalloonTip(notificationTime);
+        }
+
     }
 }

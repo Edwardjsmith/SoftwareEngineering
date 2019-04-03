@@ -45,20 +45,19 @@ namespace GUI_for_Software_Engineering_Project
                 IProjectSelection window = new ProjectSelection();
                 window.Show();
                 window.Close();
-                Notification.Notification.instance.showNotification("User " + Username + "has been registered", " ", 1000000);
+                Notification.Notification.instance.showNotification("User " + Username + "has been registered");
             }
             else
             {
-                Notification.Notification.instance.showNotification("User could not be registered", " ", 1000000);
+                Notification.Notification.instance.showNotification("User could not be registered");
                 Console.WriteLine("User could not be created");
             }
         }
 
         public void CloseWindow()
         {
-
             Console.WriteLine("Not Registered");
-            Notification.Notification.instance.showNotification("User not created", " ", 1000000);
+            Notification.Notification.instance.showNotification("User not created");
             window.Close();
         }
     }
