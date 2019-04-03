@@ -25,9 +25,9 @@ namespace GUI_for_Software_Engineering_Project.GUI
         IProjectController controller;
 
         private static List<string> _projectNames = new List<string>();
-        public List<AssetData> assetData = new List<AssetData>();
+        public List<IAssetData> assetData = new List<IAssetData>();
         string project_name = "";
-        public List<AssetData> AssetSource
+        public List<IAssetData> AssetSource
         {
             get => assetData;
         }
@@ -46,38 +46,15 @@ namespace GUI_for_Software_Engineering_Project.GUI
 
 
 
-        public Project_Window(string name)
+        public Project_Window(IProjectData projectData)
         {
             InitializeComponent();
-            project_name = name;
-            controller = new ProjectController(this);
-            FillUIWithDataForTesting(name);
-            lbAssets.ItemsSource = AssetSource;
+            
+            controller = new ProjectController(this, projectData);
+            
         }
 
-        private void FillUIWithDataForTesting(string name)
-        {
-            FileNames = Networking.Networking.instance.Get_Files(name).ToList();
-            for (int i = 0; i < FileNames.Count(); i++)
-            {
-                string thumbnail;
-                switch (FileNames[i].Split('.')[1])
-                {
-                    case ("png"):
-                        thumbnail = "picture.png";
-                        break;
-                    case ("txt"):
-                        thumbnail = "text.png";
-                        break;
-                    default:
-                        thumbnail = "unknown.png";
-                        break;
-
-                }
-
-                assetData.Add(new AssetData(@"..\..\" + thumbnail,FileNames[i],name));
-            }
-        }
+        
 
         private void btnPreview_Click(object sender, RoutedEventArgs e)
         {

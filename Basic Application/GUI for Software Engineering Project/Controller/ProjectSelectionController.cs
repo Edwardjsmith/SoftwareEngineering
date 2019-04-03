@@ -64,21 +64,8 @@ namespace GUI_for_Software_Engineering_Project.Controller
 
         public void OnProjectOpenApplied(IProjectData selected)
         {
-            if (selected.State == ProjectState.locked)
-            {
-                Networking.Networking.instance.Request_Assess(selected.Name);
-                selected.State = ProjectState.applied;
-                Notification.Notification.instance.showNotification("Assess Requested", " ", 1000000);
-            }
-            if (selected.State == ProjectState.applied)
-            {
-                Networking.Networking.instance.Request_Assess(selected.Name);
-                Notification.Notification.instance.showNotification("Still waiting on Acceptence", " ", 1000000);
-            }
-            if (selected.State == ProjectState.accepted) 
-            {
-                new Project_Window(selected.Name).Show();
-            }
+            
+            new Project_Window(selected).Show();
         }
 
   

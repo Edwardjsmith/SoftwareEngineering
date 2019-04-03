@@ -8,15 +8,12 @@ namespace GUI_for_Software_Engineering_Project.Windows
     /// </summary>
     public partial class Preview_Window : Window
     {
-        PreviewController controller;
+        IPreviewController controller;
 
-        public Preview_Window(IAssetData asset)
+        public Preview_Window(IAssetData asset, IProjectData project)
         {
             InitializeComponent();
-            controller = new PreviewController(this, asset);
-            imgPreview.Source = asset.ImgSource;
-
-            lblPreview.Content = asset.TxtContent;
+            controller = new PreviewController(this, asset, project);
 
         }
     }

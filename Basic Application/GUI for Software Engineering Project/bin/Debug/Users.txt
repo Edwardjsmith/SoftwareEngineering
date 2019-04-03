@@ -1,7 +1,13 @@
 1
+<<<<<<< Updated upstream
 test
 pass
 86.30.144.216
+=======
+Test
+Pass
+82.19.41.230
+>>>>>>> Stashed changes
 
 12
 tester

@@ -35,6 +35,7 @@ namespace GUI_for_Software_Engineering_Project.Model
                 return null;
             }
         }
+        
 
         public ProjectData(string name, ProjectState state)
         {

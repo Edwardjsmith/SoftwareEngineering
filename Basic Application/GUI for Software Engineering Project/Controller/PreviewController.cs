@@ -9,15 +9,19 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Controller
 {
-    class PreviewController
+    class PreviewController : IPreviewController
     {
-
-        public PreviewController(Preview_Window preview_Window, IAssetData data)
+        readonly Preview_Window window;
+        public PreviewController(Preview_Window preview_Window, IAssetData asset, IProjectData project)
         {
 
+            //window.imgPreview.Source = asset.ImgSource;
+            window.lblPreview.Content = asset.TxtContent;
+
+            SetAsset(asset);
         }
 
-        void SetAsset(BitmapImage asset)
+        void SetAsset(IAssetData asset)
         {
 
         }

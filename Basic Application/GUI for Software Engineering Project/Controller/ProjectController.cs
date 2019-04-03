@@ -10,24 +10,26 @@ using GUI_for_Software_Engineering_Project.Windows;
 using Microsoft.Win32;
 using System.Windows.Forms;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
+using GUI_for_Software_Engineering_Project.Model;
 
 namespace GUI_for_Software_Engineering_Project
 {
     class ProjectController : IProjectController
     {
         public IProject_Window view { get; }
+        
+        IProjectData projectData;
 
-        public List<IAssetData> AssetSource => throw new NotImplementedException();
-
-        public ProjectController(IProject_Window view)
+        public ProjectController(IProject_Window view, IProjectData projectData)
         {
             this.view = view;
+            this.projectData = projectData;
+            LoadProject(projectData.Name);
         }
 
-        public void PreviewAsset(IAssetData data)
-
+        public void PreviewAsset(IAssetData assetData)
         {
-            new Preview_Window(data).Show();
+            new Preview_Window(assetData, projectData).Show();
 
         }
 
@@ -47,22 +49,45 @@ namespace GUI_for_Software_Engineering_Project
            
         }
 
+        private void LoadProject(string name)
+        {
+            List<string> fileNames = Networking.Networking.instance.Get_Files(name).ToList();
+            for (int i = 0; i < fileNames.Count(); i++)
+            {
+                string thumbnail;
+                switch (fileNames[i].Split('.')[1])
+                {
+                    case ("png"):
+                        thumbnail = "picture.png";
+                        break;
+                    case ("txt"):
+                        thumbnail = "text.png";
+                        break;
+                    default:
+                        thumbnail = "unknown.png";
+                        break;
+                }
+
+                view.AssetSource.Add(new AssetData(@"..\..\" + thumbnail, fileNames[i]));
+            }
+        }
+
         public void DownloadFile(IAssetData data)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
           
             dialog.ShowDialog();
         
-            if(Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
+            if(Networking.Networking.instance.Get_File(projectData.Name, data.TxtContent, dialog.SelectedPath))
             {
-                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent, 1000000);
+                Notification.Notification.instance.showNotification(projectData.Name+ " successfully downloaded", data.TxtContent, 1000000);
             }
             else
             {
-                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", " ", 1000000);
+                Notification.Notification.instance.showNotification(projectData.Name+ " successfully downloaded", " ", 1000000);
             } 
 
-            Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath);
+            Networking.Networking.instance.Get_File(projectData.Name, data.TxtContent, dialog.SelectedPath);
                 /*BitmapEncoder encoder = new PngBitmapEncoder();
 
                 encoder.Frames.Add(BitmapFrame.Create(data.ImgSource));

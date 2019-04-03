@@ -7,6 +7,8 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Networking
 {
@@ -136,7 +138,7 @@ namespace Networking
             }
             else
             {
-                string[] user_data = System.IO.File.ReadAllLines(@".\Users.txt");
+                string[] user_data = System.IO.File.ReadAllLines(@"./Users.txt");
                 int number_of_users = user_data.Count() / 4;
                 for (int i = 0; i < number_of_users; i++)
                 {
