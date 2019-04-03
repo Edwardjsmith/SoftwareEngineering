@@ -16,7 +16,7 @@ namespace GUI_for_Software_Engineering_Project.Model
     {
 
         private BitmapImage imgSource;
-        readonly AssetType assetType;
+        private readonly AssetType assetType;
 
         private string txtContent;
         private string projectName;

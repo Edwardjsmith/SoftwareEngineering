@@ -235,7 +235,7 @@ namespace Networking
                         {
                             for (int i = 0; i < _Servers.Count(); i++)
                             {
-                                Console.WriteLine("Project " + i + " : " + _Servers[i].my_name);
+                                Console.WriteLine("Project " + i + " : " + _Servers[i].My_name());
                             }
                             Console.WriteLine("Enter project ID");
                             string id = Console.ReadLine();
@@ -253,7 +253,7 @@ namespace Networking
                         {
                             for (int i = 0; i < _Servers.Count(); i++)
                             {
-                                Console.WriteLine("Project " + i + " : " + _Servers[i].my_name);
+                                Console.WriteLine("Project " + i + " : " + _Servers[i].My_name());
                             }
                             Console.WriteLine("Enter project ID");
                             string id = Console.ReadLine();
