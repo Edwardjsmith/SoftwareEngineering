@@ -189,10 +189,10 @@ namespace Networking
                 while (true)
                 {
                     Console.WriteLine("ENTER USER NAME : ");
-                    string name = "test";//Console.ReadLine();
+                    string name = "Test";//Console.ReadLine();
 
                     Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = "pass"; //Console.ReadLine();
+                    string pass = "Pass"; //Console.ReadLine();
 
 
                     if (_SQL.Connect_SQL(name, pass))

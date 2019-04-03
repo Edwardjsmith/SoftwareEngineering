@@ -59,7 +59,7 @@ namespace GUI_for_Software_Engineering_Project.Model
             imageImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../image.png"), UriKind.Absolute));
 
             // Taken from https://www.flaticon.com/free-icon/document_1086563#term=text&page=1&position=5
-            txtImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../text.png"), UriKind.Absolute));
+            txtImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../textFile.png"), UriKind.Absolute));
 
             // Taken from https://www.flaticon.com/free-icon/unknown_1179247#term=unknown&page=1&position=20
             unknownImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../unknown.png"), UriKind.Absolute));
