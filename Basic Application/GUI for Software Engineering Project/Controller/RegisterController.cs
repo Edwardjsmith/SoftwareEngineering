@@ -26,8 +26,6 @@ namespace GUI_for_Software_Engineering_Project
 
         public string Password2 => window.Password2;
 
-        public string AccountType => window.AccountType;
-
         public bool CheckForEmail()
         {
             return (EMail.Split('@').Length > 1 && EMail.Split('@').Length < 3);
@@ -41,12 +39,12 @@ namespace GUI_for_Software_Engineering_Project
         public void ProcessRegistration(string name, string pw1, string pw2, string email)
         {
 
-            if (Networking.Networking.instance.Create_User(AccountType[0] + Username, Password2))
+            if (Networking.Networking.instance.Create_User(Username, Password2))
             {
                 Console.WriteLine("Registered");
                 IProjectSelection window = new ProjectSelection();
                 window.Show();
-                this.window.Close();
+                window.Close();
                 Notification.Notification.instance.showNotification("User " + Username + "has been registered");
             }
             else

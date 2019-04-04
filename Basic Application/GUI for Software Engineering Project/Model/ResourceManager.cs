@@ -18,6 +18,7 @@ namespace GUI_for_Software_Engineering_Project.Model
         BitmapImage imageImage;
         BitmapImage txtImage;
         BitmapImage unknownImage;
+        BitmapImage noFiles;
 
         static ResourceManager instance;
 
@@ -36,7 +37,7 @@ namespace GUI_for_Software_Engineering_Project.Model
         public BitmapImage ImageImage { get => imageImage; }
         public BitmapImage TxtImage { get => txtImage; }
         public BitmapImage UnknownImage { get => unknownImage; }
-
+        public BitmapImage NoFiles { get => noFiles; }
 
 
 
@@ -57,6 +58,8 @@ namespace GUI_for_Software_Engineering_Project.Model
             txtImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/text.png"), UriKind.Absolute));
 
             unknownImage = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/unknown.png"), UriKind.Absolute));
+
+            noFiles = new BitmapImage(new Uri(Path.Combine(Environment.CurrentDirectory, "../../../Assets/noFiles.jpg"), UriKind.Absolute));
 
         }
 

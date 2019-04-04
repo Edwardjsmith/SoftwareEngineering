@@ -25,9 +25,30 @@ namespace GUI_for_Software_Engineering_Project
         public void LoadProject(IProjectData projectData)
         {
             List<string> FileNames = Networking.Networking.instance.Get_Files(projectData.Name).ToList();
-            for (int i = 0; i < FileNames.Count(); i++)
+            if (FileNames[0] != "") 
             {
-                view.AssetSource.Add(new AssetData(FileNames[i], projectData));
+                for (int i = 0; i < FileNames.Count(); i++)
+                {
+                    string thumbnail;
+                    switch (FileNames[i].Split('.')[1])
+                    {
+                        case ("png"):
+                            thumbnail = "image.png";
+                            break;
+                        case ("txt"):
+                            thumbnail = "text.png";
+                            break;
+                        default:
+                            thumbnail = "unknown.png";
+                            break;
+
+                    }
+                    view.AssetSource.Add(new AssetData(@"..\..\..\Assets\" + thumbnail, FileNames[i], projectData.Name));
+                }
+            }
+            else
+            {
+                view.AssetSource.Add(new AssetData(@"..\..\..\Assets\noFiles.jpg", " NO FILES ", projectData.Name));
             }
         }
 
@@ -65,15 +86,17 @@ namespace GUI_for_Software_Engineering_Project
             FolderBrowserDialog dialog = new FolderBrowserDialog();
 
             dialog.ShowDialog();
-
-            if (Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
+            if (data.TxtContent != "NO FILES")
             {
-                Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent);
+                if (Networking.Networking.instance.Get_File(data.ProjectName, data.TxtContent, dialog.SelectedPath))
+                {
+                    Notification.Notification.instance.showNotification(data.ProjectName + " successfully downloaded", data.TxtContent);
+                }
+                else
+                {
+                    Notification.Notification.instance.showNotification(data.ProjectName + " failed to download");
+                }
             }
-            else
-            {
-                Notification.Notification.instance.showNotification(data.ProjectName + " failed to download");
-            } 
         }
 
     }

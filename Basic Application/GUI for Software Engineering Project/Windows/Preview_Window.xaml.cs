@@ -13,7 +13,7 @@ namespace GUI_for_Software_Engineering_Project.Windows
     public partial class Preview_Window : Window, IPreviewWindow
     {
         IPreviewController controller;
-        string description;
+
         public Preview_Window(IAssetData asset, IProjectData project)
         {
             InitializeComponent();
@@ -32,8 +32,6 @@ namespace GUI_for_Software_Engineering_Project.Windows
                 
             }
         }
-
-        public string Description { get => description; set => description = value; }
 
         private void PreviewClosed(object sender, System.EventArgs e)
         {

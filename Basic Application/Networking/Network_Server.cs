@@ -44,13 +44,13 @@ namespace Networking
         {
             try
             {
-                White_list = System.IO.File.ReadAllLines(file_location + @"..\..\Server_private/White_list_" + name + ".txt").ToList();
-                Request_list = System.IO.File.ReadAllLines(file_location + @"..\..\Server_private/Request_list_" + name + ".txt").ToList();
+                White_list = System.IO.File.ReadAllLines(file_location + @"..\..\..\Server_private/White_list_" + name + ".txt").ToList();
+                Request_list = System.IO.File.ReadAllLines(file_location + @"..\..\..\Server_private/Request_list_" + name + ".txt").ToList();
             }
             catch 
             {
-                System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/White_list_" + my_name + ".txt", White_list.ToArray());
-                System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/Request_list_" + my_name + ".txt", Request_list.ToArray());
+                System.IO.File.WriteAllLines(File_Location + @"..\..\..\Server_private/White_list_" + name + ".txt", White_list.ToArray());
+                System.IO.File.WriteAllLines(File_Location + @"..\..\..\Server_private/Request_list_" + name + ".txt", Request_list.ToArray());
             }
             my_name = name;
             File_Location = file_location;
@@ -71,8 +71,8 @@ namespace Networking
         }
         public bool End()
         {
-            System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/White_list_" + my_name + ".txt", White_list.ToArray());
-            System.IO.File.WriteAllLines(File_Location + @"..\..\Server_private/Request_list_" + my_name + ".txt", Request_list.ToArray());
+            System.IO.File.WriteAllLines(File_Location + @"..\..\..\Server_private/White_list_" + my_name + ".txt", White_list.ToArray());
+            System.IO.File.WriteAllLines(File_Location + @"..\..\..\Server_private/Request_list_" + my_name + ".txt", Request_list.ToArray());
             try
             {
                 Running = false;
@@ -177,32 +177,44 @@ namespace Networking
                             if (dataReceived[1] == '/')
                             {
                                 bool on_white = false;
-                                
-                                // true false on white list 
-                               for (int i = 0; i < White_list.Count(); i++)
+                                string user_name = "";
+                                string server_name = "";
+                                for(int i = 0; i < dataReceived.Count(); i++)
                                 {
-                                    if(White_list[i] == dataReceived.Remove(0, 2))
+                                    if(dataReceived[i] == 'S' && dataReceived[i + 1] == '/')
                                     {
-                                        on_white = true;
-                                        break;
+                                        server_name = dataReceived.Remove(0, i+2);
+                                        user_name = dataReceived.Remove(i, dataReceived.Count() - i).Remove(0,2);
                                     }
                                 }
-                                if (!on_white)
+                                // true false on white list 
+                                if (server_name == my_name)
                                 {
-                                    message = Encoding.UTF8.GetBytes("FALSE");
-                                    Client_Data.GetStream().Write(message, 0, message.Length);
-                                }
-                                else
-                                {
-                                    message = Encoding.UTF8.GetBytes("TRUE");
-                                    Client_Data.GetStream().Write(message, 0, message.Length);
+                                    for (int i = 0; i < White_list.Count(); i++)
+                                    {
+                                        if (White_list[i] == user_name)
+                                        {
+                                            on_white = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!on_white)
+                                    {
+                                        message = Encoding.UTF8.GetBytes("FALSE");
+                                        Client_Data.GetStream().Write(message, 0, message.Length);
+                                    }
+                                    else
+                                    {
+                                        message = Encoding.UTF8.GetBytes("TRUE");
+                                        Client_Data.GetStream().Write(message, 0, message.Length);
+                                    }
                                 }
                             }
 
                         }
                         if (dataReceived[0] == 'S' && dataReceived[1] == '/')
                         {
-                            char user_type;
+                            char user_type = 'E';
                             int name_end = 0;
                             for (int i = 0; i < dataReceived.Count(); i++)
                             {
@@ -221,8 +233,8 @@ namespace Networking
                                 data.Add(message_in[i + name_end+4]);
                             }
                             Console.WriteLine("data uploaded");
-
-                           File.WriteAllBytes(File_Location + "/" + my_name + filename, data.ToArray());
+                            
+                           File.WriteAllBytes(File_Location + "/" + my_name +"/"+user_type + "/"+ filename, data.ToArray());
                             Console.WriteLine("File saved : " + filename);
                         }
                         
@@ -235,6 +247,7 @@ namespace Networking
         }
         private static byte[] Get_File_raw(char user_type, string file_name)
         {
+
             byte[] data = File.ReadAllBytes(File_Location +"/" + my_name +"/"+ user_type  + file_name);
             return data;
         }
@@ -256,7 +269,8 @@ namespace Networking
         }
         public void Alow_asess(string name)
         {
-            White_list.Add(name);
+            Console.WriteLine("User added to white list" + name);
+           White_list.Add(name);
             Request_list.Remove(name);
         }
     }

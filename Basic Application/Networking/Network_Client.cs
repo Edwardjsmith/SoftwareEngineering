@@ -79,11 +79,11 @@ namespace Networking
             Messages.Clear();
             Send_Message("F/" + t_username);
         }
-        public void Query_Acsess(string t_username)
+        public void Query_Acsess(string t_username,string server_name)
         {
             raw_bytes.Clear();
             Messages.Clear();
-            Send_Message("U/" + t_username);
+            Send_Message("U/" + t_username + "S/" + server_name);
         }
         public void Update_file(string filename, byte[] filedata)
         {

@@ -14,7 +14,6 @@ namespace GUI_for_Software_Engineering_Project
         string Username { get; }
         string Password1 { get; }
         string Password2 { get; }
-        string AccountType { get; }
         bool CheckForPasswordMatch();
         bool CheckForEmail();
         void ProcessRegistration(string name, string pw1, string pw2, string email);

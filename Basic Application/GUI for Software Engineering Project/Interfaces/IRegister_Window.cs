@@ -13,7 +13,6 @@ namespace GUI_for_Software_Engineering_Project
         string Email { get; }
         string Password1 { get; }
         string Password2 { get; }
-        string AccountType { get; }
 
         void Close();
     }

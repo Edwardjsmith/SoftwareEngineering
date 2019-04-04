@@ -4,16 +4,52 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
+<<<<<<< refs/remotes/origin/Backup_Branch
+<<<<<<< refs/remotes/origin/Backup_Branch
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+=======
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+>>>>>>> Inproved offline and server connections
+=======
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+>>>>>>> Inproved offline and server connections
+=======
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\
+>>>>>>> LukasBranch
 GUI_for_Software_Engineering_Project
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+<<<<<<< refs/remotes/origin/Backup_Branch
+<<<<<<< refs/remotes/origin/Backup_Branch
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
 6-1662134891
 
 35-1338162234
 171083863417
+=======
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
+6-1662134891
+
+35-1338162234
+17-1698393929
+>>>>>>> Inproved offline and server connections
+=======
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
+6-1662134891
+
+35-1338162234
+17-1698393929
+>>>>>>> Inproved offline and server connections
+=======
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\App.xaml
+6-1662134891
+
+35-1338162234
+17-1698393929
+>>>>>>> LukasBranch
 Windows\MainWindow.xaml;Windows\Preview_Window.xaml;Windows\ProjectCreation_Window.xaml;Windows\ProjectSelection.xaml;Windows\Project_Window.xaml;Windows\Register_Window.xaml;
 
 False

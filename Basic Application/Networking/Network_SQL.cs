@@ -29,7 +29,7 @@ namespace Networking
     class Network_SQL
     {
         private User self = new User();
-        
+        private char user_type;
         private MySqlConnection SQL;
         private bool Connected_to_server = false;
         /*init code */
@@ -108,33 +108,41 @@ namespace Networking
         {
             if (Connected_to_server)
             {
-                string commanda = string.Format("SELECT * FROM `Users` WHERE (( `Name` = '{0}' )AND( `Password` = '{1}'))", username, password);
-                MySqlCommand myCommand = new MySqlCommand(commanda, SQL);
-                MySqlDataReader reader = myCommand.ExecuteReader();
-                string public_ip = new WebClient().DownloadString("http://icanhazip.com");
-
-                while (reader.Read())
+                for (int i = 0; i < 3; i++)
                 {
+                    user_type = 'T';
+                    if (i == 0) user_type = 'A';
+                    if (i == 1) user_type = 'D';
+                    if (i == 2) user_type = 'E';
 
-                    Console.WriteLine("User id   = " + reader[0].ToString()); //  id
-                    self.ID = Int32.Parse(reader[0].ToString());
+                    string t_username =user_type+ username;
+                    string commanda = string.Format("SELECT * FROM `Users` WHERE (( `Name` = '{0}' )AND( `Password` = '{1}'))", t_username, password);
+                    MySqlCommand myCommand = new MySqlCommand(commanda, SQL);
+                    MySqlDataReader reader = myCommand.ExecuteReader();
+                    string public_ip = new WebClient().DownloadString("http://icanhazip.com");
 
-                    Console.WriteLine("User Name = " + reader[1].ToString()); //  name
-                    self.Name = (reader[1].ToString());
-                    if (!reader.IsClosed) reader.Close();
-                    commanda = string.Format("UPDATE `Users` SET `IP` = \"{0}\" WHERE `Users`.`ID` = '{1}'", public_ip, self.ID);
-                    myCommand = new MySqlCommand(commanda, SQL);
-                    myCommand.ExecuteNonQuery();
-                    return true;
+                    while (reader.Read())
+                    {
 
+                        Console.WriteLine("User id   = " + reader[0].ToString()); //  id
+                        self.ID = Int32.Parse(reader[0].ToString());
+
+                        Console.WriteLine("User Name = " + reader[1].ToString()); //  name
+                        self.Name = (reader[1].ToString());
+                        if (!reader.IsClosed) reader.Close();
+                        commanda = string.Format("UPDATE `Users` SET `IP` = \"{0}\" WHERE `Users`.`ID` = '{1}'", public_ip, self.ID);
+                        myCommand = new MySqlCommand(commanda, SQL);
+                        myCommand.ExecuteNonQuery();
+                        return true;
+
+                    }
+                    if (!reader.HasRows)
+                    {
+                        if (!reader.IsClosed) reader.Close();
+                    }
                 }
+                return false;
 
-                if (!reader.HasRows)
-                {
-                    Console.WriteLine("ERROR -- CONNECT_SQL - USERNAME AND PASSWORD COMBO NOT FOUND"); //  name
-                    if (!reader.IsClosed) reader.Close();
-                    return false;
-                }
             }
             else
             {
@@ -142,11 +150,20 @@ namespace Networking
                 int number_of_users = user_data.Count() / 4;
                 for (int i = 0; i < number_of_users; i++)
                 {
-                    if (user_data[i*5 + 1] == username && user_data[i * 5 + 2] == password)
+                    for (int j = 0; j < 3; j++)
                     {
-                        self.ID = Int32.Parse(user_data[i * 5]);
-                        self.Name = username;
-                        return true;
+                        user_type = 'T';
+                        if (j == 0) user_type = 'A';
+                        if (j == 1) user_type = 'D';
+                        if (j == 2) user_type = 'E';
+
+                        string t_username = user_type + username;
+                        if (user_data[i * 5 + 1] == t_username && user_data[i * 5 + 2] == password)
+                        {
+                            self.ID = Int32.Parse(user_data[i * 5]);
+                            self.Name = username;
+                            return true;
+                        }
                     }
                 }
 
@@ -439,6 +456,7 @@ namespace Networking
                 user_data.Add(password);
                 user_data.Add("localhost");
                 user_data.Add("");
+                System.IO.File.WriteAllLines(@".\Users.txt", user_data);
             }
             Console.WriteLine("ERROR -- NO CONNECTION TO SQL SERVER --- Please use offline mode");
             return false;
@@ -488,7 +506,10 @@ namespace Networking
         }
         public User Get_User()
         {
-            return self;
+            User temp = self;
+
+            temp.Name = user_type + self.Name;
+            return temp;
         }
 
     }

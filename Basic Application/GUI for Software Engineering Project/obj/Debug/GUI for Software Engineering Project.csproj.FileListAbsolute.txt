@@ -32,6 +32,9 @@ C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Softwa
 C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
 C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 C:\Users\4hornl01\Downloads\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+<<<<<<< HEAD
+<<<<<<< refs/remotes/origin/Backup_Branch
+<<<<<<< refs/remotes/origin/Backup_Branch
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
@@ -66,3 +69,49 @@ C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Appli
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
 C:\Users\4hornl01\Downloads\Alternative Desaster\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+=======
+=======
+>>>>>>> Inproved offline and server connections
+=======
+>>>>>>> LukasBranch
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe.config
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.exe
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\GUI for Software Engineering Project.pdb
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.exe
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\System.Drawing.Common.dll
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\MySql.Data.dll
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Google.Protobuf.dll
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.pdb
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Networking.exe.config
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\MySql.Data.xml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\bin\Debug\Google.Protobuf.xml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csprojAssemblyReference.cache
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Preview_Window.g.cs
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.g.cs
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectSelection.g.cs
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.g.cs
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.g.cs
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\App.g.cs
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.cache
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project_MarkupCompile.lref
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\MainWindow.baml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Preview_Window.baml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectCreation_Window.baml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\ProjectSelection.baml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Project_Window.baml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\Windows\Register_Window.baml
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.g.resources
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI_for_Software_Engineering_Project.Properties.Resources.resources
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.GenerateResource.cache
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CoreCompileInputs.cache
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.csproj.CopyComplete
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.exe
+C:\Users\2coeo33\Downloads\REPO\SoftwareEngineering\Basic Application\GUI for Software Engineering Project\obj\Debug\GUI for Software Engineering Project.pdb
+<<<<<<< HEAD
+<<<<<<< refs/remotes/origin/Backup_Branch
+>>>>>>> Inproved offline and server connections
+=======
+>>>>>>> Inproved offline and server connections
+=======
+>>>>>>> LukasBranch

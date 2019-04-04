@@ -5,7 +5,7 @@ using System.Windows.Media.Imaging;
 
 namespace GUI_for_Software_Engineering_Project.Model
 {
-    public enum AssetTypeEnum
+    public enum AssetType
     {
         image,
         text,
@@ -16,10 +16,10 @@ namespace GUI_for_Software_Engineering_Project.Model
     {
 
         private BitmapImage imgSource;
+        readonly AssetType assetType;
 
         private string txtContent;
         private string projectName;
-        AssetTypeEnum assetType;
         public AssetData(string display_url,string file_name,string project_name)
         {
             
@@ -29,34 +29,10 @@ namespace GUI_for_Software_Engineering_Project.Model
             projectName = project_name;
         }
 
-        public AssetData(string file_name, IProjectData project)
-        {
-            switch (file_name.Split('.')[1])
-            {
-                case ("png"):
-                    AssetType = AssetTypeEnum.image;
-                    ImgSource = ResourceManager.Instance.ImageImage;
-                    break;
-                case ("txt"):
-                    AssetType = AssetTypeEnum.text;
-                    ImgSource = ResourceManager.Instance.TxtImage;
-                    break;
-                default:
-                    AssetType = AssetTypeEnum.unknown;
-                    ImgSource = ResourceManager.Instance.UnknownImage;
-                    break;
-
-            }
-
-            TxtContent = file_name;
-            projectName = project.Name;
-        }
-
         public string TxtContent { get => txtContent; set => txtContent = value; }
         public string ProjectName { get => projectName; set => projectName = value; }
         public BitmapImage ImgSource { get => imgSource; set => imgSource = value; }
 
-        public AssetTypeEnum AssetType { get => assetType; set => assetType = value; }
-
+        public AssetType AssetType => assetType;
     }
 }

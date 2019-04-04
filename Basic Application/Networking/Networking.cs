@@ -226,7 +226,7 @@ namespace Networking
                 else
                 {
                     _Client.Start(temp.IP, temp.Port, Get_username());
-                    _Client.Query_Acsess(name);
+                    _Client.Query_Acsess(name,project_name);
                     List<string> temp_return = _Client.Get_Messages();
                     while (temp_return.Count() == 0)
                     {

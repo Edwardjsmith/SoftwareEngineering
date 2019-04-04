@@ -7,24 +7,16 @@
         mc:Ignorable="d"
         Title="Register" Height="362.8" Width="395.2">
     <Grid>
-        <Label Content="Username;" HorizontalAlignment="Left" Margin="44,67,0,0" VerticalAlignment="Top"/>
-        <Label Content="E-Mail:" HorizontalAlignment="Left" Margin="44,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="44,146,0,0" VerticalAlignment="Top"/>
-        <Label Content="Reenter Password:" HorizontalAlignment="Left" Margin="44,177,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtbxUsername" HorizontalAlignment="Left" Height="23" Margin="211,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtbxEMail" HorizontalAlignment="Left" Height="23" Margin="211,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtbxPassword1" HorizontalAlignment="Left" Height="23" Margin="211,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtbxPassword2" HorizontalAlignment="Left" Height="23" Margin="211,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnConfirm" Content="Register" HorizontalAlignment="Left" Margin="256,240,0,0" VerticalAlignment="Top" Width="75" Click="BtnConfirm_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="165,240,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
-        <ComboBox x:Name="cmbxAccountTypes" HorizontalAlignment="Left" Margin="211,98,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
-            <ComboBoxItem>Artist</ComboBoxItem>
-            <ComboBoxItem>Developer</ComboBoxItem>
-            <ComboBoxItem>Tester</ComboBoxItem>
-            <ComboBoxItem>Supervisor</ComboBoxItem>
-
-        </ComboBox>
-            <Label Content="Account Type:" HorizontalAlignment="Left" Margin="44,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Username;" HorizontalAlignment="Left" Margin="44,42,0,0" VerticalAlignment="Top"/>
+        <Label Content="E-Mail:" HorizontalAlignment="Left" Margin="44,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="44,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="Reenter Password:" HorizontalAlignment="Left" Margin="44,228,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxUsername" HorizontalAlignment="Left" Height="23" Margin="211,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtbxEMail" HorizontalAlignment="Left" Height="23" Margin="211,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtbxPassword1" HorizontalAlignment="Left" Height="23" Margin="211,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtbxPassword2" HorizontalAlignment="Left" Height="23" Margin="211,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnConfirm" Content="Register" HorizontalAlignment="Left" Margin="256,291,0,0" VerticalAlignment="Top" Width="75" Click="BtnConfirm_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="165,291,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
 
     </Grid>
 </Window>

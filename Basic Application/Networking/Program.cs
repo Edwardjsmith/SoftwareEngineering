@@ -30,8 +30,8 @@ namespace Networking
                 ///////////////////////////////
                 Console.WriteLine("");
                 Console.WriteLine("TEST : LOGGIN");
-                string name = "Test";//Console.ReadLine();
-                string pass = "Pass";// Console.ReadLine();
+                string name = "Dave";//Console.ReadLine();
+                string pass = "Test";// Console.ReadLine();
                 if (Networking.instance.Sign_In(name, pass))
                 {
                     Console.WriteLine("PASS");
@@ -115,11 +115,8 @@ namespace Networking
                 Clear_messages(false);
                 while (true)
                 {
-                    Console.WriteLine("ENTER USER NAME : ");
-                    string name = "tester";//Console.ReadLine();
-
-                    Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = "tester";// Console.ReadLine();
+                    string name = "Dave";//Console.ReadLine();
+                    string pass = "Test";// Console.ReadLine();;
                     Clear_messages(false);
                     if (Networking.instance.Sign_In(name, pass))
                     {
@@ -273,11 +270,8 @@ namespace Networking
                 Clear_messages(true);
                 while (true)
                 {
-                    Console.WriteLine("ENTER USER NAME : ");
-                    string name = "Test";//Console.ReadLine();
-
-                    Console.WriteLine("ENTER PASSWORD  : ");
-                    string pass = "Pass"; //Console.ReadLine();
+                    string name = "Lukas";//Console.ReadLine();
+                    string pass = "Test";// Console.ReadLine();
 
 
                     if (_SQL.Connect_SQL(name, pass))
@@ -300,6 +294,29 @@ namespace Networking
                     Console.WriteLine(projects[i].Name);
                     Network_Server network_Server = new Network_Server();
                     network_Server.Start(5000, @"..\..\..\Server_files", projects[i].Name);
+
+
+                    if (!Directory.Exists(@"..\..\..\Server_files\"+ projects[i].Name))
+                    {
+                        Directory.CreateDirectory(@"..\..\..\Server_files\" + projects[i].Name);
+                    }
+                    if (!Directory.Exists(@"..\..\..\Server_files\" + projects[i].Name + @"\A"))
+                    {
+                        Directory.CreateDirectory(@"..\..\..\Server_files\" + projects[i].Name + @"\A");
+                    }
+                    if (!Directory.Exists(@"..\..\..\Server_files\" + projects[i].Name + @"\D"))
+                    {
+                        Directory.CreateDirectory(@"..\..\..\Server_files\" + projects[i].Name + @"\D");
+                    }
+                    if (!Directory.Exists(@"..\..\..\Server_files\" + projects[i].Name + @"\E"))
+                    {
+                        Directory.CreateDirectory(@"..\..\..\Server_files\" + projects[i].Name + @"\E");
+                    }
+                    if (!Directory.Exists(@"..\..\..\Server_files\" + projects[i].Name + @"\T"))
+                    {
+                        Directory.CreateDirectory(@"..\..\..\Server_files\" + projects[i].Name + @"\T");
+                    }
+
                     Console.WriteLine(" SERVER " + i + " RUNNING ");
                     _Servers.Add(network_Server);
                 }
