@@ -13,6 +13,7 @@ namespace GUI_for_Software_Engineering_Project.Interfaces
         ProjectState State { get; set; }
         string Name { get; set; }
         BitmapImage ImgSource { get; }
+        string Description { get; set; }
 
 
 

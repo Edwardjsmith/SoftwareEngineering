@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_for_Software_Engineering_Project.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,9 @@ namespace GUI_for_Software_Engineering_Project.Interfaces
 {
     public interface IAssetData
     {
+
+        AssetTypeEnum AssetType { get; set; }
+
         string TxtContent { get; set; }
         string ProjectName { get; set; }
         BitmapImage ImgSource { get; set; }

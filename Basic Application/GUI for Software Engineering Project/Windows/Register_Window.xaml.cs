@@ -30,6 +30,8 @@ namespace GUI_for_Software_Engineering_Project
 
         public string Password2 { get => txtbxEMail.Text; }
 
+        public string AccountType => (string)cmbxAccountTypes.SelectedValue.ToString();
+
         public IRegisterController controller;
 
         public Register_Window()
@@ -48,6 +50,11 @@ namespace GUI_for_Software_Engineering_Project
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             controller.CloseWindow();
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }

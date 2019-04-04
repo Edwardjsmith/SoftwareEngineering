@@ -13,7 +13,8 @@
                 <DataTemplate>
                     <DockPanel Margin="5">
                         <Image Source="{Binding ImgSource}" DockPanel.Dock="Left" MaxHeight="100" MaxWidth="200"/>
-                        <Label Content="{Binding TxtContent}" DockPanel.Dock="Right"/>
+                        <Label Content="{Binding Name}" DockPanel.Dock="Top"/>
+                        <TextBlock Text="{Binding Description}" DockPanel.Dock="Bottom" MaxWidth="250" TextWrapping="WrapWithOverflow"></TextBlock>
                     </DockPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

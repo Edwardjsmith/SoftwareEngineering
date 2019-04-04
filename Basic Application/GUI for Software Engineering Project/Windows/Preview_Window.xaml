@@ -9,6 +9,7 @@
     <Grid>
         <Label x:Name="lblPreview" Content="No Title" HorizontalAlignment="Left" Height="36" Margin="39,10,0,0" VerticalAlignment="Top" Width="689"/>
         <Image x:Name="imgPreview" Source="{Binding Path=ImgPreview, Mode=OneWay}" HorizontalAlignment="Left" Height="363" Margin="10,46,0,0" VerticalAlignment="Top" Width="772"/>
+        <TextBlock x:Name="txblPreview" Text="{Binding Description}" TextWrapping="WrapWithOverflow" Margin="0,51,0,0" />
 
     </Grid>
 </Window>

@@ -27,21 +27,7 @@ namespace GUI_for_Software_Engineering_Project
             List<string> FileNames = Networking.Networking.instance.Get_Files(projectData.Name).ToList();
             for (int i = 0; i < FileNames.Count(); i++)
             {
-                string thumbnail;
-                switch (FileNames[i].Split('.')[1])
-                {
-                    case ("png"):
-                        thumbnail = "picture.png";
-                        break;
-                    case ("txt"):
-                        thumbnail = "text.png";
-                        break;
-                    default:
-                        thumbnail = "unknown.png";
-                        break;
-
-                }
-                view.AssetSource.Add(new AssetData(@"..\..\" + thumbnail, FileNames[i], projectData.Name));
+                view.AssetSource.Add(new AssetData(FileNames[i], projectData));
             }
         }
 

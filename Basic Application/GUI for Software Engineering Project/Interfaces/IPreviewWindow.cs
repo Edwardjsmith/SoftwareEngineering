@@ -9,5 +9,7 @@ namespace GUI_for_Software_Engineering_Project.Controller
     {
 
         BitmapImage ImgPreview { get; set; }
+
+        string Description { get; set; }
     }
 }
